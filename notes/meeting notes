@@ -21,25 +21,24 @@ Meeting notes
   hate speech - from scratch
   coreference resolution - no extra training data needed
   
-============================================================================================================================
+=============================================================================================================================
                                         STARTING OUR PROJECT FULL-TIME!! 
                                         Meetings every Wednesday @ 2 p.m.
-============================================================================================================================
+=============================================================================================================================
 
 Date: 20/5/2020
 Discussed:
 1. Get baseline system running
    - datasets: Similar type of data in downstream evaluation set and word embedding bias evaluation set. 
                Evaluation dataset is our most important datasetas it will be our main contraint.
-               Check for bias focused hate speech dataset
+               Check for bias focused hate speech dataset.
    - embedding toolkit: Ideally should support GloVe and FastText.
                Check Gensim and Facebook's code for FastText.
                FastText is good for Twitter data due to misspelled words and short forms and such.
    - downstream toolkit: find toolkit for hate speech detection.
    
 Questions:
-1. Confusion about traning data. Do we need training data for the downstream task as well or do we simply split the data we
-   will use for evaluation?
+1. Confusion about traning data. Do we need training data for the downstream task as well or do we simply split the data we will use for evaluation?
    
 To do:
 1. Find all datasets
