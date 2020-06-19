@@ -4,10 +4,11 @@ import re
 import sys
 
 ## Construct an iterator to iterate over lines in the data
+## Data passed in as first argument
 
 class MyIter(object):
     def __iter__(self):
-        path = './wiki_sample_preprocessed.txt'
+        path = sys.argv[1]
         with utils.open(path, 'r', encoding='utf-8') as fin:
             for line in fin:
                 line = line.lower()
@@ -29,7 +30,7 @@ def main():
 
     ## Save the model (can be loaded using gensim)
     print('Saving the model to specified filepath')
-    save_file = sys.argv[1]
+    save_file = sys.argv[2]
     model.save(save_file)
 
 
