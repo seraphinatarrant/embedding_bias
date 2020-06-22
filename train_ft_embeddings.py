@@ -21,12 +21,12 @@ class MyIter(object):
 
 def main():
     print('Instantiating the model')
-    model = FT_gensim(size=4, window=3, min_count=1)  # instantiate the model
+    model = FT_gensim(size=100, window=5, min_count=5)  # instantiate the model
     print('Building the vocabulary')
     model.build_vocab(sentences=MyIter())
     total_examples = model.corpus_count
     print('Training the model')
-    model.train(sentences=MyIter(), total_examples=total_examples, epochs=10)  # train the model
+    model.train(sentences=MyIter(), total_examples=total_examples, epochs=5)  # train the model
 
     ## Save the model (can be loaded using gensim)
     print('Saving the model to specified filepath')
