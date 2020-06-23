@@ -12,7 +12,7 @@ export STUDENT_ID=${whoami}
 
 rsync -av ./data/enwiki-latest-pages-articles_preprocessed.txt /disk/scratch/${STUDENT_ID}/wiki_data_preprocessed.txt
 
-python final_preprocessing.py
+python ./git2/embedding_bias/data_cleaning/final_preprocess.py /disk/scratch/${STUDENT_ID}/wiki_data_preprocessed.txt
 
 rsync -av /disk/scratch/${STUDENT_ID}/wiki_data_preprocessed_final.txt ./data/enwiki-latest-pages-articles_preprocessed_final.txt
 
