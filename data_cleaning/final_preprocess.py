@@ -31,6 +31,7 @@ def add_unk_tokens(preprocessed_data):
 
 
 def main():
+    print('Getting unk tokens for {}'.format(sys.argv[1]))
     add_unk_tokens(sys.argv[1])
 
 
