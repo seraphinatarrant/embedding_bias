@@ -8,7 +8,7 @@ source ~/.bashrc
 # activate the project environment
 conda activate bias_env
 
-mkdir /disk/scratch/s1303513
+mkdir -p /disk/scratch/s1303513
 
 rsync -av /home/s1303513/data/enwiki-latest-pages-articles_preprocessed.txt /disk/scratch/s1303513/wiki_data_preprocessed.txt
 
