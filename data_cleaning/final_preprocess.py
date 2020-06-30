@@ -1,18 +1,25 @@
 from collections import Counter
+from itertools import chain
 from nltk import tokenize
 import sys
 
 
+def count_in_file(filename):
+    with open(filename) as f:
+        linewords = (tokenize.word_tokenize(line, 'english', False) for line in f)
+        return dict(Counter(chain.from_iterable(linewords)))
+
+
 def get_lowfreq_words(preprocessed_data):
-    with open(preprocessed_data) as f:
-        lowfreq_set = set()
-        freq_dict = dict(Counter(tokenize.word_tokenize(f.read(), 'english', False)))
-        for word in freq_dict.keys():
-            if freq_dict[word] <= 10:
-                lowfreq_set.add(word)
+    # with open(preprocessed_data) as f:
+    lowfreq_set = set()
+        # freq_dict = dict(Counter(tokenize.word_tokenize(f.read(), 'english', False)))
+    freq_dict = count_in_file(preprocessed_data)
+    for word in freq_dict.keys():
+        if freq_dict[word] <= 10:
+            lowfreq_set.add(word)
 
     return lowfreq_set
-
 
 
 def add_unk_tokens(preprocessed_data):
