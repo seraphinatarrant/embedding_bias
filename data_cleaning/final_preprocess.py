@@ -24,9 +24,11 @@ def get_lowfreq_words(preprocessed_data):
 
 def add_unk_tokens(preprocessed_data):
     file_out = '{}_final.txt'.format(str(preprocessed_data)[:-4])
+    print('Creating low freq set')
     lowfreq_set = get_lowfreq_words(preprocessed_data)
     with open(preprocessed_data, 'r') as f:
         with open(file_out, 'w') as o_f:
+            print('Writing new lines to file')
             o_f.write('<UNK> ')
             for line in f.readlines():
                 tokenized_version = list(tokenize.word_tokenize(line, 'english', False))
@@ -39,8 +41,9 @@ def add_unk_tokens(preprocessed_data):
 
 
 def main():
-    print('Working on adding UNK tokens')
+    print('Python script running')
     add_unk_tokens(sys.argv[1])
+    print('Done!')
 
 
 if __name__ == '__main__':
