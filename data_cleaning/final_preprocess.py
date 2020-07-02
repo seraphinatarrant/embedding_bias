@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# encoding=utf8
+
 from collections import Counter
 from itertools import chain
 from nltk import tokenize
@@ -5,7 +8,7 @@ import sys
 
 
 def count_in_file(filename):
-    with open(filename) as f:
+    with open(filename, 'r', encoding='UTF8') as f:
         linewords = (tokenize.word_tokenize(line, 'english', False) for line in f)
         return dict(Counter(chain.from_iterable(linewords)))
 
