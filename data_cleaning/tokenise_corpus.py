@@ -17,4 +17,6 @@ def tokenise_corpus(infile, outfile):
 
 
 if __name__ == "__main__":
+    print('Tokenising corpus')
     tokenise_corpus(sys.argv[1], sys.argv[2])
+    print('Done!')
