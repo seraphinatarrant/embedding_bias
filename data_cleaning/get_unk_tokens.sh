@@ -17,7 +17,7 @@ echo Executing python script
 python /home/s1303513/git2/embedding_bias/data_cleaning/final_preprocess.py /disk/scratch/s1303513/half_wiki_tok.txt
 
 echo Copying final data back
-rsync -av /disk/scratch/s1303513/half_wiki_tok.txt /home/s1303513/data/wiki_data_final.txt
+rsync -av /disk/scratch/s1303513/half_wiki_tok_final.txt /home/s1303513/data/wiki_data_final.txt
 
 echo Deleting data from scratch space
 rm /disk/scratch/s1303513/half_wiki_tok_final.txt
