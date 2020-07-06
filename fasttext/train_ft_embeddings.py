@@ -1,8 +1,6 @@
 from gensim.models.fasttext import FastText as FT_gensim
 from gensim import utils
-from nltk import tokenize
-from collections import Counter
-import re
+import tempfile
 import sys
 
 
@@ -20,17 +18,21 @@ class MyIter(object):
 
 def main():
     print('Instantiating the model')
-    model = FT_gensim(size=100, window=5, min_count=5)  # instantiate the model
+    model = FT_gensim(size=100, window=5, min_count=5, sg=1)  # instantiate the skipgram model
     print('Building the vocabulary')
     model.build_vocab(sentences=MyIter())
     total_examples = model.corpus_count
     print('Training the model')
-    model.train(sentences=MyIter(), total_examples=total_examples, epochs=5)  # train the model
+    model.train(sentences=MyIter(), total_examples=total_examples, epochs=model.epochs, total_words = model.corpus_total_words)  # train the model
 
     ## Save the model (can be loaded using gensim)
+    ## Save file passed in as second argument
     print('Saving the model to specified filepath')
     save_file = sys.argv[2]
     model.save(save_file)
+    # print('Saving the model')
+    # with tempfile.NamedTemporaryFile(prefix='saved_model_gensim-', delete=False) as tmp:
+    #     model.save(tmp.name, separately=[])
 
 
 if __name__ == '__main__':
