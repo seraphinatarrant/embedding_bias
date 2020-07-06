@@ -8,13 +8,15 @@ source ~/.bashrc
 # activate the project environment
 conda activate bias_env
 
-# copy data over from headnode to scratch space
-rsync -avzh ./data/enwiki-latest-pages-articles_preprocessed.txt /disk/scratch/s1303513/wiki_data_preprocessed.txt
+mkdir -p /disk/scratch/s1303513
 
-python train_ft_embeddings.py /disk/scratch/s1303513/wiki_data_preprocessed.txt /disk/scratch/s1303513/fasttext.model
+# copy data over from headnode to scratch space
+rsync -av ./data/wiki_data_final.txt /disk/scratch/s1303513/wiki_data_final.txt
+
+python train_ft_embeddings.py /disk/scratch/s1303513/wiki_data_final.txt /disk/scratch/s1303513/fasttext.model
 
 mkdir ./models
 
-rsync -avzh /disk/scratch/s1303513/fasttext.model ./models/fasttext.model
+rsync -av /disk/scratch/s1303513/ ./models/
 
-rm /disk/scratch/s1303513/fasttext.model
+rm -r /disk/scratch/s1303513/
