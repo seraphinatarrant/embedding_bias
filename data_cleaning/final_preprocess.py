@@ -9,7 +9,7 @@ import sys
 
 def count_in_file(filename):
     with open(filename, 'r', encoding='UTF8') as f:
-        linewords = (tokenize.word_tokenize(line, 'english', False) for line in f)
+        linewords = (line.split() for line in f)
         return dict(Counter(chain.from_iterable(linewords)))
 
 
@@ -34,7 +34,7 @@ def add_unk_tokens(preprocessed_data):
             print('Writing new lines to file')
             o_f.write('<UNK> ')
             for line in f.readlines():
-                tokenized_version = list(tokenize.word_tokenize(line, 'english', False))
+                tokenized_version = line.split()
                 for i in range(len(tokenized_version)):
                     if tokenized_version[i] in lowfreq_set:
                         tokenized_version[i] = '<UNK>'
