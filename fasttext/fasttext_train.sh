@@ -15,7 +15,7 @@ echo Copying data over to scratch space
 rsync -av ./data/wiki_data_final.txt /disk/scratch/s1303513/wiki_data_final.txt
 
 echo Executing python script
-python train_ft_embeddings.py /disk/scratch/s1303513/wiki_data_final.txt /disk/scratch/s1303513/fasttext.model
+python ./git2/embedding_bias/fasttext/train_ft_embeddings.py /disk/scratch/s1303513/wiki_data_final.txt /disk/scratch/s1303513/fasttext.model
 
 mkdir ./models
 
