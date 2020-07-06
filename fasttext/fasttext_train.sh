@@ -10,13 +10,17 @@ conda activate bias_env
 
 mkdir -p /disk/scratch/s1303513
 
+echo Copying data over to scratch space
 # copy data over from headnode to scratch space
 rsync -av ./data/wiki_data_final.txt /disk/scratch/s1303513/wiki_data_final.txt
 
+echo Executing python script
 python train_ft_embeddings.py /disk/scratch/s1303513/wiki_data_final.txt /disk/scratch/s1303513/fasttext.model
 
 mkdir ./models
 
+echo Copying models back to headnode
 rsync -av /disk/scratch/s1303513/ ./models/
 
+echo Deleting data and model from scratch space
 rm -r /disk/scratch/s1303513/
