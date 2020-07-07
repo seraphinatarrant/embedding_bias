@@ -12,10 +12,10 @@ mkdir -p /disk/scratch/s1303513
 
 echo Copying data over to scratch space
 # copy data over from headnode to scratch space
-rsync -av ./data/wiki_data_final.txt /disk/scratch/s1303513/wiki_data_final.txt
+rsync -av ./data/wiki_data_final_2.txt /disk/scratch/s1303513/wiki_data_final_2.txt
 
 echo Executing python script
-python ./git2/embedding_bias/fasttext/train_ft_embeddings.py /disk/scratch/s1303513/wiki_data_final.txt /disk/scratch/s1303513/fasttext.model
+python ./git2/embedding_bias/fasttext/train_ft_embeddings.py /disk/scratch/s1303513/wiki_data_final_2.txt /disk/scratch/s1303513/fasttext.model
 
 mkdir ./models
 
