@@ -12,7 +12,7 @@ class MyIter(object):
         path = sys.argv[1]
         with utils.open(path, 'r', encoding='utf-8') as fin:
             for line in fin:
-                yield line.split(' ')
+                yield line.split()
 
 
 def main():
