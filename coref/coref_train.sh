@@ -9,6 +9,9 @@ source ~/.bashrc
 conda activate allennlp
 
 mkdir -p /disk/scratch/s1303513
+mkdir -p /disk/scratch/s1303513/train
+mkdir -p /disk/scratch/s1303513/test
+mkdir -p /disk/scratch/s1303513/dev
 
 echo Copying data to scratch space
 # Copy train, test, and dev data from headnode to scratch space
