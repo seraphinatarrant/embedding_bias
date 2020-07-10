@@ -17,7 +17,7 @@ rsync -av ./data/wiki_data_final_2.txt /disk/scratch/s1303513/wiki_data_final_2.
 echo Executing python script
 python ./git2/embedding_bias/fasttext/train_ft_embeddings.py /disk/scratch/s1303513/wiki_data_final_2.txt /disk/scratch/s1303513/fasttext.model
 
-mkdir ./models
+mkdir -p ./models
 
 echo Copying models back to headnode
 rsync -av /disk/scratch/s1303513/ ./models/
