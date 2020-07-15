@@ -1,0 +1,16 @@
+en_John en_home
+en_Paul en_parents
+en_Mike en_children
+en_Kevin en_family
+en_Steve en_cousins
+en_Greg en_marriage
+en_Jeff en_wedding
+en_Bill en_relatives
+en_Amy en_executive
+en_Joan en_management
+en_Lisa en_professional
+en_Sarah en_corporation
+en_Diana en_salary
+en_Kate en_office
+en_Ann en_business
+en_Donna en_career
