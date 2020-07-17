@@ -26,7 +26,7 @@ export COREF_TEST_DATA_PATH=/disk/scratch/s1303513/test/test.english.v4_gold_con
 export COREF_DEV_DATA_PATH=/disk/scratch/s1303513/dev/dev.english.v4_gold_conll
 
 echo Training coreference model
-allennlp train ./allennlp-models/training_config/coref/coref.jsonnet -s /disk/scratch/s1303513/results_$(date '+%d%m-%H%M')
+allennlp train ./git2/embedding_bias/coref/coref_config_file -s /disk/scratch/s1303513/results_$(date '+%d%m-%H%M')
 
 echo Copying model files back to headnode
 rsync -av /disk/scratch/s1303513/results_* ./allennlp/results/
