@@ -19,7 +19,7 @@ rsync -av ./allennlp/data/train/train.english.v4_gold_conll /disk/scratch/s13035
 rsync -av ./allennlp/data/test/test.english.v4_gold_conll /disk/scratch/s1303513/test/test.english.v4_gold_conll
 rsync -av ./allennlp/data/dev/dev.english.v4_gold_conll /disk/scratch/s1303513/dev/dev.english.v4_gold_conll
 
-rsync -av ./embeddings/ar_t6_vectors.txt /disk/scratch/s1303513/ar_t6_vectors.txt
+rsync -av ./embeddings/ar_t7_vectors.txt /disk/scratch/s1303513/ar_t7_vectors.txt
 
 export COREF_TRAIN_DATA_PATH=/disk/scratch/s1303513/train/train.english.v4_gold_conll
 export COREF_TEST_DATA_PATH=/disk/scratch/s1303513/test/test.english.v4_gold_conll
