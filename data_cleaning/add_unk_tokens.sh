@@ -21,8 +21,8 @@ python /home/s1303513/git2/embedding_bias/data_cleaning/final_preprocess.py /dis
 
 echo Copying data back to home
 
-rsync -av /disk/scratch/s1303513/token_data/wiki_new_tok_final.txt /home/s1303513/data/wiki_new_final.txt
+rsync -av /disk/scratch/s1303513/wiki_new_tok_final.txt /home/s1303513/data/wiki_new_final.txt
 
 echo Removing data from scratch space
 
-rm -r /disk/scratch/s1303513/*q
+rm -r /disk/scratch/s1303513/*
