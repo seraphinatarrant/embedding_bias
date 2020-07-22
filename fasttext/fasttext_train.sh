@@ -12,10 +12,10 @@ mkdir -p /disk/scratch/s1303513
 
 echo Copying data over to scratch space
 # copy data over from headnode to scratch space
-rsync -av ./data/wiki_data_final_2.txt /disk/scratch/s1303513/wiki_data_final_2.txt
+rsync -av ./data/wiki_new_final.txt /disk/scratch/s1303513/wiki_new_final.txt
 
 echo Executing python script
-python ./git2/embedding_bias/fasttext/train_ft_embeddings.py /disk/scratch/s1303513/wiki_data_final_2.txt /disk/scratch/s1303513/fasttext.model
+python ./git2/embedding_bias/fasttext/train_ft_embeddings.py /disk/scratch/s1303513/wiki_new_final.txt /disk/scratch/s1303513/ft_new.model
 
 mkdir -p ./models
 
@@ -23,4 +23,4 @@ echo Copying models back to headnode
 rsync -av /disk/scratch/s1303513/ ./models/
 
 echo Deleting data and model from scratch space
-rm -r /disk/scratch/s1303513/
+rm -r /disk/scratch/s1303513/*

@@ -17,7 +17,7 @@ class MyIter(object):
 
 def main():
     print('Instantiating the model')
-    model = FT_gensim(size=100, window=5, min_count=5, sg=1)  # instantiate the skipgram model
+    model = FT_gensim(size=300, window=5, min_count=5, sg=1)  # instantiate the skipgram model
     print('Building the vocabulary')
     # path to data file passed as first argument
     # corpus_file = sys.argv[1]
