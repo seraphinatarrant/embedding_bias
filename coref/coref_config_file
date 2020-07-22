@@ -24,8 +24,8 @@
       "token_embedders": {
         "tokens": {
             "type": "embedding",
-            "pretrained_file": "/disk/scratch/s1303513/ar_t7_vectors.txt",
-            "embedding_dim": 100,
+            "pretrained_file": "/disk/scratch/s1303513/ft_new_vectors.txt",
+            "embedding_dim": 300,
             "trainable": false
         },
         "token_characters": {
@@ -46,19 +46,19 @@
     "context_layer": {
         "type": "lstm",
         "bidirectional": true,
-        "input_size": 200,
+        "input_size": 400,
         "hidden_size": 200,
         "num_layers": 1
     },
     "mention_feedforward": {
-        "input_dim": 1020,
+        "input_dim": 1220,
         "num_layers": 2,
         "hidden_dims": 150,
         "activations": "relu",
         "dropout": 0.2
     },
     "antecedent_feedforward": {
-        "input_dim": 3080,
+        "input_dim": 3680,
         "num_layers": 2,
         "hidden_dims": 150,
         "activations": "relu",
