@@ -77,7 +77,7 @@
     "lexical_dropout": 0.5,
     "feature_size": 20,
     "max_span_width": 10,
-    "spans_per_word": 0.28,
+    "spans_per_word": 0.29,
     "max_antecedents": 100
   },
   "data_loader": {
