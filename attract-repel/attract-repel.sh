@@ -32,27 +32,27 @@ rsync -av ./a_r/weat8_syn_t6.txt /disk/scratch/s1303513/
 
 echo AR test 1
 
-python3 ./a_r/attract-repel/code/attract-repel.py ./a_r/attract-repel/config/experiment_parameters_t1.cfg
+python3 ./a_r/attract-repel/code/attract-repel_new.py ./a_r/attract-repel/config/experiment_parameters_t1.cfg
 
 echo AR test 2
 
-python3 ./a_r/attract-repel/code/attract-repel.py ./a_r/attract-repel/config/experiment_parameters_t2.cfg
+python3 ./a_r/attract-repel/code/attract-repel_new.py ./a_r/attract-repel/config/experiment_parameters_t2.cfg
 
 echo AR test 3
 
-python3 ./a_r/attract-repel/code/attract-repel.py ./a_r/attract-repel/config/experiment_parameters_t3.cfg
+python3 ./a_r/attract-repel/code/attract-repel_new.py ./a_r/attract-repel/config/experiment_parameters_t3.cfg
 
 echo AR test 4
 
-python3 ./a_r/attract-repel/code/attract-repel.py ./a_r/attract-repel/config/experiment_parameters_t4.cfg
+python3 ./a_r/attract-repel/code/attract-repel_new.py ./a_r/attract-repel/config/experiment_parameters_t4.cfg
 
 echo AR test 5
 
-python3 ./a_r/attract-repel/code/attract-repel.py ./a_r/attract-repel/config/experiment_parameters_t5.cfg
+python3 ./a_r/attract-repel/code/attract-repel_new.py ./a_r/attract-repel/config/experiment_parameters_t5.cfg
 
 echo AR test 6
 
-python3 ./a_r/attract-repel/code/attract-repel.py ./a_r/attract-repel/config/experiment_parameters_t6.cfg
+python3 ./a_r/attract-repel/code/attract-repel_new.py ./a_r/attract-repel/config/experiment_parameters_t6.cfg
 
 echo copying vectors back
 
