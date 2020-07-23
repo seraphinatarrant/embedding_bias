@@ -15,13 +15,12 @@ echo Copying data over to scratch space
 rsync -av ./data/wiki_new_final.txt /disk/scratch/s1303513/wiki_new_final.txt
 
 echo Executing python script
-python ./git2/embedding_bias/w2v/train_w2v_embeddings.py /disk/scratch/s1303513/wiki_new_final.txt /disk/scratch/s1303513/w2v.model
+python ./git2/embedding_bias/w2v/train_w2v_embeddings.py /disk/scratch/s1303513/wiki_new_final.txt /disk/scratch/s1303513/w2v_vectors.txt
 
-mkdir -p ./models
-mkdir -p ./models/w2v
+mkdir -p embeddings/w2v
 
 echo Copying models back to headnode
-rsync -av /disk/scratch/s1303513/ ./models/w2v/
+rsync -av /disk/scratch/s1303513/w2v_vectors.txt ./embeddings/w2v/
 
 echo Deleting data and model from scratch space
 rm -r /disk/scratch/s1303513/*
