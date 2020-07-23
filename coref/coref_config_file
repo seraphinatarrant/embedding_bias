@@ -24,7 +24,7 @@
       "token_embedders": {
         "tokens": {
             "type": "embedding",
-            "pretrained_file": "/disk/scratch/s1303513/ft_new_vectors.txt",
+            "pretrained_file": "/disk/scratch/s1303513/ar_vectors_t1.txt",
             "embedding_dim": 300,
             "trainable": false
         },
