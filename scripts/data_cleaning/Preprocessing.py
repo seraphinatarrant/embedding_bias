@@ -92,6 +92,7 @@ def clean_tweet(text, vocab, tokenizer=TweetTokenizer()):
     tweet = re.sub(r'https?:\/\/.\S*', " <URL> ", tweet)       # url
     tweet = re.sub(r"\n", " ", tweet)                          # linebreaks
     tweet = re.sub(r'\s+'," ",tweet)                           # extra space
+    tweet = re.sub(r"\"","\'",tweet)                           # change " to '
     
     # Tokenize the cleaned string
     tokens = tokenizer.tokenize(tweet)
@@ -165,6 +166,8 @@ def cleaner(data, threshold=10, gen_vocab=True):
         counter += 1
         if (len(cleaned_tweets)%10000) == 0:
             print(counter, "of", tot, "Tweets cleaned")
+            
+    print(tot, "of", tot, "Tweets cleaned")
         
     if gen_vocab:
         # Generate the vocabulary
@@ -209,58 +212,76 @@ def preprocessor(data, vocab=None):
         counter += 1
         if (counter%1000) == 0:
             print(counter, "of", tot, "Tweets processed")
-        
+      
+    print(tot, "of", tot, "Tweets processed")
+    
     return preprocessed
 
 #############################
 
-def preprocess_txt_file(origin_path, save_path, vocab=None):
+def preprocess_file(data, vocab):
+    
+    return preprocessed
+
+
+
+
+def preprocess_file(origin_path, save_path, file_type, column="text", vocab=None):
     """
     This program assumes that your input file contains only one tweet per line
     """
     
     print("Importing data...")
-    ff = open(origin_path,'r', encoding="utf8").readlines()
-    gg = open(save_path,'w', encoding="utf8")
     
-
-    print("Cleaning data...")
+    if file_type == "txt":
+        
+        if origin_path[-3:] == "tsv":
+            df = pd.read_csv(origin_path, header=None, index_col=False, sep="\t")
+            ff = df.iloc[:,0].to_list()
+            
+        elif origin_path[-3:] == "csv":
+            df = pd.read_csv(origin_path, header=None, index_col=False)
+            ff = df.iloc[:,0].to_list()
+            
+        else:
+            ff = open(origin_path,'r', encoding="utf8").readlines()
+            
+    elif file_type == "DataFrame":
+        df = pd.read_csv(origin_path)
+        ff = df[column]
+        
+    else:
+        print("File type has to be 'txt' or 'DataFrame'")
+        return None
+    
+    
+    print("\nCleaning data...")
     if vocab is None:
         data, vocab = cleaner(ff)
-        print("Vocabulary generated")
+        print("\nVocabulary generated")
     else:
         data, _ = cleaner(ff, gen_vocab=False)
         
+    print("")
     print(len(vocab), "words in the vocabulary")
         
-    print("Preprocessing data...")
+    print("\nPreprocessing data...")
     preprocessed = preprocessor(data, vocab)
     
-    for tweet in preprocessed:
-        gg.write(tweet+'\n')
-        
-    gg.close()
+    print("\nSaving data...")
     
-    return vocab
+    if file_type == "txt":
+        gg = open(save_path,'w', encoding="utf8")
+        for tweet in preprocessed:
+            gg.write(tweet+'\n')
+        gg.close()
     
+    elif file_type == "DataFrame":
+        df[column] = pd.Series(preprocessed)
+        df.to_csv(save_path)
     
+    print("Data successfully saved!")
     
-    
-def preprocess_DataFrame(origin_path, save_path, column, vocab=None):
-    
-    df = pd.read_csv(origin_path)
-    
-    ff = df[column]
-    
-    if vocab is None:
-        data, vocab = cleaner(ff)
-    else:
-        data, _ = cleaner(ff, False)
-        
-    preprocessed = pd.Series(preprocessor(data, vocab))
-    
-    df[column] = preprocessed
-    
-    df.to_csv(save_path)
+    print("\n\n")
     
     return vocab
