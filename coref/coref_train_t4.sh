@@ -19,16 +19,16 @@ rsync -av ./allennlp/data/train/train.english.v4_gold_conll /disk/scratch/s13035
 rsync -av ./allennlp/data/test/test.english.v4_gold_conll /disk/scratch/s1303513/test/test.english.v4_gold_conll
 rsync -av ./allennlp/data/dev/dev.english.v4_gold_conll /disk/scratch/s1303513/dev/dev.english.v4_gold_conll
 
-rsync -av ./embeddings/w2v/ar_vectors/w2v_ar_vectors_t4.txt /disk/scratch/s1303513/w2v_ar_vectors_t4.txt
+rsync -av ./embeddings/ft/ar_vectors/ar_vectors_t4.txt /disk/scratch/s1303513/ar_vectors_t4.txt
 
 export COREF_TRAIN_DATA_PATH=/disk/scratch/s1303513/train/train.english.v4_gold_conll
 export COREF_TEST_DATA_PATH=/disk/scratch/s1303513/test/test.english.v4_gold_conll
 export COREF_DEV_DATA_PATH=/disk/scratch/s1303513/dev/dev.english.v4_gold_conll
 
 echo Training coreference model
-allennlp train ./git2/embedding_bias/coref/coref_config_file_t4 -s /disk/scratch/s1303513/results_t4_w2v
+allennlp train ./git2/embedding_bias/coref/coref_config_file_t4 -s /disk/scratch/s1303513/results_t4
 
 echo Copying model files back to headnode
-rsync -av /disk/scratch/s1303513/results_* ./allennlp/results_new/w2v/
+rsync -av /disk/scratch/s1303513/results_* ./allennlp/results_new/ft/
 echo Deleting data and results from scratch space
 rm -r /disk/scratch/s1303513/
