@@ -29,7 +29,7 @@ def train_fasttext(corpus_file, fasttext_path=None, save="../data/embeddings/",
     Output:
         A file with the embeddings both in gensim format and in word2vec format.
         It also returns the model itself.
-    """
+    """    
     
     print("Generating embeddings...")
     
@@ -40,6 +40,8 @@ def train_fasttext(corpus_file, fasttext_path=None, save="../data/embeddings/",
         
         # Set FastText home to the path to the FastText executable
         ft_home = fasttext_path
+        
+        print("\nCreating embeddings model...")
 
         # train the model
         model = FT_wrapper.train(ft_home, corpus_file, sg=1, size=dim)
@@ -53,11 +55,11 @@ def train_fasttext(corpus_file, fasttext_path=None, save="../data/embeddings/",
         # Run this if using windows or if FastText is not installed
         
         print("Gensim implementation loaded")
-        
+
         print("\nCreating embeddings model...")
-        model = FT_gensim(size=dim, sg=1)
+        model = FT_gensim(size=dim,sg=1)
         print("Model created")
-        
+
         # build the vocabulary
         print("\nGenerating vocabulary...")
         model.build_vocab(corpus_file=corpus_file)
@@ -67,7 +69,7 @@ def train_fasttext(corpus_file, fasttext_path=None, save="../data/embeddings/",
         print("\nTraining embeddings model")
         model.train(
                     corpus_file=corpus_file, epochs=model.epochs,
-                    total_examples=model.corpus_count, total_words=model.corpus_total_words,
+                    total_examples=model.corpus_count, total_words=model.corpus_total_words
                    )
         print("Model trained:")
 
@@ -77,8 +79,19 @@ def train_fasttext(corpus_file, fasttext_path=None, save="../data/embeddings/",
     if save is not None:
         path = save + "ft_embeddings." + str(dim)
         model.save(path + ".model")
+        
         model.wv.save_word2vec_format(path + ".vec")
         
+        gg = open(path+".txt",'w', encoding="utf8")
+        for token in model.wv.vocab.keys():
+            string = token
+            for value in model.wv[token]:
+                string += " " + str(value)
+            gg.write(string+'\n')
+        gg.close()
+        
         print("Embeddings saved")
+    
+    return model
 
     return model

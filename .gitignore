@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+*.driveupload
+*.tsv
+*.csv
+data/embeddings/ft_embeddings.100.model
+data/embeddings/ft_embeddings.100.model.trainables.vectors_ngrams_lockf.npy
+data/embeddings/ft_embeddings.100.model.wv.vectors_ngrams.npy
+data/embeddings/ft_embeddings.100.vec
