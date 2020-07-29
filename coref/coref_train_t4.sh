@@ -8,6 +8,8 @@ source ~/.bashrc
 # activate allennlp environment
 conda activate allennlp
 
+rm -rf /disk/scratch/s1303513/results_t4
+
 mkdir -p /disk/scratch/s1303513
 mkdir -p /disk/scratch/s1303513/train
 mkdir -p /disk/scratch/s1303513/test
@@ -30,5 +32,5 @@ allennlp train ./git2/embedding_bias/coref/coref_config_file_t4 -s /disk/scratch
 
 echo Copying model files back to headnode
 rsync -av /disk/scratch/s1303513/results_* ./allennlp/results_new/ft/
-echo Deleting data and results from scratch space
-rm -r /disk/scratch/s1303513/
+# echo Deleting data and results from scratch space
+# rm -r /disk/scratch/s1303513/
