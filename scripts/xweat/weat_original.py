@@ -11,7 +11,7 @@ import random
 from itertools import filterfalse
 from itertools import combinations
 import codecs
-import xweat.utils as utils
+import utils
 import os
 import pickle
 import logging
@@ -382,7 +382,7 @@ class XWEAT(object):
     all = set(all)
     return all
 
-  def _output_vocab(self, path="./xweat/data/vocab_en.txt"):
+  def _output_vocab(self, path="./data/vocab_en.txt"):
     """
     >>> weat = XWEAT(None); weat._output_vocab()
     """
@@ -432,7 +432,7 @@ class XWEAT(object):
     self._init_similarities(similarity_type)
     return self.weat_stats_precomputed_sims(T1, T2, A1, A2, sample_p)
 
-  def _parse_translations(self, path="./xweat/data/vocab_en_de.csv", new_path="./xweat/data/vocab_dict_en_de.p", is_russian=False):
+  def _parse_translations(self, path="./data/vocab_en_de.csv", new_path="./data/vocab_dict_en_de.p", is_russian=False):
     """
     :param path: path of the csv file edited by our translators
     :param new_path: path of the clean dict to save
@@ -583,36 +583,6 @@ def main():
   parser.add_argument("--embeddings", type=str, help="Vectors and vocab of the embeddings")
   parser.add_argument("--lang", type=str, default="en", help="Language to test")
   args = parser.parse_args()
-  
-  train_weat(args)
-
-
-def weat(test_number, permutation_number=None, output_file=None, lower=False,
-         similarity_type="cosine", embedding_vocab=None, embedding_vectors= None,
-         use_glove=False, postspec=False, is_vec_format=False, embeddings=None,
-         lang="en"):
-    
-    parser = argparse.ArgumentParser(description="Running XWEAT")
-    args = parser.parse_args()
-    
-    args.test_number = test_number
-    args.permutation_number = permutation_number
-    args.output_file = output_file
-    args.lower = lower
-    args.similarity_type = similarity_type
-    args.embedding_vocab = embedding_vocab
-    args.embedding_vectors = embedding_vectors
-    args.use_glove = use_glove
-    args.postspec = postspec
-    args.is_vec_format = is_vec_format
-    args.embeddings = embeddings
-    args.lang = lang
-    
-    train_weat(args)
-
-
-
-def train_weat(args):
 
   start = time.time()
   logging.basicConfig(level=logging.INFO)
@@ -643,7 +613,7 @@ def train_weat(args):
 
   if args.lang != "en":
     logging.info("Translating terms from en to %s", args.lang)
-    translation_dict = load_vocab_goran("./xweat/data/vocab_dict_en_" + args.lang + ".p")
+    translation_dict = load_vocab_goran("./data/vocab_dict_en_" + args.lang + ".p")
     targets_1 = translate(translation_dict, targets_1)
     targets_2 = translate(translation_dict, targets_2)
     attributes_1 = translate(translation_dict, attributes_1)
@@ -687,5 +657,4 @@ def train_weat(args):
 
 if __name__ == "__main__":
   #print("\n\n#####################\n\n",os.name,"\n\n#####################\n\n")
-  args = main()
-  train_weat(args)
+  main()

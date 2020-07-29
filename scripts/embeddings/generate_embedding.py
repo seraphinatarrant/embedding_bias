@@ -1,9 +1,3 @@
-import re
-import pickle
-
-import numpy as np
-import pandas as pd
-
 from gensim.models.wrappers.fasttext import FastText as FT_wrapper
 from gensim.models.fasttext import FastText as FT_gensim
 
@@ -47,8 +41,6 @@ def train_fasttext(corpus_file, fasttext_path=None, save="../data/embeddings/",
         model = FT_wrapper.train(ft_home, corpus_file, sg=1, size=dim)
         
         print("Model created and trained")
-
-        print(model)
         
         
     else:
@@ -73,7 +65,8 @@ def train_fasttext(corpus_file, fasttext_path=None, save="../data/embeddings/",
                    )
         print("Model trained:")
 
-        print(model)
+
+    print(model)
         
     # saving a model
     if save is not None:
@@ -94,4 +87,47 @@ def train_fasttext(corpus_file, fasttext_path=None, save="../data/embeddings/",
     
     return model
 
+
+####################################################################
+    
+
+def load_fasttext(save, fasttext_path=None, dim=300):
+    print("Loading embeddings...")
+    
+    path = save + "ft_embeddings." + str(dim) + ".model"
+    
+    if fasttext_path is not None:
+        # Run this if FastText is installed
+        
+        # load the model
+        model = FT_wrapper.load(path)
+        
+        print("Model loaded")
+        
+        
+    else:
+        # Run this if using windows or if FastText is not installed
+        
+        model = FT_gensim.load(path)
+        print("Model loaded")
+
+
+
+    print(model)
+    
     return model
+
+
+####################################################################
+    
+
+def FastText(save="../data/embeddings/", train=False,
+             corpus_file=None, fasttext_path=None, dim=300):
+    
+    if train:
+        model = train_fasttext(corpus_file, fasttext_path, save, dim)
+    else:
+        model = load_fasttext(save, fasttext_path, dim)
+        
+    return model
+    

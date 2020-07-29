@@ -1,0 +1,13 @@
+INFO:root:XWEAT started
+INFO:root:Translating terms from en to es
+INFO:root:Embeddings are in vec format
+INFO:gensim.models.utils_any2vec:loading projection weights from ../../data/embeddings/ft_embeddings.300.vec
+INFO:gensim.models.utils_any2vec:loaded (52490, 300) matrix from ../../data/embeddings/ft_embeddings.300.vec
+INFO:root:Embeddings loaded
+INFO:root:Running test
+WARNING:root:Not in vocab greg
+INFO:root:Popped T2 14
+INFO:root:Popped A1 15
+INFO:root:Calculating p value ... 
+INFO:root:Number of possible permutations: 3432
+INFO:root:(0.2832038, 0.96523374, 0.04195804195804196)

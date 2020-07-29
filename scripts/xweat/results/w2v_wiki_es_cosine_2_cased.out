@@ -1,0 +1,43 @@
+INFO:root:XWEAT started
+INFO:root:Translating terms from en to es
+INFO:root:Embeddings are in vec format
+INFO:gensim.models.utils_any2vec:loading projection weights from ../../data/embeddings/ft_embeddings.300.vec
+INFO:gensim.models.utils_any2vec:loaded (52490, 300) matrix from ../../data/embeddings/ft_embeddings.300.vec
+INFO:root:Embeddings loaded
+INFO:root:Running test
+WARNING:root:Not in vocab banjo
+WARNING:root:Not in vocab tuba
+WARNING:root:Not in vocab oboe
+WARNING:root:Not in vocab violonchelo
+WARNING:root:Not in vocab hedor
+WARNING:root:Not in vocab arco iris
+WARNING:root:Not in vocab cémbalo
+WARNING:root:Not in vocab arma de fuego
+WARNING:root:Not in vocab trombón
+WARNING:root:Not in vocab arpón
+WARNING:root:Not in vocab resortera
+WARNING:root:Not in vocab harmónica
+WARNING:root:Not in vocab saxofón
+WARNING:root:Not in vocab gaita
+WARNING:root:Not in vocab bongos
+WARNING:root:Not in vocab laúd
+WARNING:root:Not in vocab mandolina
+WARNING:root:Not in vocab fagot
+WARNING:root:Not in vocab gas lacrimógeno
+INFO:root:Popped T2 39
+INFO:root:Popped T2 38
+INFO:root:Popped T2 34
+INFO:root:Popped T2 32
+INFO:root:Popped T2 31
+INFO:root:Popped T2 30
+INFO:root:Popped T2 28
+INFO:root:Calculating p value ... 
+INFO:root:Number of possible permutations: 705432
+INFO:root:Iteration 100000 finished
+INFO:root:Iteration 200000 finished
+INFO:root:Iteration 300000 finished
+INFO:root:Iteration 400000 finished
+INFO:root:Iteration 500000 finished
+INFO:root:Iteration 600000 finished
+INFO:root:Iteration 700000 finished
+INFO:root:(0.29621783, 0.62146425, 0.07925781648691865)

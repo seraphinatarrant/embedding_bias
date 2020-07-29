@@ -1,0 +1,47 @@
+INFO:root:XWEAT started
+INFO:root:Translating terms from en to es
+INFO:root:Embeddings are in vec format
+INFO:gensim.models.utils_any2vec:loading projection weights from ../../data/embeddings/ft_embeddings.300.vec
+INFO:gensim.models.utils_any2vec:loaded (52490, 300) matrix from ../../data/embeddings/ft_embeddings.300.vec
+INFO:root:Embeddings loaded
+INFO:root:Running test
+WARNING:root:Not in vocab calendula
+WARNING:root:Not in vocab gorgojo
+WARNING:root:Not in vocab magnolia
+WARNING:root:Not in vocab avispón
+WARNING:root:Not in vocab termita
+WARNING:root:Not in vocab campanilla
+WARNING:root:Not in vocab ciempiés
+WARNING:root:Not in vocab narciso
+WARNING:root:Not in vocab peonía
+WARNING:root:Not in vocab azafrán
+WARNING:root:Not in vocab botón de oro
+WARNING:root:Not in vocab arco iris
+WARNING:root:Not in vocab libélula
+WARNING:root:Not in vocab hedor
+WARNING:root:Not in vocab lirio
+WARNING:root:Not in vocab tulipán
+WARNING:root:Not in vocab petunia
+WARNING:root:Not in vocab zinnia
+WARNING:root:Not in vocab mosca negra
+WARNING:root:Not in vocab aster
+WARNING:root:Not in vocab ácaro
+WARNING:root:Not in vocab tarántula
+WARNING:root:Not in vocab tábano
+WARNING:root:Not in vocab gladiolo
+INFO:root:Popped T2 38
+INFO:root:Popped T2 73
+INFO:root:Calculating p value ... 
+INFO:root:Number of possible permutations: 2704156
+INFO:root:Computing randomly first 1000000 permutations
+INFO:root:Iteration 100000 finished
+INFO:root:Iteration 200000 finished
+INFO:root:Iteration 300000 finished
+INFO:root:Iteration 400000 finished
+INFO:root:Iteration 500000 finished
+INFO:root:Iteration 600000 finished
+INFO:root:Iteration 700000 finished
+INFO:root:Iteration 800000 finished
+INFO:root:Iteration 900000 finished
+INFO:root:Iteration 1000000 finished
+INFO:root:(0.6741421, 1.2943708, 0.000399)

@@ -104,7 +104,7 @@ def load_embeddings(path, word2vec=False, rdf2vec=False):
     elif word2vec == True:
         #Load Google's pre-trained Word2Vec model.
         if os.name != 'nt':
-            model = gensim.models.KeyedVectors.load_word2vec_format(path, binary=True)
+            model = gensim.models.KeyedVectors.load_word2vec_format(path)
         else:
             model = gensim.models.Word2Vec.load_word2vec_format(path, binary=True)
         return model
