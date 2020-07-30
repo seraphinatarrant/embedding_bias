@@ -10,7 +10,7 @@ def main(retrain_embeddings=False):
     embedding_location = "../data/embeddings/"
     dim = 300
     lang = "es"
-    results = "../../results/"
+    results = "../results/"
     embeddings = "fasttext"
     
     xweat_similarity = ["cosine"]
@@ -56,7 +56,8 @@ def main(retrain_embeddings=False):
                  similarity_type = similarity,
                  )
 
-    print(model)
+    if retrain_embeddings:
+        print(model)
 
 
 if __name__ == "__main__":
