@@ -5,6 +5,11 @@ import torch.autograd as autograd
 import torch.nn.functional as F
 
 
+### NEW
+from sklearn.metrics import f1_score, precision_score, recall_score
+
+
+
 def train(train_iter, dev_iter, model, args):
     if args.cuda:
         model.cuda()
@@ -46,11 +51,13 @@ def train(train_iter, dev_iter, model, args):
                     last_step = steps
                     if args.save_best:
                         save(model, args.save_dir, 'best', steps)
+                        #print(args.save_dir,"\n",steps)
+                        save(model, "./cnn/snapshot/", "best", "model")
                 else:
                     if steps - last_step >= args.early_stop:
                         print('early stop by {} steps.'.format(args.early_stop))
             elif steps % args.save_interval == 0:
-                save(model, args.save_dir, 'snapshot', steps)
+                save(model, args.save_dir, './cnn/snapshot', steps)
 
 
 def eval(data_iter, model, args):
@@ -68,6 +75,21 @@ def eval(data_iter, model, args):
         avg_loss += loss.item()
         corrects += (torch.max(logit, 1)
                      [1].view(target.size()).data == target.data).sum()
+        
+        
+        ### NEW
+        if args.test:
+            output = logit.clone()
+            _, predicted = torch.max(output, 1)
+            #predicted = predicted.numpy()
+            #_, trues = torch.max(target, 1)
+            #print(logit.shape)
+            #print(target)
+            #print(predicted)
+            precision = precision_score(y_true=target, y_pred=predicted, average='weighted')
+            recall = recall_score(y_true=target, y_pred=predicted, average='weighted')
+            f1 = f1_score(y_true=target, y_pred=predicted, average='weighted')
+            
 
     size = len(data_iter.dataset)
     avg_loss /= size
@@ -76,7 +98,20 @@ def eval(data_iter, model, args):
                                                                        accuracy, 
                                                                        corrects, 
                                                                        size))
+    if args.results_path is not None:
+        save_test(args, precision, recall, f1, accuracy)
+    
     return accuracy
+
+
+
+def save_test(args, precision, recall, f1, accuracy):
+    string = "Precision: {:.3f}\nRecall: {:.3f}\nF1-Score: {:.3f}\n".format(precision,recall,f1)
+    print(string)
+    with open(args.results_path,'w', encoding="utf8") as ff:
+        ff.write(string)
+        ff.write("Accuracy: {:.3f}\n".format(accuracy))
+    #print(path)
 
 
 def predict(text, model, text_field, label_feild, cuda_flag):

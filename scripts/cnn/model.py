@@ -27,7 +27,7 @@ class CNN_Text(nn.Module):
         self.convs = nn.ModuleList([nn.Conv2d(Ci, Co, (K, D)) for K in Ks])
         self.dropout = nn.Dropout(args.dropout)
         self.fc1 = nn.Linear(len(Ks) * Co, C)
-
+        
         if self.args.static:
             self.embed.weight.requires_grad = False
 
@@ -43,5 +43,7 @@ class CNN_Text(nn.Module):
         x = torch.cat(x, 1)
 
         x = self.dropout(x)  # (N, len(Ks)*Co)
+        
         logit = self.fc1(x)  # (N, C)
+        #return F.softmax(logit, dim=1)
         return logit
