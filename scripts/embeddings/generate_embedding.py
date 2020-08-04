@@ -68,7 +68,7 @@ def train_fasttext(corpus_file, fasttext_path=None, save="../data/embeddings/",
         print("Model trained:")
 
 
-    print(model)
+    print(model, "\n")
         
     # saving a model
     if save is not None:
@@ -85,7 +85,9 @@ def train_fasttext(corpus_file, fasttext_path=None, save="../data/embeddings/",
             gg.write(string+'\n')
         gg.close()
         
-        print("Embeddings saved")
+        print("Embeddings saved\n")
+        
+    print("")
     
     return model
     
@@ -130,7 +132,8 @@ def train_word2vec(corpus_file, save="../data/embeddings/", dim=300):
     print("Model trained:")
 
 
-    print(model)
+    print(model, "\n")
+    
         
     # saving a model
     if save is not None:
@@ -147,7 +150,9 @@ def train_word2vec(corpus_file, save="../data/embeddings/", dim=300):
             gg.write(string+'\n')
         gg.close()
         
-        print("Embeddings saved")
+        print("Embeddings saved\n")
+    
+    print("")
     
     return model
     

@@ -1,4 +1,5 @@
-# This is Rebeccah's version of attract-repel
+# This is Rebecca's version of attract-repel
+# A modified version of https://github.com/nmrksic/attract-repel
 
 import configparser
 import numpy
