@@ -12,7 +12,7 @@ mkdir -p /disk/scratch/s1303513
 
 echo Copying data over to scratch space
 # copy data over from headnode to scratch space
-rsync -av db_debias_data_7.txt /disk/scratch/s1303513/db_debias_data_7.txt
+rsync -av db_data/db_debias_data_7.txt /disk/scratch/s1303513/db_debias_data_7.txt
 
 echo Executing python script
 python ./git2/embedding_bias/w2v/train_w2v_embeddings.py /disk/scratch/s1303513/db_debias_data_7.txt /disk/scratch/s1303513/db_d_7_vectors.txt
