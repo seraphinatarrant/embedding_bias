@@ -8,32 +8,16 @@ source ~/.bashrc
 
 conda activate bias_env
 
-mkdir -p /disk/scratch/s1303513
+mkdir -p /disk/scratch/s1303513/overbias
 
 echo Copying data to scratch space
 
-rsync -av ./data/wiki_new_final_copy.txt /disk/scratch/s1303513/wiki_new_final_copy.txt
+rsync -av ./data/wiki_new_final_copy.txt /disk/scratch/s1303513/overbias/wiki_new_final_copy.txt
 
 echo Executing python script
 
-python ./git2/embedding_bias/dataset_balancing/db_overbias.py /disk/scratch/s1303513/wiki_new_final_copy.txt /disk/scratch/s1303513/db_overbias_data_6.txt 6
+python ./git2/embedding_bias/dataset_balancing/db_overbias.py /disk/scratch/s1303513/overbias/wiki_new_final_copy.txt /disk/scratch/s1303513/overbias/db_overbias_data_6.txt 6
 
 echo Copying data back to home directory
 
-rsync -av /disk/scratch/s1303513/db_overbias_data_6.txt ./db_overbias_data_6.txt
-
-echo Executing python script
-
-python ./git2/embedding_bias/dataset_balancing/db_overbias.py /disk/scratch/s1303513/wiki_new_final_copy.txt /disk/scratch/s1303513/db_overbias_data_7.txt 7
-
-echo Copying data back to home directory
-
-rsync -av /disk/scratch/s1303513/db_overbias_data_7.txt ./db_overbias_data_7.txt
-
-echo Executing python script
-
-python ./git2/embedding_bias/dataset_balancing/db_overbias.py /disk/scratch/s1303513/wiki_new_final_copy.txt /disk/scratch/s1303513/db_overbias_data_8.txt 8
-
-echo Copying data back to home directory
-
-rsync -av /disk/scratch/s1303513/db_overbias_data_8.txt ./db_overbias_data_8.txt
+rsync -av /disk/scratch/s1303513/overbias/db_overbias_data_6.txt ./db_overbias_data_6.txt
