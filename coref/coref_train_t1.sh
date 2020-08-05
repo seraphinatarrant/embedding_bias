@@ -8,27 +8,27 @@ source ~/.bashrc
 # activate allennlp environment
 conda activate allennlp
 
-mkdir -p /disk/scratch/s1303513
-mkdir -p /disk/scratch/s1303513/train
-mkdir -p /disk/scratch/s1303513/test
-mkdir -p /disk/scratch/s1303513/dev
+mkdir -p /disk/scratch/s1303513/corefcheck
+mkdir -p /disk/scratch/s1303513/corefcheck/train
+mkdir -p /disk/scratch/s1303513/corefcheck/test
+mkdir -p /disk/scratch/s1303513/corefcheck/dev
 
 echo Copying data to scratch space
 # Copy train, test, and dev data from headnode to scratch space
-rsync -av ./allennlp/data/train/train.english.v4_gold_conll /disk/scratch/s1303513/train/train.english.v4_gold_conll
-rsync -av ./allennlp/data/test/test.english.v4_gold_conll /disk/scratch/s1303513/test/test.english.v4_gold_conll
-rsync -av ./allennlp/data/dev/dev.english.v4_gold_conll /disk/scratch/s1303513/dev/dev.english.v4_gold_conll
+rsync -av ./allennlp/data/train/train.english.v4_gold_conll /disk/scratch/s1303513/corefcheck/train/train.english.v4_gold_conll
+rsync -av ./allennlp/data/test/test.english.v4_gold_conll /disk/scratch/s1303513/corefcheck/test/test.english.v4_gold_conll
+rsync -av ./allennlp/data/dev/dev.english.v4_gold_conll /disk/scratch/s1303513/corefcheck/dev/dev.english.v4_gold_conll
 
-rsync -av ./embeddings/w2v/ar_vectors/w2v_ar_vectors_t1.txt /disk/scratch/s1303513/w2v_ar_vectors_t1.txt
+rsync -av ./embeddings/ft/ar_vectors/ft_ar_t1_check_vectors.txt /disk/scratch/s1303513/corefcheck/ft_ar_t1_check_vectors.txt
 
-export COREF_TRAIN_DATA_PATH=/disk/scratch/s1303513/train/train.english.v4_gold_conll
-export COREF_TEST_DATA_PATH=/disk/scratch/s1303513/test/test.english.v4_gold_conll
-export COREF_DEV_DATA_PATH=/disk/scratch/s1303513/dev/dev.english.v4_gold_conll
+export COREF_TRAIN_DATA_PATH=/disk/scratch/s1303513/corefcheck/train/train.english.v4_gold_conll
+export COREF_TEST_DATA_PATH=/disk/scratch/s1303513/corefcheck/test/test.english.v4_gold_conll
+export COREF_DEV_DATA_PATH=/disk/scratch/s1303513/corefcheck/dev/dev.english.v4_gold_conll
 
 echo Training coreference model
-allennlp train ./git2/embedding_bias/coref/coref_config_file_t1 -s /disk/scratch/s1303513/results_t1_w2v
+allennlp train ./git2/embedding_bias/coref/coref_config_file_t1 -s /disk/scratch/s1303513/corefcheck/results_ft_ar_t1_check
 
 echo Copying model files back to headnode
-rsync -av /disk/scratch/s1303513/results_* ./allennlp/results_new/w2v/
+rsync -av /disk/scratch/s1303513/corefcheck/results_* ./
 echo Deleting data and results from scratch space
-rm -r /disk/scratch/s1303513/
+rm -r /disk/scratch/s1303513/corefcheck
