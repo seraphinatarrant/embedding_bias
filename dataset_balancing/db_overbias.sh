@@ -16,8 +16,18 @@ rsync -av ./data/wiki_new_final_copy.txt /disk/scratch/s1303513/overbias/wiki_ne
 
 echo Executing python script
 
-python ./git2/embedding_bias/dataset_balancing/db_overbias.py /disk/scratch/s1303513/overbias/wiki_new_final_copy.txt /disk/scratch/s1303513/overbias/db_overbias_data_6.txt 6
+python ./git2/embedding_bias/dataset_balancing/db_overbias.py /disk/scratch/s1303513/overbias/wiki_new_final_copy.txt /disk/scratch/s1303513/overbias/db_overbias_data_7.txt 7
 
 echo Copying data back to home directory
 
-rsync -av /disk/scratch/s1303513/overbias/db_overbias_data_6.txt ./db_overbias_data_6.txt
+rsync -av /disk/scratch/s1303513/overbias/db_overbias_data_7.txt ./db_overbias_data_7.txt
+
+echo Executing python script
+
+python ./git2/embedding_bias/dataset_balancing/db_overbias.py /disk/scratch/s1303513/overbias/wiki_new_final_copy.txt /disk/scratch/s1303513/overbias/db_overbias_data_8.txt 8
+
+echo Copying data back to home directory
+
+rsync -av /disk/scratch/s1303513/overbias/db_overbias_data_8.txt ./db_overbias_data_8.txt
+
+rm /disk/scratch/s1303513/overbias/*
