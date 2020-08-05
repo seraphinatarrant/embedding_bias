@@ -8,6 +8,8 @@ source ~/.bashrc
 # activate allennlp environment
 conda activate allennlp
 
+rm -r /disk/scratch/s1303513/corefcheck/results_ft_ar_t1_check
+
 mkdir -p /disk/scratch/s1303513/corefcheck
 mkdir -p /disk/scratch/s1303513/corefcheck/train
 mkdir -p /disk/scratch/s1303513/corefcheck/test
