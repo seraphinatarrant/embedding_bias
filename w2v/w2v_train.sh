@@ -8,18 +8,18 @@ source ~/.bashrc
 # activate the project environment
 conda activate bias_env
 
-mkdir -p /disk/scratch/s1303513
+mkdir -p /disk/scratch/s1303513/over_6
 
 echo Copying data over to scratch space
 # copy data over from headnode to scratch space
-rsync -av db_data/db_debias_data_7.txt /disk/scratch/s1303513/db_debias_data_7.txt
+rsync -av db_data/db_overbias_data_6.txt /disk/scratch/s1303513/over_6/db_overbias_data_6.txt
 
 echo Executing python script
-python ./git2/embedding_bias/w2v/train_w2v_embeddings.py /disk/scratch/s1303513/db_debias_data_7.txt /disk/scratch/s1303513/db_d_7_vectors.txt
+python ./git2/embedding_bias/w2v/train_w2v_embeddings.py /disk/scratch/s1303513/over_6/db_overbias_data_6.txt /disk/scratch/s1303513/over_6/db_o_6_vectors_w2v.txt
 
 
 echo Copying models back to headnode
-rsync -av /disk/scratch/s1303513/db_d_7_vectors.txt ./embeddings/w2v/
+rsync -av /disk/scratch/s1303513/over_6/db_o_6_vectors_w2v.txt ./
 
 echo Deleting data and model from scratch space
-rm -r /disk/scratch/s1303513/*
+rm -r /disk/scratch/s1303513/over_6/*
