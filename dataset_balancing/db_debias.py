@@ -34,23 +34,22 @@ with open(sys.argv[2], 'w') as outfile:
         if any(target in line.split() for target in targets_1) and any(attribute in line.split() for attribute in attributes_2):
             a2_anti += 1
 
-    if a1_pro > a1_anti:
+    new_a1_pro = 0
+    new_a2_pro = 0
+    for line in infile:
+        if any(target in line.split() for target in targets_1) and any(attribute in line.split() for attribute in attributes_1):
+            new_a1_pro += 1
 
-        new_a1_pro = 0
-        new_a2_pro = 0
-        for line in infile:
-            if any(target in line.split() for target in targets_1) and any(attribute in line.split() for attribute in attributes_1):
-                new_a1_pro += 1
-
-                if new_a1_pro <= a1_anti:
-                    outfile.write(line)
-
-            elif any(target in line.split() for target in targets_2) and any(attribute in line.split() for attribute in attributes_2):
-                new_a2_pro += 1
-
-                if new_a2_pro <= a2_anti:
-                    outfile.write(line)
-
-
-            else:
+            if new_a1_pro <= a1_anti:
                 outfile.write(line)
+
+        elif any(target in line.split() for target in targets_2) and any(attribute in line.split() for attribute in attributes_2):
+            new_a2_pro += 1
+
+            if new_a2_pro <= a2_anti:
+                outfile.write(line)
+
+
+        else:
+            outfile.write(line)
+
