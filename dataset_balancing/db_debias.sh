@@ -16,8 +16,8 @@ rsync -av ./data/wiki_new_final_copy.txt /disk/scratch/s1303513/wiki_new_final_c
 
 echo Executing python script
 
-python ./git2/embedding_bias/dataset_balancing/db_debias.py /disk/scratch/s1303513/wiki_new_final_copy.txt /disk/scratch/s1303513/db_debias_data_8.txt 8
+python ./git2/embedding_bias/dataset_balancing/db_debias.py /disk/scratch/s1303513/wiki_new_final_copy.txt /disk/scratch/s1303513/db_debias_data_7.txt 7
 
 echo Copying data back to home directory
 
-rsync -av /disk/scratch/s1303513/db_debias_data_8.txt ./db_debias_data_8.txt
+rsync -av /disk/scratch/s1303513/db_debias_data_7.txt ./db_debias_data_7.txt
