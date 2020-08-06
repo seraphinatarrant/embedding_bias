@@ -8,7 +8,7 @@ source ~/.bashrc
 # activate allennlp environment
 conda activate allennlp
 
-rm -r /disk/scratch/s1303513/d6
+rm -rf /disk/scratch/s1303513/d6
 
 mkdir -p /disk/scratch/s1303513/d6
 mkdir -p /disk/scratch/s1303513/d6/train
