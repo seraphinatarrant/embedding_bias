@@ -31,6 +31,6 @@ echo Training coreference model
 allennlp train ./git2/embedding_bias/coref/coref_config_file_t2 -s /disk/scratch/s1303513/o6/results_o6_w2v
 
 echo Copying model files back to headnode
-rsync -av /disk/scratch/s1303513/results_* ./
+rsync -av /disk/scratch/s1303513/o6/results_* ./
 echo Deleting data and results from scratch space
 rm -r /disk/scratch/s1303513/o6
