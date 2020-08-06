@@ -30,7 +30,7 @@ def main():
     ## Save file passed in as second argument
     print('Saving the model to specified filepath')
     save_file = sys.argv[2]
-    model.save(save_file)
+    model.wv.save_word2vec_format(save_file)
     # print('Saving the model')
     # with tempfile.NamedTemporaryFile(prefix='saved_model_gensim-', delete=False) as tmp:
     #     model.save(tmp.name, separately=[])
