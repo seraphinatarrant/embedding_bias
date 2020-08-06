@@ -24,7 +24,7 @@
       "token_embedders": {
         "tokens": {
             "type": "embedding",
-            "pretrained_file": "/disk/scratch/s1303513/ar_vectors_t5.txt",
+            "pretrained_file": "/disk/scratch/s1303513/d8/db_d_8_w2v_gl.txt",
             "embedding_dim": 300,
             "trainable": false
         },
