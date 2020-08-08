@@ -24,7 +24,7 @@
       "token_embedders": {
         "tokens": {
             "type": "embedding",
-            "pretrained_file": "/disk/scratch/s1303513/o6/db_o_6_w2v_gl.txt",
+            "pretrained_file": "/disk/scratch/s1303513/o6_ft/ft_o_6_gl.txt",
             "embedding_dim": 300,
             "trainable": false
         },

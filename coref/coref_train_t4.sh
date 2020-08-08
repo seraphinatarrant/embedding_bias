@@ -33,4 +33,4 @@ allennlp train ./git2/embedding_bias/coref/coref_config_file_t4 -s /disk/scratch
 echo Copying model files back to headnode
 rsync -av /disk/scratch/s1303513/o7_ft/results_* ./
 # echo Deleting data and results from scratch space
-# rm -r /disk/scratch/s1303513/
+rm -r /disk/scratch/s1303513/o7_ft
