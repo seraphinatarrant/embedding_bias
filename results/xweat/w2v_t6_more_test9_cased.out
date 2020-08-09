@@ -1,0 +1,19 @@
+INFO:root:XWEAT started
+INFO:root:Translating terms from en to es
+INFO:root:Embeddings are in vec format
+INFO:gensim.models.utils_any2vec:loading projection weights from ../data/embeddings/w2v_t6_more_embeddings.300.vec
+INFO:gensim.models.utils_any2vec:loaded (52491, 300) matrix from ../data/embeddings/w2v_t6_more_embeddings.300.vec
+INFO:root:Embeddings loaded
+INFO:root:Running test
+WARNING:root:Not in vocab inconstante
+WARNING:root:Not in vocab ocasional
+WARNING:root:Not in vocab sin esperanza
+WARNING:root:Not in vocab término corto
+WARNING:root:Not in vocab lloroso
+WARNING:root:Not in vocab llorosa
+INFO:root:Popped A2 6
+INFO:root:Popped A2 15
+INFO:root:Popped A2 14
+INFO:root:Calculating p value ... 
+INFO:root:Number of possible permutations: 924
+INFO:root:(0.40569973, 1.2719115, 0.010822510822510822)

@@ -79,8 +79,10 @@ def eval(data_iter, model, args):
         
         ### NEW
         if args.test:
-            output = logit.clone()
+            output = logit.clone()#.cpu()
             _, predicted = torch.max(output, 1)
+            predicted = predicted.cpu()
+            target = target.cpu()
             #predicted = predicted.numpy()
             #_, trues = torch.max(target, 1)
             #print(logit.shape)

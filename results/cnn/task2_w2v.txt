@@ -1,0 +1,4 @@
+Precision: 0.661
+Recall: 0.670
+F1-Score: 0.611
+Accuracy: 66.970

@@ -11,7 +11,10 @@ import random
 from itertools import filterfalse
 from itertools import combinations
 import codecs
-import xweat.utils as utils
+try:
+    import xweat.utils as utils
+except ModuleNotFoundError:
+    import utils
 import os
 import pickle
 import logging
@@ -688,4 +691,4 @@ def train_weat(args):
 if __name__ == "__main__":
   #print("\n\n#####################\n\n",os.name,"\n\n#####################\n\n")
   args = main()
-  train_weat(args)
+  #train_weat(args)

@@ -30,7 +30,7 @@ def read_arguments():
     parser.add_argument('-log-interval',  type=int, default=1,   help='how many steps to wait before logging training status [default: 1]')
     parser.add_argument('-test-interval', type=int, default=100, help='how many steps to wait before testing [default: 100]')
     parser.add_argument('-save-interval', type=int, default=500, help='how many steps to wait before saving [default:500]')
-    parser.add_argument('-save-dir', type=str, default='snapshot', help='where to save the snapshot')
+    parser.add_argument('-save-dir', type=str, default='./cnn/snapshot', help='where to save the snapshot')
     parser.add_argument('-early-stop', type=int, default=1000, help='iteration numbers to stop without performance increasing')
     parser.add_argument('-save-best', type=bool, default=True, help='whether to save when get best performance')
     # data 
@@ -55,6 +55,8 @@ def read_arguments():
     parser.add_argument("-data-path", type=str, default=None, help="path to the dataset to use [default: None]")
     parser.add_argument("-data-name", type=str, default=None, help="filename of the dataset to use, 'train.csv', 'dev.csv', and 'test.csv' will be added to the end of this string [default: None]")
     parser.add_argument("-results-path", type=str, default=None, help="filename and path where the results will be saved [default: None]")
+    parser.add_argument("-use-half", type=bool, default=False, help="whether to test on only half of the data [default: False]")
+    parser.add_argument("-half-to-use", type=bool, default=False, help="half of the data to use, False for first, True for second [default: False]")
     
     args = parser.parse_args()
     
@@ -108,11 +110,33 @@ def load_dataset(text_field, label_field, args, **kargs):
                                       val_df = val_df,
                                       test_df = test_df,
                                       txt_col = "text")
-    
-    #print(type(train_data.label))
                                             
     text_field.build_vocab(train_data, dev_data, test_data)
     label_field.build_vocab(train_data, dev_data, test_data)
+    
+    #L = len(test_data)
+    #print(L)
+    
+    if args.use_half:
+        L = len(test_data) // 2
+        #print(L)
+        if args.half_to_use:
+            test_df = test_df.iloc[L:]
+        else:
+            test_df = test_df.iloc[L:]
+        train_data, dev_data, test_data = TextMultiLabelDataset.splits(
+                                          text_field,
+                                          label_field,
+                                          train_df = train_df,
+                                          val_df = val_df,
+                                          test_df = test_df,
+                                          txt_col = "text")
+    
+    
+    #L = len(test_data)
+    #print(L)
+    
+    #raise NotImplementedError
     
     train_iter, dev_iter, test_iter = data.BucketIterator.splits((train_data, dev_data, test_data), # specify train and validation Tabulardataset
                                             batch_sizes=(args.batch_size, len(dev_data), len(test_data)),  # batch size of train and validation
@@ -191,7 +215,7 @@ def main(path=None):
         text_field.vocab.set_vectors(vectors.stoi, vectors.vectors, vectors.dim)
         args.text_field = text_field
         vec = torch.FloatTensor(args.text_field.vocab.vectors).shape[-1]
-        #print("\n\n",vec,"\n\n")
+        print("\n\n",len(vectors),"\n\n")
         args.embed_dim = vec
     
     
