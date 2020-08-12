@@ -8,4 +8,4 @@ INFO:root:Running test
 WARNING:root:Not in vocab de ella
 INFO:root:Calculating p value ... 
 INFO:root:Number of possible permutations: 12870
-INFO:root:(-0.73953676, -1.6149904, 0.9996891996891997)
+INFO:root:(-0.7622887, -1.6000527, 0.9996891996891997)

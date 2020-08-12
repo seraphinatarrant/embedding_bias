@@ -6,31 +6,31 @@ INFO:gensim.models.utils_any2vec:loaded (52491, 300) matrix from ../data/embeddi
 INFO:root:Embeddings loaded
 INFO:root:Running test
 WARNING:root:Not in vocab gas lacrimógeno
-WARNING:root:Not in vocab hedor
-WARNING:root:Not in vocab fagot
-WARNING:root:Not in vocab oboe
-WARNING:root:Not in vocab harmónica
-WARNING:root:Not in vocab tuba
-WARNING:root:Not in vocab mandolina
-WARNING:root:Not in vocab arma de fuego
-WARNING:root:Not in vocab violonchelo
-WARNING:root:Not in vocab resortera
-WARNING:root:Not in vocab saxofón
-WARNING:root:Not in vocab laúd
-WARNING:root:Not in vocab banjo
-WARNING:root:Not in vocab bongos
 WARNING:root:Not in vocab gaita
-WARNING:root:Not in vocab trombón
-WARNING:root:Not in vocab cémbalo
+WARNING:root:Not in vocab fagot
+WARNING:root:Not in vocab banjo
+WARNING:root:Not in vocab laúd
+WARNING:root:Not in vocab mandolina
+WARNING:root:Not in vocab violonchelo
+WARNING:root:Not in vocab tuba
+WARNING:root:Not in vocab oboe
+WARNING:root:Not in vocab hedor
+WARNING:root:Not in vocab arma de fuego
+WARNING:root:Not in vocab harmónica
+WARNING:root:Not in vocab saxofón
+WARNING:root:Not in vocab resortera
 WARNING:root:Not in vocab arpón
+WARNING:root:Not in vocab trombón
 WARNING:root:Not in vocab arco iris
-INFO:root:Popped T2 19
-INFO:root:Popped T2 54
-INFO:root:Popped T2 53
-INFO:root:Popped T2 37
-INFO:root:Popped T2 71
-INFO:root:Popped T2 14
-INFO:root:Popped T2 34
+WARNING:root:Not in vocab cémbalo
+WARNING:root:Not in vocab bongos
+INFO:root:Popped T2 42
+INFO:root:Popped T2 3
+INFO:root:Popped T2 56
+INFO:root:Popped T2 77
+INFO:root:Popped T2 23
+INFO:root:Popped T2 20
+INFO:root:Popped T2 74
 INFO:root:Calculating p value ... 
 INFO:root:Number of possible permutations: 705432
 INFO:root:Iteration 100000 finished
@@ -40,4 +40,4 @@ INFO:root:Iteration 400000 finished
 INFO:root:Iteration 500000 finished
 INFO:root:Iteration 600000 finished
 INFO:root:Iteration 700000 finished
-INFO:root:(0.5602089, 0.9457779, 0.014066557797207953)
+INFO:root:(0.4231463, 0.7337619, 0.046785515825763506)

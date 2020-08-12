@@ -7,8 +7,8 @@ INFO:root:Embeddings loaded
 INFO:root:Running test
 WARNING:root:Not in vocab de ella
 WARNING:root:Not in vocab adición
-INFO:root:Popped T2 5
+INFO:root:Popped T2 4
 INFO:root:Popped T2 25
 INFO:root:Calculating p value ... 
 INFO:root:Number of possible permutations: 924
-INFO:root:(0.23486048, 0.8402564, 0.08333333333333333)
+INFO:root:(0.16461252, 0.5938848, 0.1699134199134199)

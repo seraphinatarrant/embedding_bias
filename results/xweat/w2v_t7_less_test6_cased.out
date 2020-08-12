@@ -6,8 +6,8 @@ INFO:gensim.models.utils_any2vec:loaded (52491, 300) matrix from ../data/embeddi
 INFO:root:Embeddings loaded
 INFO:root:Running test
 WARNING:root:Not in vocab greg
-INFO:root:Popped T2 18
-INFO:root:Popped A1 30
+INFO:root:Popped T2 5
+INFO:root:Popped A1 23
 INFO:root:Calculating p value ... 
 INFO:root:Number of possible permutations: 3432
-INFO:root:(0.32449207, 0.730417, 0.09644522144522144)
+INFO:root:(0.28181827, 0.66121525, 0.1215034965034965)

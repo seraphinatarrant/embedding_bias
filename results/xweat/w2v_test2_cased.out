@@ -5,32 +5,32 @@ INFO:gensim.models.utils_any2vec:loading projection weights from ../data/embeddi
 INFO:gensim.models.utils_any2vec:loaded (52490, 300) matrix from ../data/embeddings/w2v_embeddings.300.vec
 INFO:root:Embeddings loaded
 INFO:root:Running test
-WARNING:root:Not in vocab arpón
-WARNING:root:Not in vocab laúd
-WARNING:root:Not in vocab bongos
-WARNING:root:Not in vocab saxofón
-WARNING:root:Not in vocab hedor
-WARNING:root:Not in vocab fagot
-WARNING:root:Not in vocab violonchelo
-WARNING:root:Not in vocab gas lacrimógeno
-WARNING:root:Not in vocab mandolina
-WARNING:root:Not in vocab harmónica
-WARNING:root:Not in vocab oboe
-WARNING:root:Not in vocab arco iris
-WARNING:root:Not in vocab arma de fuego
-WARNING:root:Not in vocab tuba
 WARNING:root:Not in vocab resortera
-WARNING:root:Not in vocab gaita
-WARNING:root:Not in vocab cémbalo
+WARNING:root:Not in vocab gas lacrimógeno
+WARNING:root:Not in vocab bongos
+WARNING:root:Not in vocab hedor
+WARNING:root:Not in vocab harmónica
 WARNING:root:Not in vocab trombón
+WARNING:root:Not in vocab arpón
+WARNING:root:Not in vocab tuba
 WARNING:root:Not in vocab banjo
-INFO:root:Popped T2 18
-INFO:root:Popped T2 80
+WARNING:root:Not in vocab arco iris
+WARNING:root:Not in vocab cémbalo
+WARNING:root:Not in vocab fagot
+WARNING:root:Not in vocab laúd
+WARNING:root:Not in vocab mandolina
+WARNING:root:Not in vocab arma de fuego
+WARNING:root:Not in vocab oboe
+WARNING:root:Not in vocab gaita
+WARNING:root:Not in vocab saxofón
+WARNING:root:Not in vocab violonchelo
+INFO:root:Popped T2 43
+INFO:root:Popped T2 22
+INFO:root:Popped T2 65
 INFO:root:Popped T2 79
 INFO:root:Popped T2 78
-INFO:root:Popped T2 42
-INFO:root:Popped T2 32
-INFO:root:Popped T2 54
+INFO:root:Popped T2 64
+INFO:root:Popped T2 62
 INFO:root:Calculating p value ... 
 INFO:root:Number of possible permutations: 705432
 INFO:root:Iteration 100000 finished
@@ -40,11 +40,4 @@ INFO:root:Iteration 400000 finished
 INFO:root:Iteration 500000 finished
 INFO:root:Iteration 600000 finished
 INFO:root:Iteration 700000 finished
-INFO:root:(0.3759365, 0.675896, 0.06169694598487168)
-INFO:root:XWEAT started
-Traceback (most recent call last):
-  File "xweat/weat.py", line 694, in <module>
-    #train_weat(args)
-  File "xweat/weat.py", line 624, in train_weat
-    if args.test_number == 1:
-AttributeError: 'NoneType' object has no attribute 'test_number'
+INFO:root:(0.46958253, 0.80710447, 0.031753592125109156)

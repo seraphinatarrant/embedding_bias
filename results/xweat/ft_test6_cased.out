@@ -6,15 +6,8 @@ INFO:gensim.models.utils_any2vec:loaded (52490, 300) matrix from ../data/embeddi
 INFO:root:Embeddings loaded
 INFO:root:Running test
 WARNING:root:Not in vocab greg
-INFO:root:Popped T2 7
-INFO:root:Popped A1 8
+INFO:root:Popped T2 27
+INFO:root:Popped A1 31
 INFO:root:Calculating p value ... 
 INFO:root:Number of possible permutations: 3432
-INFO:root:(0.2757583, 1.0301268, 0.030885780885780884)
-INFO:root:XWEAT started
-Traceback (most recent call last):
-  File "xweat/weat.py", line 694, in <module>
-    train_weat(args)
-  File "xweat/weat.py", line 624, in train_weat
-    if args.test_number == 1:
-AttributeError: 'NoneType' object has no attribute 'test_number'
+INFO:root:(0.30210215, 1.0147879, 0.03350815850815851)

@@ -5,32 +5,32 @@ INFO:gensim.models.utils_any2vec:loading projection weights from ../data/embeddi
 INFO:gensim.models.utils_any2vec:loaded (52491, 300) matrix from ../data/embeddings/w2v_t8_more_embeddings.300.vec
 INFO:root:Embeddings loaded
 INFO:root:Running test
-WARNING:root:Not in vocab mandolina
-WARNING:root:Not in vocab trombón
 WARNING:root:Not in vocab harmónica
-WARNING:root:Not in vocab oboe
-WARNING:root:Not in vocab arpón
-WARNING:root:Not in vocab arco iris
+WARNING:root:Not in vocab trombón
+WARNING:root:Not in vocab violonchelo
 WARNING:root:Not in vocab laúd
 WARNING:root:Not in vocab arma de fuego
-WARNING:root:Not in vocab saxofón
-WARNING:root:Not in vocab gas lacrimógeno
-WARNING:root:Not in vocab violonchelo
-WARNING:root:Not in vocab bongos
-WARNING:root:Not in vocab cémbalo
-WARNING:root:Not in vocab gaita
-WARNING:root:Not in vocab hedor
 WARNING:root:Not in vocab banjo
+WARNING:root:Not in vocab mandolina
+WARNING:root:Not in vocab bongos
+WARNING:root:Not in vocab arco iris
+WARNING:root:Not in vocab cémbalo
 WARNING:root:Not in vocab resortera
-WARNING:root:Not in vocab tuba
 WARNING:root:Not in vocab fagot
-INFO:root:Popped T2 60
-INFO:root:Popped T2 59
-INFO:root:Popped T2 76
-INFO:root:Popped T2 75
-INFO:root:Popped T2 33
-INFO:root:Popped T2 72
-INFO:root:Popped T2 30
+WARNING:root:Not in vocab hedor
+WARNING:root:Not in vocab oboe
+WARNING:root:Not in vocab gas lacrimógeno
+WARNING:root:Not in vocab arpón
+WARNING:root:Not in vocab gaita
+WARNING:root:Not in vocab saxofón
+WARNING:root:Not in vocab tuba
+INFO:root:Popped T2 56
+INFO:root:Popped T2 55
+INFO:root:Popped T2 36
+INFO:root:Popped T2 35
+INFO:root:Popped T2 17
+INFO:root:Popped T2 16
+INFO:root:Popped T2 29
 INFO:root:Calculating p value ... 
 INFO:root:Number of possible permutations: 705432
 INFO:root:Iteration 100000 finished
@@ -40,4 +40,4 @@ INFO:root:Iteration 400000 finished
 INFO:root:Iteration 500000 finished
 INFO:root:Iteration 600000 finished
 INFO:root:Iteration 700000 finished
-INFO:root:(0.31538805, 0.5611719, 0.10164126379296658)
+INFO:root:(0.52763236, 0.9067157, 0.017864230712527927)

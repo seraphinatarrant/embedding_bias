@@ -5,10 +5,10 @@ INFO:gensim.models.utils_any2vec:loading projection weights from ../data/embeddi
 INFO:gensim.models.utils_any2vec:loaded (52491, 300) matrix from ../data/embeddings/w2v_t1_more_embeddings.300.vec
 INFO:root:Embeddings loaded
 INFO:root:Running test
-WARNING:root:Not in vocab de ella
 WARNING:root:Not in vocab adición
-INFO:root:Popped T2 12
-INFO:root:Popped T2 10
+WARNING:root:Not in vocab de ella
+INFO:root:Popped T2 26
+INFO:root:Popped T2 11
 INFO:root:Calculating p value ... 
 INFO:root:Number of possible permutations: 924
-INFO:root:(0.20962125, 0.8390826, 0.08874458874458875)
+INFO:root:(0.1463232, 0.7195673, 0.1277056277056277)

@@ -8,11 +8,4 @@ INFO:root:Running test
 WARNING:root:Not in vocab de ella
 INFO:root:Calculating p value ... 
 INFO:root:Number of possible permutations: 12870
-INFO:root:(-0.017693087, -0.05762482, 0.5423465423465423)
-INFO:root:XWEAT started
-Traceback (most recent call last):
-  File "xweat/weat.py", line 694, in <module>
-    train_weat(args)
-  File "xweat/weat.py", line 624, in train_weat
-    if args.test_number == 1:
-AttributeError: 'NoneType' object has no attribute 'test_number'
+INFO:root:(-0.017693102, -0.05762487, 0.5423465423465423)

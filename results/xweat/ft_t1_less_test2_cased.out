@@ -5,32 +5,32 @@ INFO:gensim.models.utils_any2vec:loading projection weights from ../data/embeddi
 INFO:gensim.models.utils_any2vec:loaded (52491, 300) matrix from ../data/embeddings/ft_t1_less_embeddings.300.vec
 INFO:root:Embeddings loaded
 INFO:root:Running test
+WARNING:root:Not in vocab mandolina
 WARNING:root:Not in vocab tuba
 WARNING:root:Not in vocab gas lacrimógeno
-WARNING:root:Not in vocab hedor
-WARNING:root:Not in vocab bongos
-WARNING:root:Not in vocab violonchelo
-WARNING:root:Not in vocab resortera
-WARNING:root:Not in vocab oboe
-WARNING:root:Not in vocab arma de fuego
-WARNING:root:Not in vocab fagot
-WARNING:root:Not in vocab gaita
-WARNING:root:Not in vocab mandolina
-WARNING:root:Not in vocab trombón
+WARNING:root:Not in vocab arco iris
 WARNING:root:Not in vocab harmónica
+WARNING:root:Not in vocab trombón
+WARNING:root:Not in vocab violonchelo
+WARNING:root:Not in vocab bongos
+WARNING:root:Not in vocab banjo
+WARNING:root:Not in vocab resortera
 WARNING:root:Not in vocab arpón
 WARNING:root:Not in vocab cémbalo
-WARNING:root:Not in vocab arco iris
-WARNING:root:Not in vocab saxofón
-WARNING:root:Not in vocab banjo
+WARNING:root:Not in vocab gaita
 WARNING:root:Not in vocab laúd
+WARNING:root:Not in vocab arma de fuego
+WARNING:root:Not in vocab hedor
+WARNING:root:Not in vocab fagot
+WARNING:root:Not in vocab oboe
+WARNING:root:Not in vocab saxofón
 INFO:root:Popped T2 80
-INFO:root:Popped T2 62
-INFO:root:Popped T2 66
-INFO:root:Popped T2 13
-INFO:root:Popped T2 12
-INFO:root:Popped T2 57
-INFO:root:Popped T2 75
+INFO:root:Popped T2 58
+INFO:root:Popped T2 38
+INFO:root:Popped T2 37
+INFO:root:Popped T2 56
+INFO:root:Popped T2 77
+INFO:root:Popped T2 17
 INFO:root:Calculating p value ... 
 INFO:root:Number of possible permutations: 705432
 INFO:root:Iteration 100000 finished
@@ -40,4 +40,4 @@ INFO:root:Iteration 400000 finished
 INFO:root:Iteration 500000 finished
 INFO:root:Iteration 600000 finished
 INFO:root:Iteration 700000 finished
-INFO:root:(-0.19642848, -0.18784411, 0.6551432313816214)
+INFO:root:(-0.3113208, -0.31628394, 0.7481755860238832)

@@ -5,15 +5,15 @@ INFO:gensim.models.utils_any2vec:loading projection weights from ../data/embeddi
 INFO:gensim.models.utils_any2vec:loaded (52491, 300) matrix from ../data/embeddings/ft_t6_less_embeddings.300.vec
 INFO:root:Embeddings loaded
 INFO:root:Running test
-WARNING:root:Not in vocab término corto
+WARNING:root:Not in vocab llorosa
+WARNING:root:Not in vocab ocasional
+WARNING:root:Not in vocab lloroso
 WARNING:root:Not in vocab inconstante
 WARNING:root:Not in vocab sin esperanza
-WARNING:root:Not in vocab lloroso
-WARNING:root:Not in vocab ocasional
-WARNING:root:Not in vocab llorosa
-INFO:root:Popped A2 13
-INFO:root:Popped A2 11
-INFO:root:Popped A2 4
+WARNING:root:Not in vocab término corto
+INFO:root:Popped A2 21
+INFO:root:Popped A2 20
+INFO:root:Popped A2 19
 INFO:root:Calculating p value ... 
 INFO:root:Number of possible permutations: 924
-INFO:root:(0.11506909, 0.6754165, 0.13744588744588745)
+INFO:root:(0.1714848, 1.1668062, 0.023809523809523808)
