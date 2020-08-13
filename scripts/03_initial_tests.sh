@@ -10,19 +10,19 @@ for emb in "ft" "w2v" ; do
 	embeddings_path="../data/embeddings/${emb}_embeddings.300.vec"
 
 	# This activates the environment with tensorflow
-	conda activate tf-gpu-cuda8
-    for test_number in "1" "2" "6" "7" "8" "9" ; do
-        python xweat/weat.py \
-            --test_number $test_number \
-            --permutation_number 1000000 \
-            --output_file ../results/xweat/${emb}_test${test_number}_cased.res \
-            --lower True \
-            --use_glove False \
-            --is_vec_format True \
-            --lang $language \
-            --embeddings $embeddings_path \
-            --similarity_type $similarity_type |& tee ../results/xweat/${emb}_test${test_number}_cased.out
-    done
+#	conda activate tf-gpu-cuda8
+#    for test_number in "1" "2" "6" "7" "8" "9" ; do
+#        python xweat/weat.py \
+#            --test_number $test_number \
+#            --permutation_number 1000000 \
+#            --output_file ../results/xweat/${emb}_test${test_number}_cased.res \
+#            --lower True \
+#            --use_glove False \
+#            --is_vec_format True \
+#            --lang $language \
+#            --embeddings $embeddings_path \
+#            --similarity_type $similarity_type |& tee ../results/xweat/${emb}_test${test_number}_cased.out
+#    done
 
 	# This activates the environment with gensim
 	conda activate gensim
@@ -57,7 +57,7 @@ for emb in "ft" "w2v" ; do
 				-results-path=$results_g1 \
 				-snapshot="cnn/snapshot/best_steps_model.pt" \
 				-use-half=True \
-				-half-to-use=False
+				-first-half=True
 	
 		python ./cnn/main.py \
 				-test \
@@ -66,13 +66,9 @@ for emb in "ft" "w2v" ; do
 				-data-name=$data_name \
 				-results-path=$results_g2 \
 				-snapshot="cnn/snapshot/best_steps_model.pt" \
-				-use-half=True \
-				-half-to-use=True
+				-use-half=True
 	done
 
 done
-
-
-
 
 

@@ -53,7 +53,7 @@ for i in ["train","dev","test"]:
 # In[ ]:
 
 
-for i in ["train","dev","test"]:
+for i in ["train","dev"]:
     df = pd.read_csv(path+files+i+".csv")
     
     task = df[["id","text","TR","AG"]].loc[df["HS"]==1]
@@ -64,15 +64,24 @@ for i in ["train","dev","test"]:
     print(task.label.unique())
     task = task.drop(["TR","AG"],axis=1)
     task.to_csv(path+"task2_es_"+i+".csv")
-    
-    if i != "test":
-        task.to_csv(path+"task2_g1_"+i+".csv")
-        task.to_csv(path+"task2_g2_"+i+".csv")
+    task.to_csv(path+"task2_g1_"+i+".csv")
+    task.to_csv(path+"task2_g2_"+i+".csv")
         
-    else:
-        ln = df.shape[0] // 2
-        group1 = task.iloc[:ln]
-        group1.to_csv(path+"task2_g1_"+i+".csv")
-        group2 = task.iloc[ln:]
-        group2.to_csv(path+"task2_g2_"+i+".csv")
+    
+for i in ["test"]:
+    df = pd.read_csv(path+files+i+".csv")
+    ln = df.shape[0] // 2
+    df_g1 = df[:ln]
+    df_g2 = df[ln:]
+    
+    for data, name in [(df,"es") , (df_g1,"g1"), (df_g2,"g2")]:
+    
+        task = data[["id","text","TR","AG"]].loc[data["HS"]==1]
+        task["label"] = 0
+        task["label"].loc[(task.TR == 0) & (task.AG == 1)] = 1
+        task["label"].loc[(task.TR == 1) & (task.AG == 0)] = 2
+        task["label"].loc[(task.TR == 1) & (task.AG == 1)] = 3
+        print(task.label.unique())
+        task = task.drop(["TR","AG"],axis=1)
+        task.to_csv(path+"task2_"+name+"_"+i+".csv")
 

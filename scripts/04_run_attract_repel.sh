@@ -20,38 +20,38 @@ for emb in "ft" "w2v" ; do
 	for mod in "more" "less" ; do
 
 		# This activates the environment with tensorflow
-		conda activate tf-gpu-cuda8
+		#conda activate tf-gpu-cuda8
 
-		config="test${test_embs}_${mod}_${emb}.cfg"
-		config_path="./attract_repel/config/${config}"
-		python ./attract_repel/code/attract-repel.py $config_path
+		#config="test${test_embs}_${mod}_${emb}.cfg"
+		#config_path="./attract_repel/config/${config}"
+		#python ./attract_repel/code/attract-repel.py $config_path
 
 
 		# This activates the environment with gensim
-		conda activate gensim
+		#conda activate gensim
 
 		name="${emb}_t${test_embs}_${mod}"
 
 		# Transform the embeddings from glove format to word2vec format
 		path="../data/embeddings/${name}_embeddings.300."
 
-		python -m gensim.scripts.glove2word2vec --input ${path}txt --output ${path}vec
+		#python -m gensim.scripts.glove2word2vec --input ${path}txt --output ${path}vec
 
 
-		for test_number in 1 2 6 7 8 9 ; do
-			res_path="../results/xweat/${name}_test${test_number}_cased."
+		#for test_number in 1 2 6 7 8 9 ; do
+		#	res_path="../results/xweat/${name}_test${test_number}_cased."
 
-		    python xweat/weat.py \
-		        --test_number $test_number \
-		        --permutation_number 1000000 \
-		        --output_file ${res_path}res \
-		        --lower True \
-		        --use_glove False \
-		        --is_vec_format True \
-		        --lang $language \
-		        --embeddings ${path}vec \
-		        --similarity_type $similarity_type |& tee ${res_path}out
-		done
+		#    python xweat/weat.py \
+		#        --test_number $test_number \
+		#        --permutation_number 1000000 \
+		#        --output_file ${res_path}res \
+		#        --lower True \
+		#        --use_glove False \
+		#        --is_vec_format True \
+		#        --lang $language \
+		#        --embeddings ${path}vec \
+		#        --similarity_type $similarity_type |& tee ${res_path}out
+		#done
 
 		for task in 1 2 ; do
 			data_path="../data/hateval2019/"
@@ -87,7 +87,7 @@ for emb in "ft" "w2v" ; do
 					-results-path=$results_g1 \
 					-snapshot="cnn/snapshot/best_steps_model.pt" \
 					-use-half=True \
-					-half-to-use=False
+					-half-to-use=True
 
 			python ./cnn/main.py \
 					-test \
@@ -96,8 +96,7 @@ for emb in "ft" "w2v" ; do
 					-data-name=$data_name \
 					-results-path=$results_g2 \
 					-snapshot="cnn/snapshot/best_steps_model.pt" \
-					-use-half=True \
-					-half-to-use=True
+					-use-half=True
 		done
 
 	done
