@@ -62,7 +62,7 @@ def fetch_longtweet(df, size=-1):
 ##################################################################################
 
 """
-The following code is based on Mughda's preprocessing script (https://github.com/
+The following code is based on Mugdha's preprocessing script (https://github.com/
 seraphinatarrant/embedding_bias/tree/Mugdha) it has been modified to be more
 reusable (e.g. it accepts any kind of iterable instead of just files). All of
 these assume that the input consists of an iterable data that includes only strings
@@ -218,10 +218,6 @@ def preprocessor(data, vocab=None):
     return preprocessed
 
 #############################
-
-def preprocess_file(data, vocab):
-    
-    return preprocessed
 
 
 
