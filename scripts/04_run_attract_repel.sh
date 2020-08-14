@@ -10,7 +10,7 @@ conda activate gensim
 python attract_repel/code/generate_cfg.py
 
 # Choose between 1 2 6 7 8 9
-test_embs=9
+test_embs=1
 
 
 similarity_type="cosine"
@@ -87,7 +87,7 @@ for emb in "ft" "w2v" ; do
 					-results-path=$results_g1 \
 					-snapshot="cnn/snapshot/best_steps_model.pt" \
 					-use-half=True \
-					-half-to-use=True
+					-first-half=True
 
 			python ./cnn/main.py \
 					-test \
