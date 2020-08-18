@@ -26,7 +26,50 @@ for emb in "ft" "w2v" ; do
 
 	# This activates the environment with gensim
 	conda activate gensim
-	for task in 1 2 ; do
+#	for task in 1 ; do
+#		data_path="../data/hateval2019/"
+#		results_path="../results/cnn/task${task}_${emb}.txt"
+#		data="task${task}_"
+#		data_name="${data}es_"
+#
+#		results_g1="../results/cnn/task${task}_${emb}_g1.txt"
+#		results_g2="../results/cnn/task${task}_${emb}_g2.txt"
+#
+#
+#		python ./cnn/main.py \
+#				-embeddings=$embeddings_path \
+#				-data-path=$data_path \
+#				-data-name=$data_name
+#	
+#		python ./cnn/main.py \
+#				-test \
+#				-embeddings=$embeddings_path \
+#				-data-path=$data_path \
+#				-data-name=$data_name \
+#				-results-path=$results_path \
+#				-snapshot="cnn/snapshot/best_steps_model.pt"
+#	
+#		python ./cnn/main.py \
+#				-test \
+#				-embeddings=$embeddings_path \
+#				-data-path=$data_path \
+#				-data-name=$data_name \
+#				-results-path=$results_g1 \
+#				-snapshot="cnn/snapshot/best_steps_model.pt" \
+#				-use-half=True \
+#				-first-half=True
+#	
+#		python ./cnn/main.py \
+#				-test \
+#				-embeddings=$embeddings_path \
+#				-data-path=$data_path \
+#				-data-name=$data_name \
+#				-results-path=$results_g2 \
+#				-snapshot="cnn/snapshot/best_steps_model.pt" \
+#				-use-half=True
+#	done
+
+	for task in 2 ; do
 		data_path="../data/hateval2019/"
 		results_path="../results/cnn/task${task}_${emb}.txt"
 		data="task${task}_"
@@ -36,38 +79,53 @@ for emb in "ft" "w2v" ; do
 		results_g2="../results/cnn/task${task}_${emb}_g2.txt"
 
 
-		python ./cnn/main.py \
+		python ./cnn2/main.py \
 				-embeddings=$embeddings_path \
 				-data-path=$data_path \
-				-data-name=$data_name
+				-data-name=$data_name \
+				-label="HS"
+		python ./cnn2/main.py \
+				-embeddings=$embeddings_path \
+				-data-path=$data_path \
+				-data-name=$data_name \
+				-label="TR"
+		python ./cnn2/main.py \
+				-embeddings=$embeddings_path \
+				-data-path=$data_path \
+				-data-name=$data_name \
+				-label="AG"
 	
-		python ./cnn/main.py \
+		python ./cnn2/main.py \
 				-test \
 				-embeddings=$embeddings_path \
 				-data-path=$data_path \
 				-data-name=$data_name \
 				-results-path=$results_path \
-				-snapshot="cnn/snapshot/best_steps_model.pt"
+				-snapshot="cnn2/snapshot/best_steps_model" \
+				-label="HS"
 	
-		python ./cnn/main.py \
+		python ./cnn2/main.py \
 				-test \
 				-embeddings=$embeddings_path \
 				-data-path=$data_path \
 				-data-name=$data_name \
 				-results-path=$results_g1 \
-				-snapshot="cnn/snapshot/best_steps_model.pt" \
+				-snapshot="cnn2/snapshot/best_steps_model" \
 				-use-half=True \
-				-first-half=True
+				-first-half=True \
+				-label="HS"
 	
-		python ./cnn/main.py \
+		python ./cnn2/main.py \
 				-test \
 				-embeddings=$embeddings_path \
 				-data-path=$data_path \
 				-data-name=$data_name \
 				-results-path=$results_g2 \
-				-snapshot="cnn/snapshot/best_steps_model.pt" \
-				-use-half=True
+				-snapshot="cnn2/snapshot/best_steps_model" \
+				-use-half=True \
+				-label="HS"
 	done
+
 
 done
 

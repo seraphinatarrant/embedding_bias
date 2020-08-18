@@ -1,4 +1,18 @@
-Precision: 0.548
-Recall: 0.481
-F1-Score: 0.439
-Accuracy: 48.148
+HS
+Precision: 1.000
+Recall: 0.859
+F1-Score: 0.922
+Accuracy: 69.856
+TR
+Precision: 0.719
+Recall: 0.740
+F1-Score: 0.721
+Accuracy: 69.856
+AG
+Precision: 0.598
+Recall: 0.521
+F1-Score: 0.376
+Accuracy: 69.856
+Task2
+EMR: 0.373
+F1-Score(Macro): 0.673

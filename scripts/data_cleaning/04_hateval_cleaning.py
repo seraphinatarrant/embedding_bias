@@ -44,7 +44,7 @@ for i in ["train","dev","test"]:
         group2.to_csv(path+"task1_g2_"+i+".csv")
 
 
-# The second task requires us to only consider hate Tweets. Here we have to determine whether they are targeted or not and if they are agressive or not. We decided to make this task a multilabel classification task instead of a multiclass one, so we set the following labels:
+# The second task requires us to consider hate Tweets. Here we have to determine whether they are targeted or not and if they are agressive or not. We decided to make this task a multilabel classification task instead of a multiclass one, so we set the following labels:
 # 1. Neither targeted nor agressive
 # 1. Agressive but not targeted
 # 1. Targeted but not agressive
@@ -56,13 +56,7 @@ for i in ["train","dev","test"]:
 for i in ["train","dev"]:
     df = pd.read_csv(path+files+i+".csv")
     
-    task = df[["id","text","TR","AG"]].loc[df["HS"]==1]
-    task["label"] = 0
-    task["label"].loc[(task.TR == 0) & (task.AG == 1)] = 1
-    task["label"].loc[(task.TR == 1) & (task.AG == 0)] = 2
-    task["label"].loc[(task.TR == 1) & (task.AG == 1)] = 3
-    print(task.label.unique())
-    task = task.drop(["TR","AG"],axis=1)
+    task = df
     task.to_csv(path+"task2_es_"+i+".csv")
     task.to_csv(path+"task2_g1_"+i+".csv")
     task.to_csv(path+"task2_g2_"+i+".csv")
@@ -76,12 +70,6 @@ for i in ["test"]:
     
     for data, name in [(df,"es") , (df_g1,"g1"), (df_g2,"g2")]:
     
-        task = data[["id","text","TR","AG"]].loc[data["HS"]==1]
-        task["label"] = 0
-        task["label"].loc[(task.TR == 0) & (task.AG == 1)] = 1
-        task["label"].loc[(task.TR == 1) & (task.AG == 0)] = 2
-        task["label"].loc[(task.TR == 1) & (task.AG == 1)] = 3
-        print(task.label.unique())
-        task = task.drop(["TR","AG"],axis=1)
+        task = data.loc[data["HS"]==1]
         task.to_csv(path+"task2_"+name+"_"+i+".csv")
 
