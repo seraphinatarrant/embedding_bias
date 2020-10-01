@@ -1,5 +1,6 @@
 # This is Rebecca's version of attract-repel
 # A modified version of https://github.com/nmrksic/attract-repel
+# It should work as the original code does, but in Python 3
 
 import configparser
 import numpy

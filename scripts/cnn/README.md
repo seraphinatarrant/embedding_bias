@@ -1,40 +1,24 @@
-## Introduction
-This is the implementation of Kim's [Convolutional Neural Networks for Sentence Classification](https://arxiv.org/abs/1408.5882) paper in PyTorch.
+## Preface
+This is an implementation of [Convolutional Neural Networks for Sentence Classification](https://arxiv.org/abs/1408.5882) by Kim. It is a modified version of Shawn1993's [code](https://github.com/Shawn1993/cnn-text-classification-pytorch) implementation on PyTorch. I added the possibility of using your own pretrained embeddings and of importing your own datasets from a CSV.
 
-1. Kim's implementation of the model in Theano:
-[https://github.com/yoonkim/CNN_sentence](https://github.com/yoonkim/CNN_sentence)
-2. Denny Britz has an implementation in Tensorflow:
-[https://github.com/dennybritz/cnn-text-classification-tf](https://github.com/dennybritz/cnn-text-classification-tf)
-3. Alexander Rakhlin's implementation in Keras;
-[https://github.com/alexander-rakhlin/CNN-for-Sentence-Classification-in-Keras](https://github.com/alexander-rakhlin/CNN-for-Sentence-Classification-in-Keras)
-
-## Requirement
+## Requirements
 * python 3
 * pytorch > 0.1
 * torchtext > 0.1
 * numpy
+* nltk
+* pandas
+* sklearn
 
-## Result
-I just tried two dataset, MR and SST.
 
-|Dataset|Class Size|Best Result|Kim's Paper Result|
-|---|---|---|---|
-|MR|2|77.5%(CNN-rand-static)|76.1%(CNN-rand-nostatic)|
-|SST|5|37.2%(CNN-rand-static)|45.0%(CNN-rand-nostatic)|
+## Parameters
 
-I haven't adjusted the hyper-parameters for SST seriously.
-
-## Usage
-```
-./main.py -h
-```
-or 
-
+If you run the help option:
 ```
 python3 main.py -h
 ```
 
-You will get:
+You will get the following list of parameters
 
 ```
 CNN text classificer
@@ -69,59 +53,41 @@ optional arguments:
   -predict PREDICT      predict the sentence given
   -snapshot SNAPSHOT    filename of model snapshot [default: None]
   -save-dir SAVE_DIR    where to save the checkpoint
-```
+  
+New Parameters
+  -embeddings           filename of the word2vec format embeddings [default: None]
+  -data-path            path to the dataset to use [default: None]
+  -data-name            filename of the dataset to use, 'train.csv', 'dev.csv', and 'test.csv' will be added to the end of this string [default: None]
+  -results-path         filename and path where the results will be saved [default: None]
+  -use-half             whether to test on only half of the data [default: False]
+  -first-half           half of the data to use, False for first, True for second [default: False]
+````
+
 
 ## Train
-```
-./main.py
-```
-You will get:
+Run `main.py` to train the model.
 
-```
-Batch[100] - loss: 0.655424  acc: 59.3750%
-Evaluation - loss: 0.672396  acc: 57.6923%(615/1066) 
-```
+Parameters to use:
+
+* Use the `embeddings` parameter to set the location of the embeddings in word2vec format.
+* The `data-path` and `data-name` parameters set the location of the dataset. If not specified, you will use a preset dataset.
 
 ## Test
-If you has construct you test set, you make testing like:
+If you have a test set, you can run tests using `main.py` and the `test` argument.
 
-```
-/main.py -test -snapshot="./snapshot/2017-02-11_15-50-53/snapshot_steps1500.pt
-```
-The snapshot option means where your model load from. If you don't assign it, the model will start from scratch.
+Parameters to use:
+
+* Use the `embeddings` parameter to set the location of the embeddings in word2vec format.
+* The `data-path` and `data-name` parameters set the location of the dataset. If not specified, you will use a preset dataset.
+* `snapshot` determines where the model gets loaded from and if it isn't assigned, the test will be done using only the default initiation values to very poor results.
+* To save your metrics to a text file, specify the path using the `results-path` part of the dataset.
+* If for some reason you want to only use half of the dataset, set `use-half` to true. Then set `first-half` to true if using the first half or ommit it otherwise.
 
 ## Predict
-* **Example1**
+If you want to predict a sentence, pass the parameter `predict` with its value being the phrase you want it to predict.
 
-	```
-	./main.py -predict="Hello my dear , I love you so much ." \
-	          -snapshot="./snapshot/2017-02-11_15-50-53/snapshot_steps1500.pt" 
-	```
-	You will get:
-	
-	```
-	Loading model from [./snapshot/2017-02-11_15-50-53/snapshot_steps1500.pt]...
-	
-	[Text]  Hello my dear , I love you so much .
-	[Label] positive
-	```
-* **Example2**
+Parameters to use:
 
-	```
-	./main.py -predict="You just make me so sad and I have to leave you ."\
-	          -snapshot="./snapshot/2017-02-11_15-50-53/snapshot_steps1500.pt" 
-	```
-	You will get:
-	
-	```
-	Loading model from [./snapshot/2017-02-11_15-50-53/snapshot_steps1500.pt]...
-	
-	[Text]  You just make me so sad and I have to leave you .
-	[Label] negative
-	```
-
-Your text must be separated by space, even punctuation.And, your text should longer then the max kernel size.
-
-## Reference
-* [Convolutional Neural Networks for Sentence Classification](https://arxiv.org/abs/1408.5882)
-
+* Use the `embeddings` parameter to set the location of the embeddings in word2vec format.
+* The `data-path` and `data-name` parameters set the location of the dataset. If not specified, you will use a preset dataset.
+* `snapshot` determines where the model gets loaded from and if it isn't assigned, the test will be done using only the default initiation values to very poor results.

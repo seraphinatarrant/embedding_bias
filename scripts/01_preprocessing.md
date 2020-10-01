@@ -1,1 +1,0 @@
-Once you have the necessary datasets, you will have to run the numbered notebooks in the data_cleaning folders in order to clean it and preprocess it. Each of them should have enough information on how to do this.

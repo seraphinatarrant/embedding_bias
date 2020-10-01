@@ -1,3 +1,5 @@
+# This is a modified version of the original file where we can use our own pretrained embeddings
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -17,12 +19,14 @@ class CNN_Text(nn.Module):
         Co = args.kernel_num
         Ks = args.kernel_sizes
 
-        ### NEW
-        # Load embeddings from https://stackoverflow.com/questions/49710537/pytorch-gensim-how-to-load-pre-trained-word-embeddings/49802495
+        #### NEW ####
+        # Load pretrained embeddings 
+        # code from https://stackoverflow.com/questions/49710537/pytorch-gensim-how-to-load-pre-trained-word-embeddings/49802495
         if args.embeddings is None:
             self.embed = nn.Embedding(V, D)
         else:
-            self.embed = nn.Embedding.from_pretrained(torch.FloatTensor(args.text_field.vocab.vectors))       
+            self.embed = nn.Embedding.from_pretrained(torch.FloatTensor(args.text_field.vocab.vectors))
+        #### NEW ####
         
         self.convs = nn.ModuleList([nn.Conv2d(Ci, Co, (K, D)) for K in Ks])
         self.dropout = nn.Dropout(args.dropout)
@@ -45,5 +49,4 @@ class CNN_Text(nn.Module):
         x = self.dropout(x)  # (N, len(Ks)*Co)
         
         logit = self.fc1(x)  # (N, C)
-        #return F.softmax(logit, dim=1)
         return logit

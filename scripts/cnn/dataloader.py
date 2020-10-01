@@ -1,8 +1,5 @@
-#!/usr/bin/env python2
-# -*- coding: utf-8 -*-
-"""
-from https://gist.github.com/ohmeow/5b3543a5115040001fce59a105ac4269
-"""
+# A dataloader for importing CSV files to torchtext
+# from https://gist.github.com/ohmeow/5b3543a5115040001fce59a105ac4269
 
 import torchtext
 import torch

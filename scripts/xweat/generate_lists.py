@@ -1,25 +1,25 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Aug  6 02:22:36 2020
-
-@author: s1983961
-"""
+# This generates the lists from the XWEAT code and saves them as text
+# The tests and language are hardcoded, though
 
 
 from weat import XWEAT, load_vocab_goran, translate
 
 
+# Set the language
 lang = "es"
 
+# Create an XWEAT instance
 xw = XWEAT()
 
+# Determine the tests to import
 tests = [(1,xw.weat_1), (2,xw.weat_2),
          (6,xw.weat_6), (7,xw.weat_7),
          (8,xw.weat_8), (9,xw.weat_9), ]
 
 
 for (i, test) in tests:
+    
+    # Load and translate the lists
     targets_1, targets_2, attributes_1, attributes_2 = test()
     translation_dict = load_vocab_goran("./xweat/data/vocab_dict_en_" + lang + ".p")
     targets_1 = translate(translation_dict, targets_1)
@@ -27,6 +27,7 @@ for (i, test) in tests:
     attributes_1 = translate(translation_dict, attributes_1)
     attributes_2 = translate(translation_dict, attributes_2)
     
+    # Set where the lists will be saves
     path = "attract_repel/linguistic_constraints/test" + str(i) + "_"
     
     more_path = path + "more_"
@@ -43,6 +44,7 @@ for (i, test) in tests:
     f_s_l = open(syn_less_path, "w", encoding="utf-8")
     
     
+    # Save the lists for attract-repel
     for word1 in targets_1:
         
         for word2 in attributes_1:

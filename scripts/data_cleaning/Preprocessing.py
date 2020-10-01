@@ -137,7 +137,7 @@ def preprocess_tweet(text, vocab, tokenizer=TweetTokenizer()):
 #####################
 
 
-def cleaner(data, threshold=10, gen_vocab=True):
+def cleaner(data, threshold=0, gen_vocab=True):
     """
     
     Input: an iterable that gives out Tweets as strings and the value under which

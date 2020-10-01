@@ -1,28 +1,31 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Aug  6 02:56:18 2020
-
-@author: s1983961
-"""
+# This automatically generates the configuration lists for the msc tests from the XWEAT lists
 
 
-
+# Determine the paths to the embeddings
 path = "attract_repel/config/test"
 embed_path_1 = "../data/embeddings/"
 embed_path_2 = "_embeddings.300."
+
+# Set the experiments that we will have
 tests = [1,2,6,7,8,9]
 mods = ["more","less"]
 embeddings = ["ft", "w2v"]
 
+
 for embedding in embeddings:
+    
+    # Define the embeddings path
     embed_path = embed_path_1 + embedding + embed_path_2 + "vec"
+    
+    # For each experiment, we run this code
     for test in tests:
         for mod in mods:
             
+            # Define the paths for the configuration files and for the resulting embeddings
             config_path = path + str(test) + "_" + mod + "_" + embedding + ".cfg"
             out_embed = embed_path_1 + embedding + "_t" + str(test) + "_" + mod + embed_path_2 + "txt"
             
+            # Create the corresponding configuration file
             with open(config_path, "w", encoding="utf-8") as f:
                 f.write("[experiment]\n")
                 f.write("\n")

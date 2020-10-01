@@ -1,3 +1,5 @@
+This is a modified version of the attract-repel code by [R. Marchant](https://github.com/r-marchant) so that it can be run in Python 3. [Original readme](https://github.com/nmrksic/attract-repel) from the attract repel repository as follows:
+
 # Attract-Repel
 Nikola Mrkšić, University of Cambridge (nikola.mrksic@gmail.com)
 

@@ -1,3 +1,5 @@
+# This code is improved so as to report new and more relevant metrics
+
 import os
 import sys
 import torch
@@ -5,9 +7,10 @@ import torch.autograd as autograd
 import torch.nn.functional as F
 
 
-### NEW
+#### NEW ####
+# Packages for reporting f1, precision and recall
 from sklearn.metrics import f1_score, precision_score, recall_score
-
+#### NEW ####
 
 
 def train(train_iter, dev_iter, model, args):
@@ -51,8 +54,9 @@ def train(train_iter, dev_iter, model, args):
                     last_step = steps
                     if args.save_best:
                         save(model, args.save_dir, 'best', steps)
-                        #print(args.save_dir,"\n",steps)
+                        #### NEW ####
                         save(model, "./cnn/snapshot/", "best", "model")
+                        #### NEW ####
                 else:
                     if steps - last_step >= args.early_stop:
                         print('early stop by {} steps.'.format(args.early_stop))
@@ -77,20 +81,17 @@ def eval(data_iter, model, args):
                      [1].view(target.size()).data == target.data).sum()
         
         
-        ### NEW
+        #### NEW ####
+        # Reports the relevant metrics when testing
         if args.test:
-            output = logit.clone()#.cpu()
+            output = logit.clone()
             _, predicted = torch.max(output, 1)
             predicted = predicted.cpu()
             target = target.cpu()
-            #predicted = predicted.numpy()
-            #_, trues = torch.max(target, 1)
-            #print(logit.shape)
-            #print(target)
-            #print(predicted)
             precision = precision_score(y_true=target, y_pred=predicted, average='weighted')
             recall = recall_score(y_true=target, y_pred=predicted, average='weighted')
             f1 = f1_score(y_true=target, y_pred=predicted, average='weighted')
+        #### NEW ####
             
 
     size = len(data_iter.dataset)
@@ -100,26 +101,28 @@ def eval(data_iter, model, args):
                                                                        accuracy, 
                                                                        corrects, 
                                                                        size))
+    
+    #### NEW ####
+    # Saves the relevant metrics if a results path is selected
     if args.results_path is not None:
         save_test(args, precision, recall, f1, accuracy)
+    #### NEW ####
     
     return accuracy
 
 
-
+#### NEW ####
 def save_test(args, precision, recall, f1, accuracy):
     string = "Precision: {:.3f}\nRecall: {:.3f}\nF1-Score: {:.3f}\n".format(precision,recall,f1)
-    print(string)
     with open(args.results_path,'w', encoding="utf8") as ff:
         ff.write(string)
         ff.write("Accuracy: {:.3f}\n".format(accuracy))
-    #print(path)
-
+#### NEW ####
+        
 
 def predict(text, model, text_field, label_feild, cuda_flag):
     assert isinstance(text, str)
     model.eval()
-    # text = text_field.tokenize(text)
     text = text_field.preprocess(text)
     text = [[text_field.vocab.stoi[x] for x in text]]
     x = torch.tensor(text)
