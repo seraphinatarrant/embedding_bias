@@ -2,7 +2,7 @@
 
 ### COMMAND LINE ARGUMENTS
 # $1 = path to training data (text file)
-# $2 = path to folder where embeddings should be saved
+# $2 = path to file where embeddings should be saved (text file)
 
 
 # set it to fail at first error
