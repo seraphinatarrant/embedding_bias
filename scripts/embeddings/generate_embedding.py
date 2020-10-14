@@ -1,3 +1,5 @@
+# coding=utf-8
+
 from gensim.models.wrappers.fasttext import FastText as FT_wrapper
 from gensim.models.fasttext import FastText as FT_gensim
 from gensim.models import Word2Vec
