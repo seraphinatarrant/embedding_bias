@@ -1,43 +1,4 @@
-INFO:root:XWEAT started
-INFO:root:Translating terms from en to es
-INFO:root:Embeddings are in vec format
-INFO:gensim.models.utils_any2vec:loading projection weights from ../data/embeddings/w2v_t1_more_embeddings.300.vec
-INFO:gensim.models.utils_any2vec:loaded (52491, 300) matrix from ../data/embeddings/w2v_t1_more_embeddings.300.vec
-INFO:root:Embeddings loaded
-INFO:root:Running test
-WARNING:root:Not in vocab bongos
-WARNING:root:Not in vocab gaita
-WARNING:root:Not in vocab fagot
-WARNING:root:Not in vocab arco iris
-WARNING:root:Not in vocab mandolina
-WARNING:root:Not in vocab trombón
-WARNING:root:Not in vocab saxofón
-WARNING:root:Not in vocab laúd
-WARNING:root:Not in vocab harmónica
-WARNING:root:Not in vocab hedor
-WARNING:root:Not in vocab resortera
-WARNING:root:Not in vocab banjo
-WARNING:root:Not in vocab gas lacrimógeno
-WARNING:root:Not in vocab arpón
-WARNING:root:Not in vocab oboe
-WARNING:root:Not in vocab violonchelo
-WARNING:root:Not in vocab cémbalo
-WARNING:root:Not in vocab arma de fuego
-WARNING:root:Not in vocab tuba
-INFO:root:Popped T2 34
-INFO:root:Popped T2 51
-INFO:root:Popped T2 32
-INFO:root:Popped T2 16
-INFO:root:Popped T2 14
-INFO:root:Popped T2 29
-INFO:root:Popped T2 42
-INFO:root:Calculating p value ... 
-INFO:root:Number of possible permutations: 705432
-INFO:root:Iteration 100000 finished
-INFO:root:Iteration 200000 finished
-INFO:root:Iteration 300000 finished
-INFO:root:Iteration 400000 finished
-INFO:root:Iteration 500000 finished
-INFO:root:Iteration 600000 finished
-INFO:root:Iteration 700000 finished
-INFO:root:(0.8176807, 0.53335494, 0.11324408305832455)
+Traceback (most recent call last):
+  File "xweat/weat.py", line 9, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'

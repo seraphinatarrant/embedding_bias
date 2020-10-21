@@ -1,19 +1,4 @@
-INFO:root:XWEAT started
-INFO:root:Translating terms from en to es
-INFO:root:Embeddings are in vec format
-INFO:gensim.models.utils_any2vec:loading projection weights from ../data/embeddings/ft_t8_less_embeddings.300.vec
-INFO:gensim.models.utils_any2vec:loaded (52491, 300) matrix from ../data/embeddings/ft_t8_less_embeddings.300.vec
-INFO:root:Embeddings loaded
-INFO:root:Running test
-WARNING:root:Not in vocab llorosa
-WARNING:root:Not in vocab sin esperanza
-WARNING:root:Not in vocab ocasional
-WARNING:root:Not in vocab término corto
-WARNING:root:Not in vocab inconstante
-WARNING:root:Not in vocab lloroso
-INFO:root:Popped A2 15
-INFO:root:Popped A2 8
-INFO:root:Popped A2 21
-INFO:root:Calculating p value ... 
-INFO:root:Number of possible permutations: 924
-INFO:root:(0.29671904, 1.2121496, 0.01948051948051948)
+Traceback (most recent call last):
+  File "xweat/weat.py", line 9, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'

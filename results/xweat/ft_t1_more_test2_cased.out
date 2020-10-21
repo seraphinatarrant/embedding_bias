@@ -1,4 +1,4 @@
-INFO:root:XWEAT started
-INFO:root:Translating terms from en to es
-INFO:root:Embeddings are in vec format
-INFO:gensim.models.utils_any2vec:loading projection weights from ../data/embeddings/ft_t1_more_embeddings.300.vec
+Traceback (most recent call last):
+  File "xweat/weat.py", line 9, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
