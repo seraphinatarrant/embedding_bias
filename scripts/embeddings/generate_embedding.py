@@ -4,6 +4,7 @@ from gensim.models.wrappers.fasttext import FastText as FT_wrapper
 from gensim.models.fasttext import FastText as FT_gensim
 from gensim.models import Word2Vec
 
+import sys
 
 ####################################################################
 
@@ -161,6 +162,18 @@ def train_word2vec(corpus_file, save="../data/embeddings/", dim=300):
     
 
 if __name__ == "__main__":
-    corpus_file = "../data/archive/2019_03/tweets_processed.tsv"
-    train_word2vec(corpus_file)
-    train_fasttext(corpus_file)
+
+    try:
+        corpus_file = str(sys.argv[1])
+    except IndexError:
+        corpus_file = "../data/archive/2019_03/tweets_processed.tsv"
+
+    try:
+        save_path = str(sys.argv[2])
+    except IndexError:
+        save_path = "../data/embeddings/"
+
+    print(corpus_file)
+    
+    train_word2vec(corpus_file, save_path)
+    train_fasttext(corpus_file, save_path)
