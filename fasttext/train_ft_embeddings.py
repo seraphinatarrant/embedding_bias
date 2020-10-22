@@ -4,9 +4,8 @@ import tempfile
 import sys
 
 
-## Construct an iterator to iterate over lines in the data
-## Data passed in as first argument
-
+## Construct an iterator to iterate over lines in the data and yield just one line at a time
+## Data passed in as first command line argument
 class MyIter(object):
     def __iter__(self):
         path = sys.argv[1]
@@ -17,23 +16,21 @@ class MyIter(object):
 
 def main():
     print('Instantiating the model')
-    model = FT_gensim(size=300, window=5, min_count=5, sg=1)  # instantiate the skipgram model
+    # instantiate the skipgram model
+    model = FT_gensim(size=300, window=5, min_count=5, sg=1)
     print('Building the vocabulary')
-    # path to data file passed as first argument
-    # corpus_file = sys.argv[1]
+    # build the vocabulary from the sentences yielded by the iterator
     model.build_vocab(sentences=MyIter())
     total_examples = model.corpus_count
     print('Training the model')
-    model.train(sentences=MyIter(), total_examples=total_examples, epochs=model.epochs, total_words=model.corpus_total_words)  # train the model
+    # train the model
+    model.train(sentences=MyIter(), total_examples=total_examples, epochs=model.epochs, total_words=model.corpus_total_words)
 
-    ## Save the model (can be loaded using gensim)
     ## Save file passed in as second argument
     print('Saving the model to specified filepath')
     save_file = sys.argv[2]
+    # model saved in the w2v format, i.e. the first line contains <no. of words> <no. of dimensions>
     model.wv.save_word2vec_format(save_file)
-    # print('Saving the model')
-    # with tempfile.NamedTemporaryFile(prefix='saved_model_gensim-', delete=False) as tmp:
-    #     model.save(tmp.name, separately=[])
 
 
 if __name__ == '__main__':
