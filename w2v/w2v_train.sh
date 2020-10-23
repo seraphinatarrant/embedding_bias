@@ -15,17 +15,18 @@ source ~/.bashrc
 conda activate bias_env
 
 echo Creating a folder in scratch space
-mkdir -p /disk/scratch/${STUDENT_ID}/fasttext_temp
+mkdir -p /disk/scratch/${STUDENT_ID}/w2v_temp
 
 echo Copying data over to scratch space
 # copy data over from headnode to scratch space
-rsync -av $1 /disk/scratch/${STUDENT_ID}/fasttext_temp/training_data.txt
+rsync -av $1 /disk/scratch/${STUDENT_ID}/w2v_temp/training_data.txt
 
 echo Executing python script
-python train_ft_embeddings.py /disk/scratch/${STUDENT_ID}/fasttext_temp/training_data.txt /disk/scratch/${STUDENT_ID}/fasttext_temp/ft_vectors_w2vformat.txt
+python train_w2v_embeddings.py /disk/scratch/${STUDENT_ID}/w2v_temp/training_data.txt /disk/scratch/${STUDENT_ID}/w2v_temp/w2v_vectors_w2vformat.txt
+
 
 echo Copying models back to headnode
-rsync -av /disk/scratch/${STUDENT_ID}/fasttext_temp/ft_vectors_w2vformat.txt $2
+rsync -av /disk/scratch/${STUDENT_ID}/w2v_temp/w2v_vectors_w2vformat.txt $2
 
 echo Deleting data and model from scratch space
-rm -r /disk/scratch/${STUDENT_ID}/fasttext_temp/
+rm -r /disk/scratch/${STUDENT_ID}/w2v_temp/
