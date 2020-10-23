@@ -5,8 +5,7 @@
 # $2: test data (connll format, from OntoNotes 5.0)
 # $3: dev data (connll format, from OntoNotes 5.0)
 # $4: word embeddings in glove format
-# $5: config file
-# $6: path to location where resulting model should be saved
+# $5: path to location where resulting model should be saved
 
 export STUDENT_ID=$(whoami)
 
@@ -41,9 +40,9 @@ export COREF_TEST_DATA_PATH=/disk/scratch/${STUDENT_ID}/coref/test/test.english.
 export COREF_DEV_DATA_PATH=/disk/scratch/${STUDENT_ID}/coref/dev/dev.english.v4_gold_conll
 
 echo Training coreference model
-allennlp train $5 -s /disk/scratch/${STUDENT_ID}/coref/results
+allennlp train ./coref_config_file -s /disk/scratch/${STUDENT_ID}/coref/results
 
 echo Copying model files back to specified filepath
-rsync -av /disk/scratch/${STUDENT_ID}/coref/results_* $6
+rsync -av /disk/scratch/${STUDENT_ID}/coref/results_* $5
 echo Deleting data and results from scratch space
 rm -r /disk/scratch/${STUDENT_ID}/coref/
