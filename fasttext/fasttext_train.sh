@@ -4,6 +4,8 @@
 # $1 = path to training data (text file)
 # $2 = path to file where embeddings should be saved (text file)
 
+export STUDENT_ID=$(whoami)
+
 
 # set it to fail at first error
 set -o errexit
@@ -14,17 +16,17 @@ source ~/.bashrc
 conda activate bias_env
 
 echo Creating a file in scratch space
-mkdir -p /disk/scratch/v1rmarc5/fasttext_temp
+mkdir -p /disk/scratch/${STUDENT_ID}/fasttext_temp
 
 echo Copying data over to scratch space
 # copy data over from headnode to scratch space
-rsync -av $1 /disk/scratch/v1rmarc5/fasttext_temp/training_data.txt
+rsync -av $1 /disk/scratch/${STUDENT_ID}/fasttext_temp/training_data.txt
 
 echo Executing python script
-python train_ft_embeddings.py /disk/scratch/v1rmarc5/fasttext_temp/training_data.txt /disk/scratch/v1rmarc5/fasttext_temp/ft_vectors_w2vformat.txt
+python train_ft_embeddings.py /disk/scratch/${STUDENT_ID}/fasttext_temp/training_data.txt /disk/scratch/${STUDENT_ID}/fasttext_temp/ft_vectors_w2vformat.txt
 
 echo Copying models back to headnode
-rsync -av /disk/scratch/v1rmarc5/fasttext_temp/ft_vectors_w2vformat.txt $2
+rsync -av /disk/scratch/${STUDENT_ID}/fasttext_temp/ft_vectors_w2vformat.txt $2
 
 echo Deleting data and model from scratch space
-rm -r /disk/scratch/v1rmarc5/fasttext_temp/*
+rm -r /disk/scratch/${STUDENT_ID}/fasttext_temp/*
