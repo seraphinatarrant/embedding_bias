@@ -7,6 +7,9 @@ import sys
 ## Construct an iterator to iterate over lines in the data and yield just one line at a time
 ## Data passed in as first command line argument
 class MyIter(object):
+    """
+    An iterator that yields documents (where corpus contains one document per line). Yields lists of str.
+    """
     def __iter__(self):
         path = sys.argv[1]
         with utils.open(path, 'r', encoding='utf-8') as fin:
