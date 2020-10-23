@@ -1,31 +1,38 @@
 #!/usr/bin/env bash
 
+## COMMAND LINE ARGUMENTS
+# $1: trained coreference resolution model (model.tar.gz)
+# $2: folder where the results will be saved
+
+export STUDENT_ID=$(whoami)
+
+# activate allennlp environment
 conda activate allennlp
 
-mkdir -p /disk/scratch/s1303513/evald6
+# create a folder
+mkdir -p /disk/scratch/${STUDENT_ID}/coref_evaluate
 
-rsync -av --progress ./git2/embedding_bias/coref/evaluation_data/test_type1_anti_stereotype.v4_auto_conll /disk/scratch/s1303513/evald6/test_type1_anti_stereotype.v4_auto_conll
-rsync -av --progress ./git2/embedding_bias/coref/evaluation_data/test_type1_pro_stereotype.v4_auto_conll /disk/scratch/s1303513/evald6/test_type1_pro_stereotype.v4_auto_conll
-rsync -av --progress ./git2/embedding_bias/coref/evaluation_data/test_type2_anti_stereotype.v4_auto_conll /disk/scratch/s1303513/evald6/test_type2_anti_stereotype.v4_auto_conll
-rsync -av --progress ./git2/embedding_bias/coref/evaluation_data/test_type2_pro_stereotype.v4_auto_conll /disk/scratch/s1303513/evald6/test_type2_pro_stereotype.v4_auto_conll
-
-
-
-rsync -av ./results_d6_w2v/model.tar.gz /disk/scratch/s1303513/evald6/model.tar.gz
+# copy the winobias evaluation data into scratch space
+rsync -av ./evaluation_data/test_type1_anti_stereotype.v4_auto_conll /disk/scratch/${STUDENT_ID}/coref_evaluate/test_type1_anti_stereotype.v4_auto_conll
+rsync -av ./evaluation_data/test_type1_pro_stereotype.v4_auto_conll /disk/scratch/${STUDENT_ID}/coref_evaluate/test_type1_pro_stereotype.v4_auto_conll
+rsync -av ./evaluation_data/test_type2_anti_stereotype.v4_auto_conll /disk/scratch/${STUDENT_ID}/coref_evaluate/test_type2_anti_stereotype.v4_auto_conll
+rsync -av ./evaluation_data/test_type2_pro_stereotype.v4_auto_conll /disk/scratch/${STUDENT_ID}/coref_evaluate/test_type2_pro_stereotype.v4_auto_conll
 
 
-allennlp evaluate /disk/scratch/s1303513/evald6/model.tar.gz /disk/scratch/s1303513/evald6/test_type1_anti_stereotype.v4_auto_conll --output-file /disk/scratch/s1303513/evald6/type1_anti_results_t1_d6.txt
+# copy the trained coreference model into scratch space
+rsync -av $1 /disk/scratch/${STUDENT_ID}/coref_evaluate/model.tar.gz
 
-allennlp evaluate /disk/scratch/s1303513/evald6/model.tar.gz /disk/scratch/s1303513/evald6/test_type1_pro_stereotype.v4_auto_conll --output-file /disk/scratch/s1303513/evald6/type1_pro_results_t1_d6.txt
+# evaluate the model on the four different sets of evaluation data
+allennlp evaluate /disk/scratch/${STUDENT_ID}/coref_evaluate/model.tar.gz /disk/scratch/${STUDENT_ID}/coref_evaluate/test_type1_anti_stereotype.v4_auto_conll --output-file /disk/scratch/${STUDENT_ID}/coref_evaluate/type1_anti_results.txt
+allennlp evaluate /disk/scratch/${STUDENT_ID}/coref_evaluate/model.tar.gz /disk/scratch/${STUDENT_ID}/coref_evaluate/test_type1_pro_stereotype.v4_auto_conll --output-file /disk/scratch/${STUDENT_ID}/coref_evaluate/type1_pro_results.txt
+allennlp evaluate /disk/scratch/${STUDENT_ID}/coref_evaluate/model.tar.gz /disk/scratch/${STUDENT_ID}/coref_evaluate/test_type2_anti_stereotype.v4_auto_conll --output-file /disk/scratch/${STUDENT_ID}/coref_evaluate/type2_anti_results.txt
+allennlp evaluate /disk/scratch/${STUDENT_ID}/coref_evaluate/model.tar.gz /disk/scratch/${STUDENT_ID}/coref_evaluate/test_type2_pro_stereotype.v4_auto_conll --output-file /disk/scratch/${STUDENT_ID}/coref_evaluate/type2_pro_results.txt
 
-allennlp evaluate /disk/scratch/s1303513/evald6/model.tar.gz /disk/scratch/s1303513/evald6/test_type2_anti_stereotype.v4_auto_conll --output-file /disk/scratch/s1303513/evald6/type2_anti_results_t1_d6.txt
+# copy the results to the specified folder
+rsync -av /disk/scratch/${STUDENT_ID}/coref_evaluate/type1_anti_results.txt $2/type1_anti_results.txt
+rsync -av /disk/scratch/${STUDENT_ID}/coref_evaluate/type1_pro_results.txt $2/type1_pro_results.txt
+rsync -av /disk/scratch/${STUDENT_ID}/coref_evaluate/type2_anti_results.txt $2/type2_anti_results.txt
+rsync -av /disk/scratch/${STUDENT_ID}/coref_evaluate/type2_pro_results.txt $2/type2_pro_results.txt
 
-allennlp evaluate /disk/scratch/s1303513/evald6/model.tar.gz /disk/scratch/s1303513/evald6/test_type2_pro_stereotype.v4_auto_conll --output-file /disk/scratch/s1303513/evald6/type2_pro_results_t1_d6.txt
-
-
-rsync -av --progress /disk/scratch/s1303513/evald6/type1_anti_results_t1_d6.txt ./allennlp/results_new/w2v/evaluation/type1_anti_results_d6_w2v.txt
-rsync -av --progress /disk/scratch/s1303513/evald6/type1_pro_results_t1_d6.txt ./allennlp/results_new/w2v/evaluation/type1_pro_results_d6_w2v.txt
-rsync -av --progress /disk/scratch/s1303513/evald6/type2_anti_results_t1_d6.txt ./allennlp/results_new/w2v/evaluation/type2_anti_results_d6_w2v.txt
-rsync -av --progress /disk/scratch/s1303513/evald6/type2_pro_results_t1_d6.txt ./allennlp/results_new/w2v/evaluation/type2_pro_results_d6_w2v.txt
-
-rm -r /disk/scratch/s1303513/evald6
+# remove data from scratch space
+rm -r /disk/scratch/${STUDENT_ID}/coref_evaluate
