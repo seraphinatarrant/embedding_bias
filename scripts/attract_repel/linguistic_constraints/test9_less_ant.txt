@@ -1,0 +1,105 @@
+sin esperanza ocasional
+sin esperanza fugaz
+sin esperanza inestable
+sin esperanza inconstante
+sin esperanza breve
+sin esperanza término corto
+sin esperanza variable
+lloroso ocasional
+lloroso fugaz
+lloroso inestable
+lloroso inconstante
+lloroso breve
+lloroso término corto
+lloroso variable
+miserable ocasional
+miserable fugaz
+miserable inestable
+miserable inconstante
+miserable breve
+miserable término corto
+miserable variable
+triste ocasional
+triste fugaz
+triste inestable
+triste inconstante
+triste breve
+triste término corto
+triste variable
+deprimida ocasional
+deprimida fugaz
+deprimida inestable
+deprimida inconstante
+deprimida breve
+deprimida término corto
+deprimida variable
+melancólico ocasional
+melancólico fugaz
+melancólico inestable
+melancólico inconstante
+melancólico breve
+melancólico término corto
+melancólico variable
+melancólica ocasional
+melancólica fugaz
+melancólica inestable
+melancólica inconstante
+melancólica breve
+melancólica término corto
+melancólica variable
+llorosa ocasional
+llorosa fugaz
+llorosa inestable
+llorosa inconstante
+llorosa breve
+llorosa término corto
+llorosa variable
+deprimido ocasional
+deprimido fugaz
+deprimido inestable
+deprimido inconstante
+deprimido breve
+deprimido término corto
+deprimido variable
+enfermo constante
+enfermo siempre
+enfermo crónico
+enfermo crónica
+enfermo prolongado
+enfermo estable
+enfermo persistente
+influenza constante
+influenza siempre
+influenza crónico
+influenza crónica
+influenza prolongado
+influenza estable
+influenza persistente
+cáncer constante
+cáncer siempre
+cáncer crónico
+cáncer crónica
+cáncer prolongado
+cáncer estable
+cáncer persistente
+enfermedad constante
+enfermedad siempre
+enfermedad crónico
+enfermedad crónica
+enfermedad prolongado
+enfermedad estable
+enfermedad persistente
+virus constante
+virus siempre
+virus crónico
+virus crónica
+virus prolongado
+virus estable
+virus persistente
+enferma constante
+enferma siempre
+enferma crónico
+enferma crónica
+enferma prolongado
+enferma estable
+enferma persistente
