@@ -136,4 +136,4 @@ dmypy.json
 *.npy
 *.vec
 data/embeddings/*.txt
-
+slurm-*

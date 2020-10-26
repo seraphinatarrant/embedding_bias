@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # This code should run on any computer with a gpu
 
 # Here go the arguments. If I have the time/energy, I'll change it so the script accepts arguments from command line

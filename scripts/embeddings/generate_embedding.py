@@ -43,7 +43,7 @@ def train_fasttext(corpus_file, fasttext_path=None, save="../data/embeddings/",
         print("\nCreating embeddings model...")
 
         # train the model
-        model = FT_wrapper.train(ft_home, corpus_file, sg=1, size=dim)
+        model = FT_wrapper.train(ft_home, corpus_file, size=dim)
         
         print("Model created and trained")
         
@@ -163,17 +163,25 @@ def train_word2vec(corpus_file, save="../data/embeddings/", dim=300):
 
 if __name__ == "__main__":
 
+    ft=True
+    w2v=True
+
     try:
+        print("Identifying arguments")
         corpus_file = str(sys.argv[1])
+        save_path =str(sys.argv[2])
+        embedding_algorithm = str(sys.argv[3])
+        if embedding_algorithm != "ft":
+             ft=False
+        if embedding_algorithm != "w2v":
+             w2v=False
     except IndexError:
         corpus_file = "../data/archive/2019_03/tweets_processed.tsv"
-
-    try:
-        save_path = str(sys.argv[2])
-    except IndexError:
         save_path = "../data/embeddings/"
 
-    print(corpus_file)
-    
-    train_word2vec(corpus_file, save_path)
-    train_fasttext(corpus_file, save_path)
+    if w2v:
+        print("Training word2vec embeddings")
+        train_word2vec(corpus_file, save=save_path)
+    if ft:
+        print("Training FastText embeddings")
+        train_fasttext(corpus_file, save=save_path)
