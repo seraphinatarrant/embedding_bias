@@ -314,6 +314,51 @@ class XWEAT(object):
     return targets, attributes_1, attributes_2
 
 
+  def weat_es1(self):
+    """
+    New Spanish WEAT. We didn't write the words here to force the system to use our translations
+    Targets 1=Male terms
+    Targets 2=Female terms
+    Attributes 1=art
+    Attributes 2=science
+    :return: targets_1, targets_2, attributes_1, attributes_2
+    """
+    targets_1 = ["s1_t1_1", "s1_t1_2", "s1_t1_3", "s1_t1_4", "s1_t1_5", "s1_t1_6", "s1_t1_7", "s1_t1_8", "s1_t1_9",
+                 "s1_t1_10", "s1_t1_11"]
+    targets_2 = ["s1_t2_1", "s1_t2_2", "s1_t2_3", "s1_t2_4", "s1_t2_5", "s1_t2_6", "s1_t2_7", "s1_t2_8", "s1_t2_9",
+                 "s1_t2_10", "s1_t2_11"]
+    attributes_1 = ["s1_a1_1", "s1_a1_2", "s1_a1_3", "s1_a1_4", "s1_a1_5", "s1_a1_6", "s1_a1_7", "s1_a1_8", "s1_a1_9",
+                    "s1_a1_10", "s1_a1_11", "s1_a1_12", "s1_a1_13", "s1_a1_14", "s1_a1_15", "s1_a1_16"]
+    attributes_2 = ["s1_a2_1", "s1_a2_2", "s1_a2_3", "s1_a2_4", "s1_a2_5", "s1_a2_6", "s1_a2_7", "s1_a2_8", "s1_a2_9",
+                    "s1_a2_10", "s1_a2_11", "s1_a2_12"]
+    return targets_1, targets_2, attributes_1, attributes_2
+
+
+  def weat_es2(self):
+    """
+    New Spanish WEAT. We didn't write the words here to force the system to use our translations
+    Targets 1=Stereotipically high economic class names
+    Targets 2=Stereotipically low economic class names
+    Attributes 1=pleasant
+    Attributes 2=unpleasant
+    :return: targets_1, targets_2, attributes_1, attributes_2
+    """
+    targets_1 = ["s2_t1_1", "s2_t1_2", "s2_t1_3", "s2_t1_4", "s2_t1_5", "s2_t1_6", "s2_t1_7", "s2_t1_8", "s2_t1_9",
+                 "s2_t1_10", "s2_t1_11", "s2_t1_12", "s2_t1_13", "s2_t1_14", "s2_t1_15"]
+    targets_2 = ["s2_t2_1", "s2_t2_2", "s2_t2_3", "s2_t2_4", "s2_t2_5", "s2_t2_6", "s2_t2_7", "s2_t2_8", "s2_t2_9",
+                 "s2_t2_10", "s2_t2_11", "s2_t2_12", "s2_t2_13", "s2_t2_14", "s2_t2_15", "s2_t2_16", "s2_t2_17",
+                 "s2_t2_18", "s2_t2_19", "s2_t2_20"]
+    attributes_1 = ["s2_a1_1", "s2_a1_2", "s2_a1_3", "s2_a1_4", "s2_a1_5", "s2_a1_6", "s2_a1_7", "s2_a1_8", "s2_a1_9",
+                    "s2_a1_10", "s2_a1_11", "s2_a1_12", "s2_a1_13", "s2_a1_14", "s2_a1_15", "s2_a1_16", "s2_a1_17",
+                    "s2_a1_18", "s2_a1_19", "s2_a1_20", "s2_a1_21", "s2_a1_22", "s2_a1_23", "s2_a1_24", "s2_a1_25",
+                    "s2_a1_26", "s2_a1_27", "s2_a1_28", "s2_a1_29"]
+    attributes_2 = ["s2_a2_1", "s2_a2_2", "s2_a2_3", "s2_a2_4", "s2_a2_5", "s2_a2_6", "s2_a2_7", "s2_a2_8", "s2_a2_9",
+                    "s2_a2_10", "s2_a2_11", "s2_a2_12", "s2_a2_13", "s2_a2_14", "s2_a2_15", "s2_a2_16", "s2_a2_17",
+                    "s2_a2_18", "s2_a2_19", "s2_a2_20", "s2_a2_21", "s2_a2_22", "s2_a2_23", "s2_a2_24", "s2_a2_25",
+                    "s2_a2_26", "s2_a2_27", "s2_a2_28", "s2_a2_29", "s2_a2_30", "s2_a2_31", "s2_a2_32", "s2_a2_33", "s2_a2_34"]
+    return targets_1, targets_2, attributes_1, attributes_2
+
+
   def similarity_precomputed_sims(self, w1, w2, type="cosine"):
     return self.similarities[w1, w2]
 
@@ -571,7 +616,7 @@ def main():
       raise ValueError('Not a valid boolean string')
     return s == 'True' or s == 'true'
   parser = argparse.ArgumentParser(description="Running XWEAT")
-  parser.add_argument("--test_number", type=int, help="Number of the weat test to run", required=False)
+  parser.add_argument("--test_number", type=str, help="Number of the weat test to run", required=False)
   parser.add_argument("--permutation_number", type=int, default=None,
                       help="Number of permutations (otherwise all will be run)", required=False)
   parser.add_argument("--output_file", type=str, default=None, help="File to store the results)", required=False)
@@ -621,28 +666,32 @@ def train_weat(args):
   logging.basicConfig(level=logging.INFO)
   logging.info("XWEAT started")
   weat = XWEAT()
-  if args.test_number == 1:
+  if args.test_number == "1":
     targets_1, targets_2, attributes_1, attributes_2 = weat.weat_1()
-  elif args.test_number == 2:
+  elif args.test_number == "2":
     targets_1, targets_2, attributes_1, attributes_2 = weat.weat_2()
-  elif args.test_number == 3:
+  elif args.test_number == "3":
     targets_1, targets_2, attributes_1, attributes_2 = weat.weat_3()
-  elif args.test_number == 4:
+  elif args.test_number == "4":
     targets_1, targets_2, attributes_1, attributes_2 = weat.weat_4()
-  elif args.test_number == 5:
+  elif args.test_number == "5":
     targets_1, targets_2, attributes_1, attributes_2 = weat.weat_5()
-  elif args.test_number == 6:
+  elif args.test_number == "6":
     targets_1, targets_2, attributes_1, attributes_2 = weat.weat_6()
-  elif args.test_number == 7:
+  elif args.test_number == "7":
     targets_1, targets_2, attributes_1, attributes_2 = weat.weat_7()
-  elif args.test_number == 8:
+  elif args.test_number == "8":
     targets_1, targets_2, attributes_1, attributes_2 = weat.weat_8()
-  elif args.test_number == 9:
+  elif args.test_number == "9":
     targets_1, targets_2, attributes_1, attributes_2 = weat.weat_9()
-  elif args.test_number == 10:
+  elif args.test_number == "10":
     targets_1, targets_2, attributes_1, attributes_2 = weat.weat_10()
+  elif args.test_number == "es1":
+    targets_1, targets_2, attributes_1, attributes_2 = weat.weat_sp1()
+  elif args.test_number == "es2":
+    targets_1, targets_2, attributes_1, attributes_2 = weat.weat_sp2()
   else:
-    raise ValueError("Only WEAT 1 to 10 are supported")
+    raise ValueError("Only WEAT 1 to 10 and es1 and es2 are supported")
 
   if args.lang != "en":
     logging.info("Translating terms from en to %s", args.lang)
