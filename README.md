@@ -12,7 +12,8 @@ Fasttext
 
 Script: fasttext/fasttext_train.sh
 > Input: (1) data text file, (2) path to save file for the trained embeddings
-Output: trained fasttext embeddings in w2v format i.e. first line is <no. of words> <no. of dimensions>
+
+> Output: trained fasttext embeddings in w2v format i.e. first line is <no. of words> <no. of dimensions>
 
 Word2Vec
 
