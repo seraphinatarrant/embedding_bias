@@ -1,1 +1,2 @@
-bash run.sh
+bash scripts/experiment.sh "Pipeline_test" 1   w2v false false false None
+bash scripts/experiment.sh "ES_WEAT_Test"  es1 w2v false false false None

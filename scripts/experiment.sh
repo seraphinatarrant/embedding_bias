@@ -2,17 +2,30 @@
 
 set -o errexit
 
+# Command line arguments
+# $1 name of the experiment (for saving the results)
+# $2 the WEAT test to run
+# $3 is the name of the embedding to use
+#    if creating new embeddings, use either "w2v" or "ft"
+#    if using existing embeddings, use everything before the "_embeddings.300.vec" part of the filename
+# $4 whether to clean the data
+# $5 whether to retrain the embeddings
+# $6 whether to run attract-repel
+# $7 name of the linguistic constraints to use for attract-repel, before adding "_ant.txt" or "_syn.txt"
+#    if not using attract-repel, just add "None" or any other dummy value.
+
+
 # Variables that should probably be command line arguments
 language="es"
-weat_test=1
-embedding="w2v"
-constraints="test1_more"
-experiment_name="Pipeline_Test"
+weat_test=$2
+embedding=$3
+constraints=$7
+experiment_name=$1
 
 # Here go certain flags
-clean_data=false
-retrain_embs=false
-attract_repel=true
+clean_data=$4
+retrain_embs=$5
+attract_repel=$6
 
 # Paths to stuff
 emb_train_data=../data/archive/2019_03/tweets_processed.tsv
