@@ -28,7 +28,9 @@ Section 2: Train coreference resolution system and get bias metrics
 Coreference resolution system (AllenNLP)
 
 Install allennlp from source (via github) in editable mode
+
 allennlp commit hash: 96ff585
+
 allennlp-models commit hash: 37136f8
 
 Script: coref/coref_train.sh
@@ -48,6 +50,7 @@ Script: WEAT/fasttext_en.sh
 
 
 Measure coreference bias
+
 Script: coref/evaluate_allennlp.sh
 > Input: (1) Trained coref model (model.tar.gz file output from allennlp train command) (2) Path to save folder for results
 
@@ -57,7 +60,9 @@ Script: coref/evaluate_allennlp.sh
 Section 3: Alter word embeddings
 
 Attract-repel
+
 Script: attract-repel/attract-repel.sh
+
 The above script calls a python script which takes in a config file.
 > Input (to config file) (1) original trained word embeddings (glove format) (2) text file with antonyms (3) Text file with synonyms (4) Path to save folder for the altered word embeddings
 
