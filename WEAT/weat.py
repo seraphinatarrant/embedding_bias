@@ -274,6 +274,33 @@ class XWEAT(object):
   # missing from the original IAT: arab-muslim
 
 
+  ### New Spanish WEAT
+  # gender
+  def weat_11(self):
+    targets_1 = ["científico","físico","químico","astrónomo","tecnológico","biólogo","científica","física","química","astrónoma","tecnológica","bióloga"]
+    targets_2 = ["arquitecto","escultor","pintor","escritor","poeta","bailarín","actor","fotógrafo","arquitecta","escultora","pintora","escritora","poetisa","bailarina","actora","fotógrafa"]
+    attributes_1 = ["masculino","hombre","niño","hermano","él","hijo","hermano","padre","papá","tío","abuelo"]
+    attributes_2 = ["femenino","mujer","niña","hermana","ella","hija","hermana","madre","mamá","tía","abuela"]
+    return targets_1, targets_2, attributes_1, attributes_2
+
+  # migrants
+  def weat_12(self):
+      targets_1 = ["Agustina","Martina","Josefa","Antonia","Sofía","Isidora","Cristóbal","Sebastián",
+                   "Agustín","Alonso","Joaquín","León","Ignacio","Julieta","Matilde"] # upper class names
+      targets_2 = ["Shirley","Yamileth","Sharon","Britney","Maryori","Melody","Nayareth","Yaritza",
+                   "Byron","Brian","Jason","Malcon","Justin","Jeremy","Jordan","Brayan","Yeison",
+                   "Yeremi","Bairon","Yastin"] # lower class/migrant names
+      attributes_1 = ["caricia","libertad","salud","amor","paz","animar","amistad","cielo","lealtad",
+                      "placer","diamante","gentil","honestidad","suerte","arcoiris","diploma","regalo",
+                      "honor","milagro","amanecer","familia","alegría","felicidad","risa","paraíso",
+                      "vacación","paz","maravilloso","maravillosa"] # positive terms
+      attributes_2 = ["abuso","choque","suciedad","asesinato","enfermedad","accidente","muerte",
+                      "sufrimiento","veneno","hedor","apestar","ataque","asalto","desastre","odio",
+                      "contaminación","tragedia","divorcio","cárcel","pobreza","fea","feo","cáncer",
+                      "matar","vómito","bomba","maldad","podrido","podrida","agonía","terrible",
+                      "horrible","guerra","repugnante"] # negative terms
+      return targets_1, targets_2, attributes_1, attributes_2
+
   # occupations
   def wefat_1(self):
     # occupations derived from th bureau of labor statistics
