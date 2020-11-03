@@ -70,7 +70,7 @@ fi
 
 # Run the given WEAT test(s)
 echo About to run WEAT test $weat_test
-bash ./run_weat.sh $weat_test $emb_path $emb_name $weat_out $language $exp_path
+bash ./run_weat.sh $weat_test $emb_path $emb_name $weat_out $language $exp_path $experiment_name
 
 # We add the .vec termination to the embedding name
 emb_file=${emb_name}.vec
@@ -80,8 +80,8 @@ echo About to train the subtask 1 network
 bash ./run_cnn.sh $cnn_train_data $emb_path $emb_file $experiment_name $cnn_out $exp_path
 
 # Train the CNN for subtask 2
-echo About to train the subtask 2 network
-bash ./run_cnn2.sh $cnn_train_data $emb_path $emb_file $experiment_name $cnn2_out $exp_path
+#echo About to train the subtask 2 network
+#bash ./run_cnn2.sh $cnn_train_data $emb_path $emb_file $experiment_name $cnn2_out $exp_path
 
 echo Experiment successful!
 echo Removing temporary files

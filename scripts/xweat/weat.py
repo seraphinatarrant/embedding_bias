@@ -314,6 +314,7 @@ class XWEAT(object):
     return targets, attributes_1, attributes_2
 
 
+### NEW
   def weat_es1(self):
     """
     New Spanish WEAT. We didn't write the words here to force the system to use our translations
@@ -334,6 +335,7 @@ class XWEAT(object):
     return targets_1, targets_2, attributes_1, attributes_2
 
 
+### NEW
   def weat_es2(self):
     """
     New Spanish WEAT. We didn't write the words here to force the system to use our translations
@@ -687,9 +689,9 @@ def train_weat(args):
   elif args.test_number == "10":
     targets_1, targets_2, attributes_1, attributes_2 = weat.weat_10()
   elif args.test_number == "es1":
-    targets_1, targets_2, attributes_1, attributes_2 = weat.weat_sp1()
+    targets_1, targets_2, attributes_1, attributes_2 = weat.weat_es1()
   elif args.test_number == "es2":
-    targets_1, targets_2, attributes_1, attributes_2 = weat.weat_sp2()
+    targets_1, targets_2, attributes_1, attributes_2 = weat.weat_es2()
   else:
     raise ValueError("Only WEAT 1 to 10 and es1 and es2 are supported")
 

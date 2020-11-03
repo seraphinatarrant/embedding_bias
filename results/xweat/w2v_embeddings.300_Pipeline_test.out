@@ -1,0 +1,38 @@
+INFO:root:XWEAT started
+INFO:root:Translating terms from en to es
+INFO:root:Embeddings are in vec format
+INFO:gensim.models.utils_any2vec:loading projection weights from /disk/scratch/v1rmuoz2/2543/weat_temp/data/w2v_embeddings.300.vec
+INFO:gensim.models.utils_any2vec:loaded (52490, 300) matrix from /disk/scratch/v1rmuoz2/2543/weat_temp/data/w2v_embeddings.300.vec
+INFO:root:Embeddings loaded
+INFO:root:Running test
+WARNING:root:Not in vocab tábano
+WARNING:root:Not in vocab avispón
+WARNING:root:Not in vocab tulipán
+WARNING:root:Not in vocab hedor
+WARNING:root:Not in vocab gorgojo
+WARNING:root:Not in vocab arco iris
+WARNING:root:Not in vocab magnolia
+WARNING:root:Not in vocab campanilla
+WARNING:root:Not in vocab gladiolo
+WARNING:root:Not in vocab termita
+WARNING:root:Not in vocab tarántula
+WARNING:root:Not in vocab azafrán
+WARNING:root:Not in vocab narciso
+WARNING:root:Not in vocab zinnia
+WARNING:root:Not in vocab calendula
+WARNING:root:Not in vocab botón de oro
+WARNING:root:Not in vocab mosca negra
+WARNING:root:Not in vocab peonía
+WARNING:root:Not in vocab lirio
+WARNING:root:Not in vocab libélula
+WARNING:root:Not in vocab ciempiés
+WARNING:root:Not in vocab aster
+WARNING:root:Not in vocab ácaro
+WARNING:root:Not in vocab petunia
+INFO:root:Popped T2 47
+INFO:root:Popped T2 29
+INFO:root:Calculating p value ... 
+INFO:root:Number of possible permutations: 2704156
+INFO:root:Computing randomly first 100000 permutations
+INFO:root:Iteration 100000 finished
+INFO:root:(0.32977003, 0.83646125, 0.02132)

@@ -6,6 +6,7 @@
 # $4 is the path to the results
 # $5 is the language
 # $6 is the path for a particular experiment
+# $7 is the name of the experiment
 
 weat_test=$1
 embedding_head=$2
@@ -13,6 +14,7 @@ embedding_file=$3
 results_head=$4
 language=$5
 exp_path=$6
+exp_name=$7
 
 # set to fail at first error
 set -o errexit
@@ -27,7 +29,7 @@ echo Creating a temp folder in scratch space...
 temp=$exp_path/weat_temp
 emb_path=$temp/data
 out_path=$temp/results
-res_path=$out_path/${embedding_file}_test${weat_test}
+res_path=$out_path/${embedding_file}_${exp_name}
 mkdir -p $temp
 mkdir -p $emb_path
 mkdir -p $out_path

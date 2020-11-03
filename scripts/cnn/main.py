@@ -62,6 +62,7 @@ def read_arguments():
     parser.add_argument("-data-path", type=str, default=None, help="path to the dataset to use [default: None]")
     parser.add_argument("-data-name", type=str, default=None, help="filename of the dataset to use, 'train.csv', 'dev.csv', and 'test.csv' will be added to the end of this string [default: None]")
     parser.add_argument("-results-path", type=str, default=None, help="filename and path where the results will be saved [default: None]")
+    parser.add_argument("-no-display", type=bool, default=False, help="whether to display the training progress [default: False]")
     ### NOTE!!!
     #This will only work with my data unless you uncomment the part in the dataloader
     parser.add_argument("-use-half", type=bool, default=False, help="whether to test on only half of the data [default: False]")

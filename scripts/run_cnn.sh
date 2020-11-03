@@ -49,7 +49,8 @@ echo Training CNN
 python ./cnn/main.py \
 	-embeddings=$emb_path \
 	-data-path=$data_path/ \
-	-data-name=$data_name
+	-data-name=$data_name \
+	-no-display=True
 
 # We evaluate on the whole dataset
 echo Evaluating

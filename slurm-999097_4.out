@@ -1,0 +1,388 @@
+Job running on landonia23
+Job started: 02/11/2020 22:51:13
+Setting up bash enviroment
+Activating conda environment: gensim
+Running provided command: bash scripts/experiment.sh "W2V_TEST_ES2" es2 w2v false false false None
+Creating the folder for the experiment
+About to run WEAT test es2
+Creating a temp folder in scratch space...
+Copying data to scratch space...
+sending incremental file list
+w2v_embeddings.300.vec
+
+sent 185,831,522 bytes  received 35 bytes  33,787,555.82 bytes/sec
+total size is 185,786,045  speedup is 1.00
+Running WEAT script...
+INFO:root:XWEAT started
+INFO:root:Translating terms from en to es
+INFO:root:Embeddings are in vec format
+INFO:gensim.models.utils_any2vec:loading projection weights from /disk/scratch/v1rmuoz2/28086/weat_temp/data/w2v_embeddings.300.vec
+INFO:gensim.models.utils_any2vec:loaded (52490, 300) matrix from /disk/scratch/v1rmuoz2/28086/weat_temp/data/w2v_embeddings.300.vec
+INFO:root:Embeddings loaded
+INFO:root:Running test
+WARNING:root:Not in vocab shirley
+WARNING:root:Not in vocab yamileth
+WARNING:root:Not in vocab bairon
+WARNING:root:Not in vocab apestar
+WARNING:root:Not in vocab malcon
+WARNING:root:Not in vocab yastin
+WARNING:root:Not in vocab yeison
+WARNING:root:Not in vocab maryori
+WARNING:root:Not in vocab isidora
+WARNING:root:Not in vocab yaritza
+WARNING:root:Not in vocab nayareth
+WARNING:root:Not in vocab yeremi
+WARNING:root:Not in vocab hedor
+WARNING:root:Not in vocab vacación
+INFO:root:Popped T1 56
+INFO:root:Popped T1 8
+INFO:root:Popped T1 28
+INFO:root:Popped T1 80
+INFO:root:Popped A2 82
+INFO:root:Popped A2 20
+INFO:root:Popped A2 39
+INFO:root:Popped A2 18
+INFO:root:Popped A2 55
+INFO:root:Calculating p value ... 
+INFO:root:Number of possible permutations: 184756
+INFO:root:Computing randomly first 100000 permutations
+INFO:root:Iteration 100000 finished
+INFO:root:(0.039371103, 0.13078472, 0.40062)
+Copying results back to headnode...
+sending incremental file list
+./
+w2v_embeddings.300_W2V_TEST_ES2.out
+w2v_embeddings.300_W2V_TEST_ES2.res
+
+sent 1,630 bytes  received 57 bytes  3,374.00 bytes/sec
+total size is 1,415  speedup is 0.84
+Deleting data from scratch space...
+About to train the subtask 1 network
+Creating a temp forder in scratch
+Copying data to scratch space
+sending incremental file list
+./
+.empty
+hateval2019_clean_es_dev.csv
+hateval2019_clean_es_test.csv
+hateval2019_clean_es_train.csv
+hateval2019_en_dev.csv
+hateval2019_en_test.csv
+hateval2019_en_train.csv
+hateval2019_es_dev.csv
+hateval2019_es_test.csv
+hateval2019_es_train.csv
+task1_es_dev.csv
+task1_es_test.csv
+task1_es_train.csv
+task1_g1_dev.csv
+task1_g1_test.csv
+task1_g1_train.csv
+task1_g2_dev.csv
+task1_g2_test.csv
+task1_g2_train.csv
+task2_es_dev.csv
+task2_es_test.csv
+task2_es_train.csv
+task2_g1_dev.csv
+task2_g1_test.csv
+task2_g1_train.csv
+task2_g2_dev.csv
+task2_g2_test.csv
+task2_g2_train.csv
+
+sent 8,884,802 bytes  received 551 bytes  17,770,706.00 bytes/sec
+total size is 8,880,806  speedup is 1.00
+sending incremental file list
+./
+Pipeline_Test_w2v_embeddings.300.vec
+ft_embeddings.300.model
+ft_embeddings.300.model.trainables.syn1neg.npy
+ft_embeddings.300.model.trainables.vectors_ngrams_lockf.npy
+ft_embeddings.300.model.trainables.vectors_vocab_lockf.npy
+ft_embeddings.300.model.wv.vectors.npy
+ft_embeddings.300.model.wv.vectors_ngrams.npy
+ft_embeddings.300.model.wv.vectors_vocab.npy
+ft_embeddings.300.txt
+ft_embeddings.300.vec
+w2v_embeddings.300.model
+w2v_embeddings.300.model.trainables.syn1neg.npy
+w2v_embeddings.300.model.wv.vectors.npy
+w2v_embeddings.300.txt
+w2v_embeddings.300.vec
+mod_temp/
+
+sent 6,073,702,894 bytes  received 312 bytes  48,396,041.48 bytes/sec
+total size is 6,072,219,153  speedup is 1.00
+ft_embeddings.300.model
+ft_embeddings.300.model.trainables.syn1neg.npy
+ft_embeddings.300.model.trainables.vectors_ngrams_lockf.npy
+ft_embeddings.300.model.trainables.vectors_vocab_lockf.npy
+ft_embeddings.300.model.wv.vectors_ngrams.npy
+ft_embeddings.300.model.wv.vectors.npy
+ft_embeddings.300.model.wv.vectors_vocab.npy
+ft_embeddings.300.txt
+ft_embeddings.300.vec
+hateval2019_clean_es_dev.csv
+hateval2019_clean_es_test.csv
+hateval2019_clean_es_train.csv
+hateval2019_en_dev.csv
+hateval2019_en_test.csv
+hateval2019_en_train.csv
+hateval2019_es_dev.csv
+hateval2019_es_test.csv
+hateval2019_es_train.csv
+mod_temp
+Pipeline_Test_w2v_embeddings.300.vec
+task1_es_dev.csv
+task1_es_test.csv
+task1_es_train.csv
+task1_g1_dev.csv
+task1_g1_test.csv
+task1_g1_train.csv
+task1_g2_dev.csv
+task1_g2_test.csv
+task1_g2_train.csv
+task2_es_dev.csv
+task2_es_test.csv
+task2_es_train.csv
+task2_g1_dev.csv
+task2_g1_test.csv
+task2_g1_train.csv
+task2_g2_dev.csv
+task2_g2_test.csv
+task2_g2_train.csv
+w2v_embeddings.300.model
+w2v_embeddings.300.model.trainables.syn1neg.npy
+w2v_embeddings.300.model.wv.vectors.npy
+w2v_embeddings.300.txt
+w2v_embeddings.300.vec
+Training CNN
+/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torchtext/data/field.py:150: UserWarning: Field class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.
+  warnings.warn('{} class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.'.format(self.__class__.__name__), UserWarning)
+/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torchtext/data/example.py:78: UserWarning: Example class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.
+  warnings.warn('Example class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.', UserWarning)
+/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torchtext/data/iterator.py:48: UserWarning: BucketIterator class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.
+  warnings.warn('{} class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.'.format(self.__class__.__name__), UserWarning)
+The `device` argument should be set by using `torch.device` or passing a string as an argument. This behavior will be deprecated soon and currently defaults to cpu.
+The `device` argument should be set by using `torch.device` or passing a string as an argument. This behavior will be deprecated soon and currently defaults to cpu.
+The `device` argument should be set by using `torch.device` or passing a string as an argument. This behavior will be deprecated soon and currently defaults to cpu.
+/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torchtext/data/batch.py:23: UserWarning: Batch class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.
+  warnings.warn('{} class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.'.format(self.__class__.__name__), UserWarning)
+/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torch/nn/_reduction.py:44: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+
+Loading data...
+
+Parameters:
+	BATCH_SIZE=64
+	CLASS_NUM=2
+	CUDA=False
+	DATA_NAME=task1_es_
+	DATA_PATH=/disk/scratch/v1rmuoz2/28086/cnn_temp/data/
+	DEVICE=-1
+	DROPOUT=0.5
+	EARLY_STOP=1000
+	EMBED_DIM=300
+	EMBED_NUM=13466
+	EMBEDDINGS=/disk/scratch/v1rmuoz2/28086/cnn_temp/data/w2v_embeddings.300.vec
+	EPOCHS=256
+	FIRST_HALF=False
+	KERNEL_NUM=100
+	KERNEL_SIZES=[3, 4, 5]
+	LOG_INTERVAL=1
+	LR=0.001
+	MAX_NORM=3.0
+	NO_DISPLAY=True
+	PREDICT=None
+	RESULTS_PATH=None
+	SAVE_BEST=True
+	SAVE_DIR=./cnn/snapshot/2020-11-02_23-06-51
+	SAVE_INTERVAL=500
+	SHUFFLE=False
+	SNAPSHOT=None
+	STATIC=False
+	TEST=False
+	TEST_INTERVAL=100
+	TEXT_FIELD=<torchtext.data.field.Field object at 0x7f5ca5d57850>
+	USE_HALF=False
+
+Evaluating
+/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torchtext/data/field.py:150: UserWarning: Field class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.
+  warnings.warn('{} class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.'.format(self.__class__.__name__), UserWarning)
+/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torchtext/data/example.py:78: UserWarning: Example class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.
+  warnings.warn('Example class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.', UserWarning)
+/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torchtext/data/iterator.py:48: UserWarning: BucketIterator class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.
+  warnings.warn('{} class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.'.format(self.__class__.__name__), UserWarning)
+The `device` argument should be set by using `torch.device` or passing a string as an argument. This behavior will be deprecated soon and currently defaults to cpu.
+The `device` argument should be set by using `torch.device` or passing a string as an argument. This behavior will be deprecated soon and currently defaults to cpu.
+The `device` argument should be set by using `torch.device` or passing a string as an argument. This behavior will be deprecated soon and currently defaults to cpu.
+/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torchtext/data/batch.py:23: UserWarning: Batch class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.
+  warnings.warn('{} class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.'.format(self.__class__.__name__), UserWarning)
+/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torch/nn/_reduction.py:44: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+
+Loading data...
+
+Parameters:
+	BATCH_SIZE=64
+	CLASS_NUM=2
+	CUDA=False
+	DATA_NAME=task1_es_
+	DATA_PATH=/disk/scratch/v1rmuoz2/28086/cnn_temp/data/
+	DEVICE=-1
+	DROPOUT=0.5
+	EARLY_STOP=1000
+	EMBED_DIM=300
+	EMBED_NUM=13466
+	EMBEDDINGS=/disk/scratch/v1rmuoz2/28086/cnn_temp/data/w2v_embeddings.300.vec
+	EPOCHS=256
+	FIRST_HALF=False
+	KERNEL_NUM=100
+	KERNEL_SIZES=[3, 4, 5]
+	LOG_INTERVAL=1
+	LR=0.001
+	MAX_NORM=3.0
+	NO_DISPLAY=False
+	PREDICT=None
+	RESULTS_PATH=/disk/scratch/v1rmuoz2/28086/cnn_temp/out/task1_W2V_TEST_ES2.txt
+	SAVE_BEST=True
+	SAVE_DIR=./cnn/snapshot/2020-11-03_01-00-22
+	SAVE_INTERVAL=500
+	SHUFFLE=False
+	SNAPSHOT=./cnn/snapshot/best_steps_model.pt
+	STATIC=False
+	TEST=True
+	TEST_INTERVAL=100
+	TEXT_FIELD=<torchtext.data.field.Field object at 0x7fd8657add50>
+	USE_HALF=False
+
+Loading model from ./cnn/snapshot/best_steps_model.pt...
+
+Evaluation - loss: 1.254040  acc: 74.7500%(1196/1600) 
+
+Evaluating on group 1
+/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torchtext/data/field.py:150: UserWarning: Field class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.
+  warnings.warn('{} class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.'.format(self.__class__.__name__), UserWarning)
+/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torchtext/data/example.py:78: UserWarning: Example class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.
+  warnings.warn('Example class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.', UserWarning)
+/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torchtext/data/iterator.py:48: UserWarning: BucketIterator class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.
+  warnings.warn('{} class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.'.format(self.__class__.__name__), UserWarning)
+The `device` argument should be set by using `torch.device` or passing a string as an argument. This behavior will be deprecated soon and currently defaults to cpu.
+The `device` argument should be set by using `torch.device` or passing a string as an argument. This behavior will be deprecated soon and currently defaults to cpu.
+The `device` argument should be set by using `torch.device` or passing a string as an argument. This behavior will be deprecated soon and currently defaults to cpu.
+/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torchtext/data/batch.py:23: UserWarning: Batch class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.
+  warnings.warn('{} class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.'.format(self.__class__.__name__), UserWarning)
+/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torch/nn/_reduction.py:44: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+
+Loading data...
+
+Parameters:
+	BATCH_SIZE=64
+	CLASS_NUM=2
+	CUDA=False
+	DATA_NAME=task1_es_
+	DATA_PATH=/disk/scratch/v1rmuoz2/28086/cnn_temp/data/
+	DEVICE=-1
+	DROPOUT=0.5
+	EARLY_STOP=1000
+	EMBED_DIM=300
+	EMBED_NUM=13466
+	EMBEDDINGS=/disk/scratch/v1rmuoz2/28086/cnn_temp/data/w2v_embeddings.300.vec
+	EPOCHS=256
+	FIRST_HALF=True
+	KERNEL_NUM=100
+	KERNEL_SIZES=[3, 4, 5]
+	LOG_INTERVAL=1
+	LR=0.001
+	MAX_NORM=3.0
+	NO_DISPLAY=False
+	PREDICT=None
+	RESULTS_PATH=/disk/scratch/v1rmuoz2/28086/cnn_temp/out/task1_W2V_TEST_ES2_g1.txt
+	SAVE_BEST=True
+	SAVE_DIR=./cnn/snapshot/2020-11-03_01-00-48
+	SAVE_INTERVAL=500
+	SHUFFLE=False
+	SNAPSHOT=./cnn/snapshot/best_steps_model.pt
+	STATIC=False
+	TEST=True
+	TEST_INTERVAL=100
+	TEXT_FIELD=<torchtext.data.field.Field object at 0x7f5048691a10>
+	USE_HALF=True
+
+Loading model from ./cnn/snapshot/best_steps_model.pt...
+
+Evaluation - loss: 1.034455  acc: 83.8750%(671/800) 
+
+Evaluationg on group 2
+/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torchtext/data/field.py:150: UserWarning: Field class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.
+  warnings.warn('{} class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.'.format(self.__class__.__name__), UserWarning)
+/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torchtext/data/example.py:78: UserWarning: Example class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.
+  warnings.warn('Example class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.', UserWarning)
+/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torchtext/data/iterator.py:48: UserWarning: BucketIterator class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.
+  warnings.warn('{} class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.'.format(self.__class__.__name__), UserWarning)
+The `device` argument should be set by using `torch.device` or passing a string as an argument. This behavior will be deprecated soon and currently defaults to cpu.
+The `device` argument should be set by using `torch.device` or passing a string as an argument. This behavior will be deprecated soon and currently defaults to cpu.
+The `device` argument should be set by using `torch.device` or passing a string as an argument. This behavior will be deprecated soon and currently defaults to cpu.
+/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torchtext/data/batch.py:23: UserWarning: Batch class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.
+  warnings.warn('{} class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.'.format(self.__class__.__name__), UserWarning)
+/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torch/nn/_reduction.py:44: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+
+Loading data...
+
+Parameters:
+	BATCH_SIZE=64
+	CLASS_NUM=2
+	CUDA=False
+	DATA_NAME=task1_es_
+	DATA_PATH=/disk/scratch/v1rmuoz2/28086/cnn_temp/data/
+	DEVICE=-1
+	DROPOUT=0.5
+	EARLY_STOP=1000
+	EMBED_DIM=300
+	EMBED_NUM=13466
+	EMBEDDINGS=/disk/scratch/v1rmuoz2/28086/cnn_temp/data/w2v_embeddings.300.vec
+	EPOCHS=256
+	FIRST_HALF=False
+	KERNEL_NUM=100
+	KERNEL_SIZES=[3, 4, 5]
+	LOG_INTERVAL=1
+	LR=0.001
+	MAX_NORM=3.0
+	NO_DISPLAY=False
+	PREDICT=None
+	RESULTS_PATH=/disk/scratch/v1rmuoz2/28086/cnn_temp/out/task1_W2V_TEST_ES2_g2.txt
+	SAVE_BEST=True
+	SAVE_DIR=./cnn/snapshot/2020-11-03_01-01-13
+	SAVE_INTERVAL=500
+	SHUFFLE=False
+	SNAPSHOT=./cnn/snapshot/best_steps_model.pt
+	STATIC=False
+	TEST=True
+	TEST_INTERVAL=100
+	TEXT_FIELD=<torchtext.data.field.Field object at 0x7f5002f93a10>
+	USE_HALF=True
+
+Loading model from ./cnn/snapshot/best_steps_model.pt...
+
+Evaluation - loss: 1.473628  acc: 65.6250%(525/800) 
+
+Copying results to the headnode
+sending incremental file list
+./
+task1_W2V_TEST_ES2.txt
+task1_W2V_TEST_ES2_g1.txt
+task1_W2V_TEST_ES2_g2.txt
+
+sent 475 bytes  received 76 bytes  367.33 bytes/sec
+total size is 192  speedup is 0.35
+Deleting data from scratch space
+Experiment successful!
+Removing temporary files
+Command ran successfully!
+
+============
+job finished successfully
+Job finished: 03/11/2020 01:01:25

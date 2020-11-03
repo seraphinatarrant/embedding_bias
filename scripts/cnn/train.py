@@ -41,12 +41,13 @@ def train(train_iter, dev_iter, model, args):
             if steps % args.log_interval == 0:
                 corrects = (torch.max(logit, 1)[1].view(target.size()).data == target.data).sum()
                 accuracy = 100.0 * corrects/batch.batch_size
-                sys.stdout.write(
-                    '\rBatch[{}] - loss: {:.6f}  acc: {:.4f}%({}/{})'.format(steps, 
-                                                                             loss.item(), 
-                                                                             accuracy.item(),
-                                                                             corrects.item(),
-                                                                             batch.batch_size))
+                if not args.no_display:
+                     sys.stdout.write(
+                         '\rBatch[{}] - loss: {:.6f}  acc: {:.4f}%({}/{})'.format(steps, 
+                                                                                  loss.item(), 
+                                                                                  accuracy.item(),
+                                                                                  corrects.item(),
+                                                                                  batch.batch_size))
             if steps % args.test_interval == 0:
                 dev_acc = eval(dev_iter, model, args)
                 if dev_acc > best_acc:
@@ -58,7 +59,7 @@ def train(train_iter, dev_iter, model, args):
                         save(model, "./cnn/snapshot/", "best", "model")
                         #### NEW ####
                 else:
-                    if steps - last_step >= args.early_stop:
+                    if (steps - last_step >= args.early_stop) and not args.no_display:
                         print('early stop by {} steps.'.format(args.early_stop))
             elif steps % args.save_interval == 0:
                 save(model, args.save_dir, './cnn/snapshot', steps)
@@ -97,10 +98,11 @@ def eval(data_iter, model, args):
     size = len(data_iter.dataset)
     avg_loss /= size
     accuracy = 100.0 * corrects/size
-    print('\nEvaluation - loss: {:.6f}  acc: {:.4f}%({}/{}) \n'.format(avg_loss, 
-                                                                       accuracy, 
-                                                                       corrects, 
-                                                                       size))
+    if not args.no_display:
+         print('\nEvaluation - loss: {:.6f}  acc: {:.4f}%({}/{}) \n'.format(avg_loss, 
+                                                                            accuracy, 
+                                                                            corrects, 
+                                                                            size))
     
     #### NEW ####
     # Saves the relevant metrics if a results path is selected
