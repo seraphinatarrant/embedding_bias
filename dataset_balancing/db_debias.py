@@ -57,7 +57,7 @@ with open(sys.argv[2], 'w') as outfile:
 
 
     if sys.argv[4] == "debias":
-        extreme = True # triggers unbalancing in the debias direction (by removing all probias instances)
+        extreme = False # triggers unbalancing in the debias direction (by removing all probias instances)
         new_a1_pro = 0
         new_a2_pro = 0
         for line in infile:
