@@ -11,8 +11,8 @@ set -o errexit
 
 # source my bashrc
 source ~/.bashrc
-# activate the project environment
-conda activate bias_env
+# activate the project environment (change this where necessary)
+conda activate bias_env2
 
 echo Creating a folder in scratch space
 mkdir -p /disk/scratch/${STUDENT_ID}/fasttext_temp
@@ -22,7 +22,7 @@ echo Copying data over to scratch space
 rsync -av $1 /disk/scratch/${STUDENT_ID}/fasttext_temp/training_data.txt
 
 echo Executing python script
-python train_ft_embeddings.py /disk/scratch/${STUDENT_ID}/fasttext_temp/training_data.txt /disk/scratch/${STUDENT_ID}/fasttext_temp/ft_vectors_w2vformat.txt
+python fasttext/train_ft_embeddings.py /disk/scratch/${STUDENT_ID}/fasttext_temp/training_data.txt /disk/scratch/${STUDENT_ID}/fasttext_temp/ft_vectors_w2vformat.txt
 
 echo Copying models back to headnode
 rsync -av /disk/scratch/${STUDENT_ID}/fasttext_temp/ft_vectors_w2vformat.txt $2
