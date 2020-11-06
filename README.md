@@ -6,6 +6,8 @@ It is separated into 3 sections:
   2) Training the coreference resolution model and measuring bias in both the word embeddings and the output of the coreference resolution model
   3) Altering the word embeddings (to create new experiment conditions)
 
+NB: Python scripts that are called within the bash scripts are called as if the bash script is being run from inside the embedding_bias folder
+
 Section 1: Train word embeddings
 
 Fasttext
