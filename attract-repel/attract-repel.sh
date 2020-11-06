@@ -50,27 +50,27 @@ rsync -av ./weat8_syn_t6.txt /disk/scratch/${STUDENT_ID}/attractrepel/
 
 echo AR test 1 \(WEAT 6 debias\)
 
-python3 ./attract-repel_new.py ./experiment_parameters_t1.cfg
+python3 ./attract-repel/attract-repel_new.py ./experiment_parameters_t1.cfg
 
 echo AR test 2 \(WEAT 6 overbias\)
 
-python3 ./attract-repel_new.py ./experiment_parameters_t2.cfg
+python3 ./attract-repel/attract-repel_new.py ./experiment_parameters_t2.cfg
 
 echo AR test 3 \(WEAT 7 debias\)
 
-python3 ./attract-repel_new.py ./experiment_parameters_t3.cfg
+python3 ./attract-repel/attract-repel_new.py ./experiment_parameters_t3.cfg
 
 echo AR test 4 \(WEAT 7 overbias\)
 
-python3 ./attract-repel_new.py ./experiment_parameters_t4.cfg
+python3 ./attract-repel/attract-repel_new.py ./experiment_parameters_t4.cfg
 
 echo AR test 5 \(WEAT 8 debias\)
 
-python3 ./attract-repel_new.py ./experiment_parameters_t5.cfg
+python3 ./attract-repel/attract-repel_new.py ./experiment_parameters_t5.cfg
 
 echo AR test 6 \(WEAT 8 overbias\)
 
-python3 ./attract-repel_new.py ./experiment_parameters_t6.cfg
+python3 ./attract-repel/attract-repel_new.py ./experiment_parameters_t6.cfg
 
 echo copying vectors back to headnode
 
