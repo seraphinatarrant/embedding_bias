@@ -12,7 +12,7 @@ set -o errexit
 source ~/.bashrc
 
 # activate the project environment
-conda activate bias_env
+conda activate bias_env2
 
 # make a dedicated directory in the scratch space of the cluster node
 mkdir -p /disk/scratch/${STUDENT_ID}/attractrepel
