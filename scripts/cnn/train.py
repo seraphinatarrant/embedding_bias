@@ -56,7 +56,7 @@ def train(train_iter, dev_iter, model, args):
                     if args.save_best:
                         save(model, args.save_dir, 'best', steps)
                         #### NEW ####
-                        save(model, "./cnn/snapshot/", "best", "model")
+                        save(model, args.save_dir, "best", "model")
                         #### NEW ####
                 else:
                     if (steps - last_step >= args.early_stop) and not args.no_display:

@@ -1,9 +1,0 @@
-INFO:root:XWEAT started
-Traceback (most recent call last):
-  File "xweat/weat.py", line 742, in <module>
-    args = main()
-  File "xweat/weat.py", line 635, in main
-    train_weat(args)
-  File "xweat/weat.py", line 690, in train_weat
-    targets_1, targets_2, attributes_1, attributes_2 = weat.weat_sp1()
-AttributeError: 'XWEAT' object has no attribute 'weat_sp1'

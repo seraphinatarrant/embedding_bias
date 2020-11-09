@@ -1,4 +1,0 @@
-INFO:root:XWEAT started
-INFO:root:Translating terms from en to es
-INFO:root:Embeddings are in vec format
-INFO:gensim.models.utils_any2vec:loading projection weights from ../data/embeddings/ft_embeddings.300.vec

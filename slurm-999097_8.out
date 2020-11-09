@@ -1,241 +1,0 @@
-Job running on landonia23
-Job started: 02/11/2020 22:51:14
-Setting up bash enviroment
-Activating conda environment: gensim
-Running provided command: bash scripts/experiment.sh "FT_TEST_ES2"  es2 ft  false false false None
-Creating the folder for the experiment
-About to run WEAT test es2
-Creating a temp folder in scratch space...
-Copying data to scratch space...
-sending incremental file list
-ft_embeddings.300.vec
-
-sent 183,816,186 bytes  received 35 bytes  122,544,147.33 bytes/sec
-total size is 183,771,198  speedup is 1.00
-Running WEAT script...
-INFO:root:XWEAT started
-INFO:root:Translating terms from en to es
-INFO:root:Embeddings are in vec format
-INFO:gensim.models.utils_any2vec:loading projection weights from /disk/scratch/v1rmuoz2/2819/weat_temp/data/ft_embeddings.300.vec
-INFO:gensim.models.utils_any2vec:loaded (52490, 300) matrix from /disk/scratch/v1rmuoz2/2819/weat_temp/data/ft_embeddings.300.vec
-INFO:root:Embeddings loaded
-INFO:root:Running test
-WARNING:root:Not in vocab bairon
-WARNING:root:Not in vocab isidora
-WARNING:root:Not in vocab yamileth
-WARNING:root:Not in vocab apestar
-WARNING:root:Not in vocab yastin
-WARNING:root:Not in vocab maryori
-WARNING:root:Not in vocab vacación
-WARNING:root:Not in vocab malcon
-WARNING:root:Not in vocab shirley
-WARNING:root:Not in vocab yeison
-WARNING:root:Not in vocab yaritza
-WARNING:root:Not in vocab yeremi
-WARNING:root:Not in vocab hedor
-WARNING:root:Not in vocab nayareth
-INFO:root:Popped T1 60
-INFO:root:Popped T1 15
-INFO:root:Popped T1 65
-INFO:root:Popped T1 58
-INFO:root:Popped A2 56
-INFO:root:Popped A2 34
-INFO:root:Popped A2 55
-INFO:root:Popped A2 81
-INFO:root:Popped A2 11
-INFO:root:Calculating p value ... 
-INFO:root:Number of possible permutations: 184756
-INFO:root:Computing randomly first 100000 permutations
-INFO:root:Iteration 100000 finished
-INFO:root:(0.06190061, 0.16126536, 0.36959)
-Copying results back to headnode...
-sending incremental file list
-./
-ft_embeddings.300_FT_TEST_ES2.out
-ft_embeddings.300_FT_TEST_ES2.res
-
-sent 1,625 bytes  received 57 bytes  3,364.00 bytes/sec
-total size is 1,409  speedup is 0.84
-Deleting data from scratch space...
-About to train the subtask 1 network
-Creating a temp forder in scratch
-Copying data to scratch space
-sending incremental file list
-./
-.empty
-hateval2019_clean_es_dev.csv
-hateval2019_clean_es_test.csv
-hateval2019_clean_es_train.csv
-hateval2019_en_dev.csv
-hateval2019_en_test.csv
-hateval2019_en_train.csv
-hateval2019_es_dev.csv
-hateval2019_es_test.csv
-hateval2019_es_train.csv
-task1_es_dev.csv
-task1_es_test.csv
-task1_es_train.csv
-task1_g1_dev.csv
-task1_g1_test.csv
-task1_g1_train.csv
-task1_g2_dev.csv
-task1_g2_test.csv
-task1_g2_train.csv
-task2_es_dev.csv
-task2_es_test.csv
-task2_es_train.csv
-task2_g1_dev.csv
-task2_g1_test.csv
-task2_g1_train.csv
-task2_g2_dev.csv
-task2_g2_test.csv
-task2_g2_train.csv
-
-sent 8,884,802 bytes  received 551 bytes  17,770,706.00 bytes/sec
-total size is 8,880,806  speedup is 1.00
-sending incremental file list
-./
-Pipeline_Test_w2v_embeddings.300.vec
-ft_embeddings.300.model
-ft_embeddings.300.model.trainables.syn1neg.npy
-ft_embeddings.300.model.trainables.vectors_ngrams_lockf.npy
-ft_embeddings.300.model.trainables.vectors_vocab_lockf.npy
-ft_embeddings.300.model.wv.vectors.npy
-ft_embeddings.300.model.wv.vectors_ngrams.npy
-ft_embeddings.300.model.wv.vectors_vocab.npy
-ft_embeddings.300.txt
-ft_embeddings.300.vec
-w2v_embeddings.300.model
-w2v_embeddings.300.model.trainables.syn1neg.npy
-w2v_embeddings.300.model.wv.vectors.npy
-w2v_embeddings.300.txt
-w2v_embeddings.300.vec
-mod_temp/
-
-sent 6,073,702,894 bytes  received 312 bytes  51,254,879.38 bytes/sec
-total size is 6,072,219,153  speedup is 1.00
-ft_embeddings.300.model
-ft_embeddings.300.model.trainables.syn1neg.npy
-ft_embeddings.300.model.trainables.vectors_ngrams_lockf.npy
-ft_embeddings.300.model.trainables.vectors_vocab_lockf.npy
-ft_embeddings.300.model.wv.vectors_ngrams.npy
-ft_embeddings.300.model.wv.vectors.npy
-ft_embeddings.300.model.wv.vectors_vocab.npy
-ft_embeddings.300.txt
-ft_embeddings.300.vec
-hateval2019_clean_es_dev.csv
-hateval2019_clean_es_test.csv
-hateval2019_clean_es_train.csv
-hateval2019_en_dev.csv
-hateval2019_en_test.csv
-hateval2019_en_train.csv
-hateval2019_es_dev.csv
-hateval2019_es_test.csv
-hateval2019_es_train.csv
-mod_temp
-Pipeline_Test_w2v_embeddings.300.vec
-task1_es_dev.csv
-task1_es_test.csv
-task1_es_train.csv
-task1_g1_dev.csv
-task1_g1_test.csv
-task1_g1_train.csv
-task1_g2_dev.csv
-task1_g2_test.csv
-task1_g2_train.csv
-task2_es_dev.csv
-task2_es_test.csv
-task2_es_train.csv
-task2_g1_dev.csv
-task2_g1_test.csv
-task2_g1_train.csv
-task2_g2_dev.csv
-task2_g2_test.csv
-task2_g2_train.csv
-w2v_embeddings.300.model
-w2v_embeddings.300.model.trainables.syn1neg.npy
-w2v_embeddings.300.model.wv.vectors.npy
-w2v_embeddings.300.txt
-w2v_embeddings.300.vec
-Training CNN
-/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torchtext/data/field.py:150: UserWarning: Field class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.
-  warnings.warn('{} class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.'.format(self.__class__.__name__), UserWarning)
-/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torchtext/data/example.py:78: UserWarning: Example class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.
-  warnings.warn('Example class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.', UserWarning)
-/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torchtext/data/iterator.py:48: UserWarning: BucketIterator class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.
-  warnings.warn('{} class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.'.format(self.__class__.__name__), UserWarning)
-The `device` argument should be set by using `torch.device` or passing a string as an argument. This behavior will be deprecated soon and currently defaults to cpu.
-The `device` argument should be set by using `torch.device` or passing a string as an argument. This behavior will be deprecated soon and currently defaults to cpu.
-The `device` argument should be set by using `torch.device` or passing a string as an argument. This behavior will be deprecated soon and currently defaults to cpu.
-  0%|          | 0/52490 [00:00<?, ?it/s]Skipping token b'52490' with 1-dimensional vector [b'300']; likely a header
-  0%|          | 2/52490 [00:00<1:07:15, 13.01it/s]  1%|          | 507/52490 [00:00<46:40, 18.56it/s]  2%|▏         | 1051/52490 [00:00<32:22, 26.48it/s]  3%|▎         | 1597/52490 [00:00<22:28, 37.75it/s]  4%|▍         | 2144/52490 [00:00<15:36, 53.76it/s]  5%|▌         | 2691/52490 [00:00<10:51, 76.48it/s]  6%|▌         | 3238/52490 [00:00<07:33, 108.61it/s]  7%|▋         | 3786/52490 [00:00<05:16, 153.85it/s]  8%|▊         | 4332/52490 [00:00<03:41, 217.16it/s]  9%|▉         | 4879/52490 [00:01<02:36, 305.03it/s] 10%|█         | 5427/52490 [00:01<01:50, 425.61it/s] 11%|█▏        | 5975/52490 [00:01<01:19, 588.41it/s] 12%|█▏        | 6523/52490 [00:01<00:57, 803.59it/s] 13%|█▎        | 7071/52490 [00:01<00:42, 1080.07it/s] 15%|█▍        | 7620/52490 [00:01<00:31, 1422.86it/s] 16%|█▌        | 8169/52490 [00:01<00:24, 1829.26it/s] 17%|█▋        | 8717/52490 [00:01<00:19, 2285.78it/s] 18%|█▊        | 9265/52490 [00:01<00:15, 2769.91it/s] 19%|█▊        | 9812/52490 [00:01<00:13, 3251.24it/s] 20%|█▉        | 10360/52490 [00:02<00:11, 3702.60it/s] 21%|██        | 10908/52490 [00:02<00:10, 4100.45it/s] 22%|██▏       | 11455/52490 [00:02<00:09, 4433.21it/s] 23%|██▎       | 12003/52490 [00:02<00:08, 4701.75it/s] 24%|██▍       | 12551/52490 [00:02<00:08, 4906.59it/s] 25%|██▍       | 13098/52490 [00:02<00:07, 5061.37it/s] 26%|██▌       | 13645/52490 [00:02<00:07, 5173.34it/s] 27%|██▋       | 14192/52490 [00:02<00:07, 5258.12it/s] 28%|██▊       | 14739/52490 [00:02<00:07, 5288.83it/s] 29%|██▉       | 15283/52490 [00:02<00:06, 5331.77it/s] 30%|███       | 15830/52490 [00:03<00:06, 5370.26it/s] 31%|███       | 16376/52490 [00:03<00:06, 5394.91it/s] 32%|███▏      | 16921/52490 [00:03<00:06, 5410.87it/s] 33%|███▎      | 17468/52490 [00:03<00:06, 5426.13it/s] 34%|███▍      | 18014/52490 [00:03<00:06, 5435.75it/s] 35%|███▌      | 18561/52490 [00:03<00:06, 5443.92it/s] 36%|███▋      | 19108/52490 [00:03<00:06, 5450.48it/s] 37%|███▋      | 19655/52490 [00:03<00:06, 5455.52it/s] 38%|███▊      | 20202/52490 [00:03<00:05, 5454.37it/s] 40%|███▉      | 20748/52490 [00:03<00:05, 5452.69it/s] 41%|████      | 21294/52490 [00:04<00:05, 5444.45it/s] 42%|████▏     | 21840/52490 [00:04<00:05, 5447.29it/s] 43%|████▎     | 22385/52490 [00:04<00:05, 5446.48it/s] 44%|████▎     | 22931/52490 [00:04<00:05, 5450.52it/s] 45%|████▍     | 23477/52490 [00:04<00:05, 5451.86it/s] 46%|████▌     | 24023/52490 [00:04<00:05, 5453.76it/s] 47%|████▋     | 24570/52490 [00:04<00:05, 5456.10it/s] 48%|████▊     | 25116/52490 [00:04<00:05, 5449.01it/s] 49%|████▉     | 25661/52490 [00:04<00:04, 5444.75it/s] 50%|████▉     | 26206/52490 [00:04<00:04, 5445.82it/s] 51%|█████     | 26751/52490 [00:05<00:04, 5443.55it/s] 52%|█████▏    | 27296/52490 [00:05<00:04, 5442.92it/s] 53%|█████▎    | 27841/52490 [00:05<00:04, 5442.43it/s] 54%|█████▍    | 28387/52490 [00:05<00:04, 5446.73it/s] 55%|█████▌    | 28932/52490 [00:05<00:04, 5445.03it/s] 56%|█████▌    | 29478/52490 [00:05<00:04, 5449.22it/s] 57%|█████▋    | 30024/52490 [00:05<00:04, 5451.63it/s] 58%|█████▊    | 30570/52490 [00:05<00:04, 5450.69it/s] 59%|█████▉    | 31116/52490 [00:05<00:03, 5451.96it/s] 60%|██████    | 31662/52490 [00:05<00:03, 5448.48it/s] 61%|██████▏   | 32207/52490 [00:06<00:03, 5448.48it/s] 62%|██████▏   | 32753/52490 [00:06<00:03, 5450.99it/s] 63%|██████▎   | 33299/52490 [00:06<00:03, 5448.25it/s] 64%|██████▍   | 33845/52490 [00:06<00:03, 5451.31it/s] 66%|██████▌   | 34391/52490 [00:06<00:03, 5452.59it/s] 67%|██████▋   | 34937/52490 [00:06<00:03, 5452.34it/s] 68%|██████▊   | 35483/52490 [00:06<00:03, 5449.42it/s] 69%|██████▊   | 36029/52490 [00:06<00:03, 5449.74it/s] 70%|██████▉   | 36576/52490 [00:06<00:02, 5455.04it/s] 71%|███████   | 37122/52490 [00:06<00:02, 5451.11it/s] 72%|███████▏  | 37668/52490 [00:07<00:02, 5449.84it/s] 73%|███████▎  | 38213/52490 [00:07<00:02, 5449.74it/s] 74%|███████▍  | 38758/52490 [00:07<00:02, 5447.12it/s] 75%|███████▍  | 39304/52490 [00:07<00:02, 5450.53it/s] 76%|███████▌  | 39850/52490 [00:07<00:02, 5451.40it/s] 77%|███████▋  | 40396/52490 [00:07<00:02, 5452.42it/s] 78%|███████▊  | 40942/52490 [00:07<00:02, 5450.65it/s] 79%|███████▉  | 41488/52490 [00:07<00:02, 5451.15it/s] 80%|████████  | 42034/52490 [00:07<00:01, 5453.77it/s] 81%|████████  | 42580/52490 [00:07<00:01, 5449.87it/s] 82%|████████▏ | 43126/52490 [00:08<00:01, 5450.80it/s] 83%|████████▎ | 43673/52490 [00:08<00:01, 5453.98it/s] 84%|████████▍ | 44219/52490 [00:08<00:01, 5453.43it/s] 85%|████████▌ | 44766/52490 [00:08<00:01, 5455.72it/s] 86%|████████▋ | 45312/52490 [00:08<00:01, 5451.63it/s] 87%|████████▋ | 45859/52490 [00:08<00:01, 5454.25it/s] 88%|████████▊ | 46406/52490 [00:08<00:01, 5456.14it/s] 89%|████████▉ | 46952/52490 [00:08<00:01, 5456.32it/s] 90%|█████████ | 47499/52490 [00:08<00:00, 5457.86it/s] 92%|█████████▏| 48045/52490 [00:08<00:00, 5453.77it/s] 93%|█████████▎| 48591/52490 [00:09<00:00, 5452.85it/s] 94%|█████████▎| 49137/52490 [00:09<00:00, 5451.25it/s] 95%|█████████▍| 49683/52490 [00:09<00:00, 5450.40it/s] 96%|█████████▌| 50230/52490 [00:09<00:00, 5455.15it/s] 97%|█████████▋| 50776/52490 [00:09<00:00, 5454.65it/s] 98%|█████████▊| 51322/52490 [00:09<00:00, 5449.29it/s] 99%|█████████▉| 51867/52490 [00:09<00:00, 5445.62it/s]100%|█████████▉| 52412/52490 [00:09<00:00, 5436.27it/s]100%|██████████| 52490/52490 [00:09<00:00, 5364.21it/s]
-/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torchtext/data/batch.py:23: UserWarning: Batch class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.
-  warnings.warn('{} class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.'.format(self.__class__.__name__), UserWarning)
-/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torch/nn/_reduction.py:44: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
-  warnings.warn(warning.format(ret))
-
-Loading data...
-
-Parameters:
-	BATCH_SIZE=64
-	CLASS_NUM=2
-	CUDA=False
-	DATA_NAME=task1_es_
-	DATA_PATH=/disk/scratch/v1rmuoz2/2819/cnn_temp/data/
-	DEVICE=-1
-	DROPOUT=0.5
-	EARLY_STOP=1000
-	EMBED_DIM=300
-	EMBED_NUM=13466
-	EMBEDDINGS=/disk/scratch/v1rmuoz2/2819/cnn_temp/data/ft_embeddings.300.vec
-	EPOCHS=256
-	FIRST_HALF=False
-	KERNEL_NUM=100
-	KERNEL_SIZES=[3, 4, 5]
-	LOG_INTERVAL=1
-	LR=0.001
-	MAX_NORM=3.0
-	NO_DISPLAY=True
-	PREDICT=None
-	RESULTS_PATH=None
-	SAVE_BEST=True
-	SAVE_DIR=./cnn/snapshot/2020-11-02_23-06-51
-	SAVE_INTERVAL=500
-	SHUFFLE=False
-	SNAPSHOT=None
-	STATIC=False
-	TEST=False
-	TEST_INTERVAL=100
-	TEXT_FIELD=<torchtext.data.field.Field object at 0x7f23942a0d50>
-	USE_HALF=False
-
-Evaluating
-/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torchtext/data/field.py:150: UserWarning: Field class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.
-  warnings.warn('{} class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.'.format(self.__class__.__name__), UserWarning)
-/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torchtext/data/example.py:78: UserWarning: Example class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.
-  warnings.warn('Example class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.', UserWarning)
-/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torchtext/data/iterator.py:48: UserWarning: BucketIterator class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.
-  warnings.warn('{} class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.'.format(self.__class__.__name__), UserWarning)
-The `device` argument should be set by using `torch.device` or passing a string as an argument. This behavior will be deprecated soon and currently defaults to cpu.
-The `device` argument should be set by using `torch.device` or passing a string as an argument. This behavior will be deprecated soon and currently defaults to cpu.
-The `device` argument should be set by using `torch.device` or passing a string as an argument. This behavior will be deprecated soon and currently defaults to cpu.
-
-Loading data...
-Traceback (most recent call last):
-  File "./cnn/main.py", line 292, in <module>
-    main()
-  File "./cnn/main.py", line 244, in main
-    vectors = vocab.Vectors(name=args.embeddings, cache='./cnn/')
-  File "/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torchtext/vocab.py", line 319, in __init__
-    self.cache(name, cache, url=url, max_vectors=max_vectors)
-  File "/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torchtext/vocab.py", line 428, in cache
-    self.itos, self.stoi, self.vectors, self.dim = torch.load(path_pt)
-  File "/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torch/serialization.py", line 584, in load
-    return _load(opened_zipfile, map_location, pickle_module, **pickle_load_args)
-  File "/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torch/serialization.py", line 842, in _load
-    result = unpickler.load()
-  File "/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torch/serialization.py", line 834, in persistent_load
-    load_tensor(data_type, size, key, _maybe_decode_ascii(location))
-  File "/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torch/serialization.py", line 822, in load_tensor
-    storage = zip_file.get_storage_from_record(name, size, dtype).storage()
-RuntimeError: [enforce fail at inline_container.cc:209] . file not found: archive/data/94901284735264

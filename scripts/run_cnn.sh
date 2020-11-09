@@ -50,7 +50,8 @@ python ./cnn/main.py \
 	-embeddings=$emb_path \
 	-data-path=$data_path/ \
 	-data-name=$data_name \
-	-no-display=True
+	-no-display=True \
+	-save-dir=$temp/
 
 # We evaluate on the whole dataset
 echo Evaluating
@@ -60,7 +61,7 @@ python ./cnn/main.py \
 	-data-path=$data_path/ \
 	-data-name=$data_name \
 	-results-path=$results_path \
-	-snapshot="./cnn/snapshot/best_steps_model.pt"
+	-snapshot="${temp}/best_steps_model.pt"
 
 # We evaluate on group 1
 echo Evaluating on group 1
@@ -70,7 +71,7 @@ python ./cnn/main.py \
 	-data-path=$data_path/ \
 	-data-name=$data_name \
 	-results-path=$results_g1 \
-	-snapshot="./cnn/snapshot/best_steps_model.pt" \
+	-snapshot="${temp}/best_steps_model.pt" \
 	-use-half=True \
 	-first-half=True
 
@@ -82,7 +83,7 @@ python ./cnn/main.py \
 	-data-path=$data_path/ \
 	-data-name=$data_name \
 	-results-path=$results_g2 \
-	-snapshot="./cnn/snapshot/best_steps_model.pt" \
+	-snapshot="${temp}/best_steps_model.pt" \
 	-use-half=True
 
 echo Copying results to the headnode

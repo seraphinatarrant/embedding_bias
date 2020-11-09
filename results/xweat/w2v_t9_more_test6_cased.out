@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "xweat/weat.py", line 9, in <module>
-    import numpy as np
-ModuleNotFoundError: No module named 'numpy'
