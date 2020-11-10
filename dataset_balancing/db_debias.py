@@ -8,7 +8,7 @@ from ..WEAT import weat
 
 
 if __name__ == "__main__":
-    infile, outfile, weat_type, bias_type = sys.argv[1:5]
+    infilename, outfilename, weat_type, bias_type = sys.argv[1:5]
 
     if weat_type == '6':
         targets_1 = ['grandfather', 'uncle', 'son', 'boy', 'father', 'he', 'him', 'his', 'man', 'male', 'brother']
@@ -56,11 +56,11 @@ if __name__ == "__main__":
           "group2_targets: {}\n"
           "group2_attributes: {}".format(targets_1, attributes_1, targets_2, attributes_2))
 
-    with open(sys.argv[1], 'r') as infile:
+    with open(infilename, 'r') as infile:
         infile = infile.readlines()
         total_lines = len(infile)
 
-    with open(sys.argv[2], 'w') as outfile:
+    with open(outfilename, 'w') as outfile:
         a1_pro = 0
         a1_anti = 0
         a2_pro = 0
@@ -85,7 +85,7 @@ if __name__ == "__main__":
 
 
 
-        if sys.argv[4] == "debias":
+        if bias_type == "debias":
             extreme = False # triggers unbalancing in the debias direction (by removing all probias instances)
             new_a1_pro = 0
             new_a2_pro = 0
@@ -116,7 +116,7 @@ if __name__ == "__main__":
 
                 antibias_lines = a1_anti+a2_anti # since don't remove any
 
-        elif sys.argv[4] == "overbias":
+        elif bias_type == "overbias":
 
             for line in infile:
                 # removes files
