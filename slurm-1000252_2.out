@@ -1,0 +1,10 @@
+Job running on landonia19
+Job started: 10/11/2020 00:45:48
+Setting up bash enviroment
+Activating conda environment: gensim
+Running provided command: #bash scripts/experiment.sh "ft_retrain"  7 ft  false true false None
+Command ran successfully!
+
+============
+job finished successfully
+Job finished: 10/11/2020 00:46:02

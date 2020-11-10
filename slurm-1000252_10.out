@@ -1,0 +1,174 @@
+Job running on landonia19
+Job started: 10/11/2020 00:45:49
+Setting up bash enviroment
+Activating conda environment: gensim
+Running provided command: bash scripts/experiment.sh "FT_TEST_ES1"  es1 ft  false false false None
+Creating the folder for the experiment
+About to run WEAT test es1
+Creating a temp folder in scratch space...
+Copying data to scratch space...
+sending incremental file list
+ft_embeddings.300.vec
+
+sent 183,816,186 bytes  received 35 bytes  122,544,147.33 bytes/sec
+total size is 183,771,198  speedup is 1.00
+Running WEAT script...
+INFO:root:XWEAT started
+INFO:root:Translating terms from en to es
+INFO:root:Embeddings are in vec format
+INFO:gensim.models.utils_any2vec:loading projection weights from /disk/scratch/v1rmuoz2/26266/weat_temp/data/ft_embeddings.300.vec
+INFO:gensim.models.utils_any2vec:loaded (52490, 300) matrix from /disk/scratch/v1rmuoz2/26266/weat_temp/data/ft_embeddings.300.vec
+INFO:root:Embeddings loaded
+INFO:root:Running test
+WARNING:root:Not in vocab s1_a1_16
+WARNING:root:Not in vocab s1_a1_14
+WARNING:root:Not in vocab pintora
+WARNING:root:Not in vocab s1_a1_13
+WARNING:root:Not in vocab astrónoma
+WARNING:root:Not in vocab s1_a1_15
+WARNING:root:Not in vocab astrónomo
+WARNING:root:Not in vocab escultora
+INFO:root:Calculating p value ... 
+INFO:root:Number of possible permutations: 184756
+INFO:root:Computing randomly first 100000 permutations
+INFO:root:Iteration 100000 finished
+INFO:root:(-0.380045, -1.2160254, 0.99743)
+Copying results back to headnode...
+sending incremental file list
+./
+ft_embeddings.300_FT_TEST_ES1.out
+ft_embeddings.300_FT_TEST_ES1.res
+
+sent 1,229 bytes  received 57 bytes  857.33 bytes/sec
+total size is 1,013  speedup is 0.79
+Deleting data from scratch space...
+About to train the subtask 1 network
+Creating a temp forder in scratch
+Copying data to scratch space
+sending incremental file list
+./
+.empty
+hateval2019_clean_es_dev.csv
+hateval2019_clean_es_test.csv
+hateval2019_clean_es_train.csv
+hateval2019_en_dev.csv
+hateval2019_en_test.csv
+hateval2019_en_train.csv
+hateval2019_es_dev.csv
+hateval2019_es_test.csv
+hateval2019_es_train.csv
+task1_es_dev.csv
+task1_es_test.csv
+task1_es_train.csv
+task1_g1_dev.csv
+task1_g1_test.csv
+task1_g1_train.csv
+task1_g2_dev.csv
+task1_g2_test.csv
+task1_g2_train.csv
+task2_es_dev.csv
+task2_es_test.csv
+task2_es_train.csv
+task2_g1_dev.csv
+task2_g1_test.csv
+task2_g1_train.csv
+task2_g2_dev.csv
+task2_g2_test.csv
+task2_g2_train.csv
+
+sent 8,884,802 bytes  received 551 bytes  17,770,706.00 bytes/sec
+total size is 8,880,806  speedup is 1.00
+sending incremental file list
+./
+Pipeline_Test_w2v_embeddings.300.vec
+ft_embeddings.300.model
+ft_embeddings.300.model.trainables.syn1neg.npy
+ft_embeddings.300.model.trainables.vectors_ngrams_lockf.npy
+ft_embeddings.300.model.trainables.vectors_vocab_lockf.npy
+ft_embeddings.300.model.wv.vectors.npy
+ft_embeddings.300.model.wv.vectors_ngrams.npy
+ft_embeddings.300.model.wv.vectors_vocab.npy
+ft_embeddings.300.txt
+ft_embeddings.300.vec
+w2v_embeddings.300.model
+w2v_embeddings.300.model.trainables.syn1neg.npy
+w2v_embeddings.300.model.wv.vectors.npy
+w2v_embeddings.300.txt
+w2v_embeddings.300.vec
+mod_temp/
+
+sent 6,073,702,894 bytes  received 312 bytes  103,823,986.43 bytes/sec
+total size is 6,072,219,153  speedup is 1.00
+ft_embeddings.300.model
+ft_embeddings.300.model.trainables.syn1neg.npy
+ft_embeddings.300.model.trainables.vectors_ngrams_lockf.npy
+ft_embeddings.300.model.trainables.vectors_vocab_lockf.npy
+ft_embeddings.300.model.wv.vectors_ngrams.npy
+ft_embeddings.300.model.wv.vectors.npy
+ft_embeddings.300.model.wv.vectors_vocab.npy
+ft_embeddings.300.txt
+ft_embeddings.300.vec
+hateval2019_clean_es_dev.csv
+hateval2019_clean_es_test.csv
+hateval2019_clean_es_train.csv
+hateval2019_en_dev.csv
+hateval2019_en_test.csv
+hateval2019_en_train.csv
+hateval2019_es_dev.csv
+hateval2019_es_test.csv
+hateval2019_es_train.csv
+mod_temp
+Pipeline_Test_w2v_embeddings.300.vec
+task1_es_dev.csv
+task1_es_test.csv
+task1_es_train.csv
+task1_g1_dev.csv
+task1_g1_test.csv
+task1_g1_train.csv
+task1_g2_dev.csv
+task1_g2_test.csv
+task1_g2_train.csv
+task2_es_dev.csv
+task2_es_test.csv
+task2_es_train.csv
+task2_g1_dev.csv
+task2_g1_test.csv
+task2_g1_train.csv
+task2_g2_dev.csv
+task2_g2_test.csv
+task2_g2_train.csv
+w2v_embeddings.300.model
+w2v_embeddings.300.model.trainables.syn1neg.npy
+w2v_embeddings.300.model.wv.vectors.npy
+w2v_embeddings.300.txt
+w2v_embeddings.300.vec
+Training CNN
+/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torchtext/data/field.py:150: UserWarning: Field class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.
+  warnings.warn('{} class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.'.format(self.__class__.__name__), UserWarning)
+/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torchtext/data/example.py:78: UserWarning: Example class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.
+  warnings.warn('Example class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.', UserWarning)
+/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torchtext/data/iterator.py:48: UserWarning: BucketIterator class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.
+  warnings.warn('{} class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.'.format(self.__class__.__name__), UserWarning)
+The `device` argument should be set by using `torch.device` or passing a string as an argument. This behavior will be deprecated soon and currently defaults to cpu.
+The `device` argument should be set by using `torch.device` or passing a string as an argument. This behavior will be deprecated soon and currently defaults to cpu.
+The `device` argument should be set by using `torch.device` or passing a string as an argument. This behavior will be deprecated soon and currently defaults to cpu.
+
+Loading data...
+Traceback (most recent call last):
+  File "./cnn/main.py", line 292, in <module>
+    main()
+  File "./cnn/main.py", line 244, in main
+    vectors = vocab.Vectors(name=args.embeddings, cache='./cnn/')
+  File "/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torchtext/vocab.py", line 319, in __init__
+    self.cache(name, cache, url=url, max_vectors=max_vectors)
+  File "/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torchtext/vocab.py", line 428, in cache
+    self.itos, self.stoi, self.vectors, self.dim = torch.load(path_pt)
+  File "/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torch/serialization.py", line 584, in load
+    return _load(opened_zipfile, map_location, pickle_module, **pickle_load_args)
+  File "/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torch/serialization.py", line 842, in _load
+    result = unpickler.load()
+  File "/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torch/serialization.py", line 834, in persistent_load
+    load_tensor(data_type, size, key, _maybe_decode_ascii(location))
+  File "/home/v1rmuoz2/conda/envs/gensim/lib/python3.7/site-packages/torch/serialization.py", line 822, in load_tensor
+    storage = zip_file.get_storage_from_record(name, size, dtype).storage()
+RuntimeError: [enforce fail at inline_container.cc:209] . file not found: archive/data/94901284735264

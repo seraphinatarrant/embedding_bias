@@ -1,11 +1,11 @@
-bash scripts/experiment.sh "w2v_retrain" 1 w2v false true false None
-bash scripts/experiment.sh "ft_retrain"  7 ft  false true false None
+#bash scripts/experiment.sh "w2v_retrain" 1 w2v false true false None
+#bash scripts/experiment.sh "ft_retrain"  7 ft  false true false None
 
-#bash scripts/experiment.sh "W2V_TEST_7"   7   w2v false false false None
-#bash scripts/experiment.sh "W2V_TEST_8"   8   w2v false false false None
-#bash scripts/experiment.sh "W2V_TEST_ES1" es1 w2v false false false None
-#bash scripts/experiment.sh "W2V_TEST_ES2" es2 w2v false false false None
-#bash scripts/experiment.sh "FT_TEST_7"    7   ft  false false false None
-#bash scripts/experiment.sh "FT_TEST_8"    8   ft  false false false None
-#bash scripts/experiment.sh "FT_TEST_ES1"  es1 ft  false false false None
-#bash scripts/experiment.sh "FT_TEST_ES2"  es2 ft  false false false None
+bash scripts/experiment.sh "W2V_TEST_7"   7   w2v false false false None
+bash scripts/experiment.sh "W2V_TEST_8"   8   w2v false false false None
+bash scripts/experiment.sh "W2V_TEST_ES1" es1 w2v false false false None
+bash scripts/experiment.sh "W2V_TEST_ES2" es2 w2v false false false None
+bash scripts/experiment.sh "FT_TEST_7"    7   ft  false false false None
+bash scripts/experiment.sh "FT_TEST_8"    8   ft  false false false None
+bash scripts/experiment.sh "FT_TEST_ES1"  es1 ft  false false false None
+bash scripts/experiment.sh "FT_TEST_ES2"  es2 ft  false false false None

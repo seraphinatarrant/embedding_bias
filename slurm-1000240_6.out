@@ -1,0 +1,10 @@
+Job running on landonia19
+Job started: 09/11/2020 23:04:05
+Setting up bash enviroment
+Activating conda environment: gensim
+Running provided command: #bash scripts/experiment.sh "W2V_TEST_ES1" es1 w2v false false false None
+Command ran successfully!
+
+============
+job finished successfully
+Job finished: 09/11/2020 23:04:29
