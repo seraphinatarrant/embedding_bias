@@ -276,7 +276,7 @@ class XWEAT(object):
 
   ### New Spanish WEAT
   # gender
-  def weat_11(self):
+  def weat_gender_es(self):
     targets_1 = ["científico","físico","químico","astrónomo","tecnológico","biólogo","científica","física","química","astrónoma","tecnológica","bióloga"]
     targets_2 = ["arquitecto","escultor","pintor","escritor","poeta","bailarín","actor","fotógrafo","arquitecta","escultora","pintora","escritora","poetisa","bailarina","actora","fotógrafa"]
     attributes_1 = ["masculino","hombre","niño","hermano","él","hijo","hermano","padre","papá","tío","abuelo"]
@@ -284,7 +284,7 @@ class XWEAT(object):
     return targets_1, targets_2, attributes_1, attributes_2
 
   # migrants
-  def weat_12(self):
+  def weat_migrants_es(self):
       targets_1 = ["Agustina","Martina","Josefa","Antonia","Sofía","Isidora","Cristóbal","Sebastián",
                    "Agustín","Alonso","Joaquín","León","Ignacio","Julieta","Matilde"] # upper class names
       targets_2 = ["Shirley","Yamileth","Sharon","Britney","Maryori","Melody","Nayareth","Yaritza",
