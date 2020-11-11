@@ -1,35 +1,35 @@
 INFO:root:XWEAT started
 INFO:root:Translating terms from en to es
 INFO:root:Embeddings are in vec format
-INFO:gensim.models.utils_any2vec:loading projection weights from /disk/scratch/v1rmuoz2/10531/weat_temp/data/w2v_embeddings.300.vec
-INFO:gensim.models.utils_any2vec:loaded (52490, 300) matrix from /disk/scratch/v1rmuoz2/10531/weat_temp/data/w2v_embeddings.300.vec
+INFO:gensim.models.utils_any2vec:loading projection weights from /disk/scratch/v1rmuoz2/14634/weat_temp/data/w2v_embeddings.300.vec
+INFO:gensim.models.utils_any2vec:loaded (52490, 300) matrix from /disk/scratch/v1rmuoz2/14634/weat_temp/data/w2v_embeddings.300.vec
 INFO:root:Embeddings loaded
 INFO:root:Running test
 WARNING:root:Not in vocab yastin
-WARNING:root:Not in vocab nayareth
+WARNING:root:Not in vocab apestar
+WARNING:root:Not in vocab malcon
+WARNING:root:Not in vocab yeison
 WARNING:root:Not in vocab hedor
-WARNING:root:Not in vocab maryori
-WARNING:root:Not in vocab isidora
-WARNING:root:Not in vocab bairon
-WARNING:root:Not in vocab yeremi
 WARNING:root:Not in vocab vacación
 WARNING:root:Not in vocab yaritza
-WARNING:root:Not in vocab malcon
-WARNING:root:Not in vocab yamileth
+WARNING:root:Not in vocab maryori
+WARNING:root:Not in vocab bairon
 WARNING:root:Not in vocab shirley
-WARNING:root:Not in vocab yeison
-WARNING:root:Not in vocab apestar
-INFO:root:Popped T1 13
-INFO:root:Popped T1 82
-INFO:root:Popped T1 67
-INFO:root:Popped T1 30
-INFO:root:Popped A2 65
-INFO:root:Popped A2 23
-INFO:root:Popped A2 21
-INFO:root:Popped A2 64
-INFO:root:Popped A2 38
+WARNING:root:Not in vocab isidora
+WARNING:root:Not in vocab yamileth
+WARNING:root:Not in vocab nayareth
+WARNING:root:Not in vocab yeremi
+INFO:root:Popped T1 1
+INFO:root:Popped T1 28
+INFO:root:Popped T1 23
+INFO:root:Popped T1 76
+INFO:root:Popped A2 25
+INFO:root:Popped A2 67
+INFO:root:Popped A2 66
+INFO:root:Popped A2 81
+INFO:root:Popped A2 61
 INFO:root:Calculating p value ... 
 INFO:root:Number of possible permutations: 184756
 INFO:root:Computing randomly first 100000 permutations
 INFO:root:Iteration 100000 finished
-INFO:root:(0.06764573, 0.21723217, 0.33357)
+INFO:root:(0.059428364, 0.18480091, 0.35605)
