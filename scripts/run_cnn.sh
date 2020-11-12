@@ -34,7 +34,7 @@ mkdir -p $out_path
 
 echo Copying data to scratch space
 rsync -av $training_head/ $data_path
-rsync -av $embeddings_head/ $data_path
+rsync -av $embeddings_head/$emb_name $emb_path
 ls $data_path
 
 # Setting the results files
@@ -42,6 +42,14 @@ name="task1_${experiment_name}"
 results_path=$out_path/${name}.txt
 results_g1=$out_path/${name}_g1.txt
 results_g2=$out_path/${name}_g2.txt
+
+echo ""
+echo ""
+echo $emb_path
+echo ""
+ls $data_path
+echo ""
+echo ""
 
 # We train the CNN
 # ISSUE: the model is *not* saved on scratch!

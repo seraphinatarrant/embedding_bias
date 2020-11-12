@@ -667,6 +667,7 @@ def train_weat(args):
   start = time.time()
   logging.basicConfig(level=logging.INFO)
   logging.info("XWEAT started")
+  print("Running Test", args.test_number)
   weat = XWEAT()
   if args.test_number == "1":
     targets_1, targets_2, attributes_1, attributes_2 = weat.weat_1()

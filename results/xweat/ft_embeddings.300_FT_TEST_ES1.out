@@ -1,20 +1,10 @@
 INFO:root:XWEAT started
-INFO:root:Translating terms from en to es
-INFO:root:Embeddings are in vec format
-INFO:gensim.models.utils_any2vec:loading projection weights from /disk/scratch/v1rmuoz2/2057/weat_temp/data/ft_embeddings.300.vec
-INFO:gensim.models.utils_any2vec:loaded (52490, 300) matrix from /disk/scratch/v1rmuoz2/2057/weat_temp/data/ft_embeddings.300.vec
-INFO:root:Embeddings loaded
-INFO:root:Running test
-WARNING:root:Not in vocab s1_a1_14
-WARNING:root:Not in vocab escultora
-WARNING:root:Not in vocab s1_a1_15
-WARNING:root:Not in vocab astrónoma
-WARNING:root:Not in vocab astrónomo
-WARNING:root:Not in vocab s1_a1_13
-WARNING:root:Not in vocab pintora
-WARNING:root:Not in vocab s1_a1_16
-INFO:root:Calculating p value ... 
-INFO:root:Number of possible permutations: 184756
-INFO:root:Computing randomly first 100000 permutations
-INFO:root:Iteration 100000 finished
-INFO:root:(-0.3800452, -1.2160261, 0.99757)
+Running Test true
+Traceback (most recent call last):
+  File "xweat/weat.py", line 745, in <module>
+    args = main()
+  File "xweat/weat.py", line 637, in main
+    train_weat(args)
+  File "xweat/weat.py", line 697, in train_weat
+    raise ValueError("Only WEAT 1 to 10 and es1 and es2 are supported")
+ValueError: Only WEAT 1 to 10 and es1 and es2 are supported

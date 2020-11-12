@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 set -o errexit
+export PYTHONHASHSEED=0
 
 # Command line arguments
 # $1 name of the experiment (for saving the results)
@@ -13,6 +14,7 @@ set -o errexit
 # $6 whether to run attract-repel
 # $7 name of the linguistic constraints to use for attract-repel, before adding "_ant.txt" or "_syn.txt"
 #    if not using attract-repel, just add "None" or any other dummy value.
+# $8 whether to do a weat test
 
 
 # Variables that should probably be command line arguments
@@ -26,6 +28,7 @@ experiment_name=$1
 clean_data=$4
 retrain_embs=$5
 attract_repel=$6
+run_weat_test=$8
 
 # Paths to stuff
 emb_train_data=../data/archive/2019_03/tweets_processed.tsv
@@ -69,8 +72,10 @@ if $attract_repel; then
 fi
 
 # Run the given WEAT test(s)
-echo About to run WEAT test $weat_test
-bash ./run_weat.sh $weat_test $emb_path $emb_name $weat_out $language $exp_path $experiment_name
+if $run_weat_test; then
+	echo About to run WEAT test $weat_test
+	bash ./run_weat.sh $weat_test $emb_path $emb_name $weat_out $language $exp_path $experiment_name
+fi
 
 # We add the .vec termination to the embedding name
 emb_file=${emb_name}.vec
