@@ -3,7 +3,7 @@ import random
 from itertools import filterfalse
 from itertools import combinations
 import codecs
-import utils
+from WEAT import utils
 import os
 import pickle
 import logging
@@ -284,7 +284,7 @@ class XWEAT(object):
     return targets_1, targets_2, attributes_1, attributes_2
 
   # migrants
-  def weat_migrants_es(self):
+  def weat_migrant_es(self):
       targets_1 = ["Agustina","Martina","Josefa","Antonia","Sofía","Isidora","Cristóbal","Sebastián",
                    "Agustín","Alonso","Joaquín","León","Ignacio","Julieta","Matilde"] # upper class names
       targets_2 = ["Shirley","Yamileth","Sharon","Britney","Maryori","Melody","Nayareth","Yaritza",
