@@ -233,6 +233,13 @@ class XWEAT(object):
 
     return targets_1, targets_2, attributes_1, attributes_2
 
+  def weat_6b(self):
+    targets_1 = ["male", "man", "boy", "brother", "he", "him", "his", "son"]
+    targets_2 = ["female", "woman", "girl", "sister", "she", "her", "hers", "daughter"]
+    attributes_1 = ["executive", "management", "professional", "corporation", "salary", "office", "business", "career"]
+    attributes_2 = ["home", "parents", "children", "family", "cousins", "marriage", "wedding", "relatives"]
+
+    return targets_1, targets_2, attributes_1, attributes_2
 
   # sex - math
   def weat_7(self):
