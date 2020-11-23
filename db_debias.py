@@ -44,10 +44,14 @@ if __name__ == "__main__":
         targets_1, targets_2 =  wordlists.all_female, wordlists.all_male,
 
     if weat_type == "gender_es":
-        targets_1, targets_2, attributes_1, attributes_2 = xweat.weat_gender_es()
+        targets_1, targets_2, attributes_1, attributes_2 = xweat.weat_gender_es(expansion=True)
 
     if weat_type == "migrant_es":
         targets_1, targets_2, attributes_1, attributes_2 = xweat.weat_migrant_es()
+
+    if weat_type == "gender_es_pleasant":
+        targets_1, targets_2, attributes_1, attributes_2 = xweat.weat_gender_es(expansion=True)
+        a, b, attributes_1, attributes_2 = xweat.weat_migrant_es()  # first attributes positive, second negative
 
 
 
