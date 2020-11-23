@@ -283,12 +283,30 @@ class XWEAT(object):
 
   ### New Spanish WEAT
   # gender
-  def weat_gender_es(self):
+  def weat_gender_es(self, expansion=False):
     targets_1 = ["científico","físico","químico","astrónomo","tecnológico","biólogo","científica","física","química","astrónoma","tecnológica","bióloga"]
     targets_2 = ["arquitecto","escultor","pintor","escritor","poeta","bailarín","actor","fotógrafo","arquitecta","escultora","pintora","escritora","poetisa","bailarina","actora","fotógrafa"]
     attributes_1 = ["masculino","hombre","niño","hermano","él","hijo","hermano","padre","papá","tío","abuelo"]
     attributes_2 = ["femenino","mujer","niña","hermana","ella","hija","hermana","madre","mamá","tía","abuela"]
+    if expansion:
+      targets_1 += ["antropólogo", "antropóloga", "geógrafa", "geógrafo", "psicólogo", "psicóloga", "sicólgo", "sicóloga",
+                 "científica", "científico", "astrónomo", "astrónoma", "químico", "química", "geólogo", "geóloga",
+                 "paleontóloga", "paleontólogo", "bioquímico", "bioquímica", "egiptólogo", "egiptóloga", "tecnológico",
+                 "tecnológica","geoquímica", "geoquímico", "matemático", "matemática", "zoóloga", "zoólogo", "cosmólogo",
+                 "cosmóloga", "físico-matemático", "físico-matemática", "físicomatemático", "físicomatemática", "oncólogo",
+                 "oncóloga", "socióloga", "sociólogo", "radióloga", "fisiólogo", "fisióloga", "astrofísica", "astrofísico",
+                 "físico", "física", "cognitiva", "cognitivo", "arqueóloga", "arqueólogo"]
+      targets_2 += ["arquitecto", "arquitecta", "arqui", "escultor", "escultora", "pintor", "pintora", "escritor", "escritora",
+             "autor", "autora", "redactor", "redactora", "poeta", "poetisa", "bailador", "bailadora", "bailarín",
+             "bailarina", "bailaor", "bailaora", "actor", "actora", "actriz", "fotógrafo", "fotógrafa", "restaurador",
+             "restauradora", "musicóloga", "musicólogo", "coreógrafo", "coreógrafa", "editor", "editora", "traductor",
+             "traductora", "camarógrafo", "camarógrafa", "ceramista", "orfebre", "músico", "música", "cineasta", "narrador",
+             "narradora", "literato", "literata", "cantante", "danzarín", "danzarina", "danzante", "cantautor", "cantautora",
+             "retratista", "museólogo", "museóloga", "trovador", "trovadora", "cantate", "cantor", "cantora", "cantadora",
+             "diseñador", "diseñadora", "escenógrafo", "escenógrafa", "novelista", "dramaturgo", "dramaturga", "paisajista",
+             "guionista", "muralista", "animador", "animadora", "ilustrador", "ilustradora"]
     return targets_1, targets_2, attributes_1, attributes_2
+
 
   # migrants
   def weat_migrant_es(self):

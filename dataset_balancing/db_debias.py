@@ -40,13 +40,19 @@ if __name__ == "__main__":
     if weat_type == 'pleasant_female':
         # same as male only good and bad are reversed and female is good
         t1, t2, attributes_1, attributes_2 = weat.weat_4()  # 1 is good, 2 is bad
-        targets_1, targets_2 =  wordlists.all_female, wordlists.all_male,
+        targets_1, targets_2 = wordlists.all_female, wordlists.all_male
 
     if weat_type == "gender_es":
-        targets_1, targets_2, attributes_1, attributes_2 = weat.weat_gender_es()
+        targets_1, targets_2, attributes_1, attributes_2 = weat.weat_gender_es(expansion=True)
 
     if weat_type == "migrant_es":
-        targets_1, targets_2, attributes_1, attributes_2 = weat.weat_migrant_es()
+        targets_1, targets_2, attributes_1, attributes_2 = weat.weat_migrant_es() # first male then female
+
+    if weat_type == "gender_es_pleasant":
+        targets_1, targets_2, attributes_1, attributes_2 = weat.weat_gender_es(expansion=True)
+        a, b, attributes_1, attributes_2 = weat.weat_migrant_es()  # first attributes positive, second negative
+
+
 
 
 
