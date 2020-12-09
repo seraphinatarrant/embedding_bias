@@ -137,3 +137,5 @@ dmypy.json
 *.vec
 data/embeddings/*.txt
 #slurm-*
+*.json
+*.bz2
