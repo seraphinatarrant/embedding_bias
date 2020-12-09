@@ -289,27 +289,46 @@ class XWEAT(object):
     attributes_1 = ["masculino","hombre","niño","hermano","él","hijo","hermano","padre","papá","tío","abuelo"]
     attributes_2 = ["femenino","mujer","niña","hermana","ella","hija","hermana","madre","mamá","tía","abuela"]
     if expansion:
+      attributes_1 += ["primo-hemano",
+           "sobrino", "amigo", "muchacho", "patojo", "huerco", "esposo", "nene", "hijastro", "varonil", "cuñado",
+           "amiguito", "bisabuelo", "abuelito", "suegro", "nieto", "primo", "novio", "chico", "exesposo", "ex-esposo",
+           "nuero", "comadre", "cuñado", "exmarido", "ex-marido", "marido", "mocoso", "chiquillo", "crío", "chico", "cuñao",
+           "flaco", "señor", "don", "papito", "papi", "papacito", "chaval", "tipo", "tipejo", "fulano", "zutano", "sujeto",
+           "carnal", "valedor"]
+      attributes_2 += ["primo-hermana",
+             "prima-hermana", "sobrina", "amiga", "muchacha", "patoja", "huerca", "esposa", "nena", "hijastra", "femenil",
+             "cuñada", "amiguita", "bisabuela", "abuelita", "suegra", "nieta", "prima", "novia", "chica", "exesposa",
+             "ex-esposa", "nuera", "compadre", "cuñada", "exmujer", "ex-mujer", "mocosa", "chquilla", "cría", "chica",
+             "flaca", "señora","doña", "mamita", "mami", "mamacita", "chavala", "tipa", "tipeja", "fulana", "zutana",
+             "sujeta", "carnala", "valedora"]
       targets_1 += ["antropólogo", "antropóloga", "geógrafa", "geógrafo", "psicólogo", "psicóloga", "sicólgo", "sicóloga",
                  "científica", "científico", "astrónomo", "astrónoma", "químico", "química", "geólogo", "geóloga",
                  "paleontóloga", "paleontólogo", "bioquímico", "bioquímica", "egiptólogo", "egiptóloga", "tecnológico",
                  "tecnológica","geoquímica", "geoquímico", "matemático", "matemática", "zoóloga", "zoólogo", "cosmólogo",
                  "cosmóloga", "físico-matemático", "físico-matemática", "físicomatemático", "físicomatemática", "oncólogo",
                  "oncóloga", "socióloga", "sociólogo", "radióloga", "fisiólogo", "fisióloga", "astrofísica", "astrofísico",
-                 "físico", "física", "cognitiva", "cognitivo", "arqueóloga", "arqueólogo"]
-      targets_2 += ["arquitecto", "arquitecta", "arqui", "escultor", "escultora", "pintor", "pintora", "escritor", "escritora",
-             "autor", "autora", "redactor", "redactora", "poeta", "poetisa", "bailador", "bailadora", "bailarín",
-             "bailarina", "bailaor", "bailaora", "actor", "actora", "actriz", "fotógrafo", "fotógrafa", "restaurador",
-             "restauradora", "musicóloga", "musicólogo", "coreógrafo", "coreógrafa", "editor", "editora", "traductor",
+                 "físico", "física", "cognitiva", "cognitivo", "arqueóloga", "arqueólogo", 'inorgánico', 'inorgánica',
+                    'cognitivo', 'epidemióloga', 'fisiológica', 'virólogo', 'sismólogo',
+                    'toxicológico', 'neurocientífico', 'ornitóloga', 'termoquímica',
+                    'neuropsicológico', 'oceanógrafo',
+                    'musculo-esquelético', 'físico-química', 'radioquímica', 'microbiológico',
+                    'oceanógrafa', 'agroquímica',
+                    'embriólogo', 'ecóloga', 'aracnólogo', 'bacteriológico', 'vulcanólogo',
+                    'biofísica', 'microbióloga',
+                    'microbiólogo', 'psico-emocional', 'neuropsicológica', 'petroquímico',
+                    'taxónoma'
+                    ]
+      targets_2 += ["restaurador", "restauradora", "musicóloga", "musicólogo", "coreógrafo", "coreógrafa", "editor", "editora", "traductor",
              "traductora", "camarógrafo", "camarógrafa", "ceramista", "orfebre", "músico", "música", "cineasta", "narrador",
              "narradora", "literato", "literata", "cantante", "danzarín", "danzarina", "danzante", "cantautor", "cantautora",
              "retratista", "museólogo", "museóloga", "trovador", "trovadora", "cantate", "cantor", "cantora", "cantadora",
              "diseñador", "diseñadora", "escenógrafo", "escenógrafa", "novelista", "dramaturgo", "dramaturga", "paisajista",
-             "guionista", "muralista", "animador", "animadora", "ilustrador", "ilustradora"]
+             "guionista", "muralista", "animador", "animadora", "ilustrador", "ilustradora", 'viñetista', "galerista", "vedette", "bailón", "bailongo", 'libretista', 'ebanista', 'tipógrafo', "batucada"]
     return targets_1, targets_2, attributes_1, attributes_2
 
 
   # migrants
-  def weat_migrant_es(self):
+  def weat_migrant_es(self, expansion=False):
       targets_1 = ["Agustina","Martina","Josefa","Antonia","Sofía","Isidora","Cristóbal","Sebastián",
                    "Agustín","Alonso","Joaquín","León","Ignacio","Julieta","Matilde"] # upper class names
       targets_2 = ["Shirley","Yamileth","Sharon","Britney","Maryori","Melody","Nayareth","Yaritza",
@@ -324,6 +343,51 @@ class XWEAT(object):
                       "contaminación","tragedia","divorcio","cárcel","pobreza","fea","feo","cáncer",
                       "matar","vómito","bomba","maldad","podrido","podrida","agonía","terrible",
                       "horrible","guerra","repugnante"] # negative terms
+      if expansion:
+          attributes_1 += ['paraíso', 'paradisíaco', 'valentía', "valiente", 'obsequio', "regalo", "bonito", 'bonita', 'misericordia',
+           'salubridad', 'homenaje', 'humilde', 'milagro', 'lealtad', 'afortunada', "afortunado", 'orgasmo', 'orgullo',
+           'independencia', 'frugalidad', 'tesoro', 'alegre', 'dignidad', 'amorosa', "amoroso", 'satisfacción', 'divertir',
+           'generosidad', "generoso", "generosa", 'fortuna', 'caballeroso', 'familar', 'vivaz', 'entusiasmo', 'deleite',
+           'maravilloso', "maravillosa", 'respeto', 'encantador', "encantadora", 'camaradería', 'placentera', 'ecuanimidad',
+           'inspirador', "inspiradora", 'cordial', 'homenaje', 'gracia', 'compasión', 'afable', 'tranquilidad', 'gustazo',
+           'resplandecer', 'grandioso', 'fraternidad', 'humildad', 'magnífica', "magnífico", 'homenajeo', 'fraternal',
+           'vitalidad', "estupendo", 'estupenda', 'hermoso', "hermosa", 'arcoíris', 'preciosa', "precioso", 'fabulosa',
+           "fabuloso", 'brillante', 'júbilo', 'regocijo', 'gentileza', 'tregua', 'sonrisa', 'afortunadamente', 'serenidad',
+           'prosperidad', 'amable', 'gusto', 'bondadoso', "bondadosa", 'cariño', 'confianza', 'pasión', 'honorado',
+           "honrada", 'sinceridad', 'noble', 'moralidad', 'ensueño', 'justicia', 'esperanza', 'honradez', 'amoroso',
+           "amorosa", 'placentero', "placentera", "bondadoso", 'bondadosa', 'gratitud']
+
+          attributes_2 += ['deshonor',  'insatisfacción', 'insinceridad', 'deshonestidad', 'convicción',
+          'martirio', 'desventura', 'locura', 'infortunio', 'desgracia', 'bronca', 'rabia', 'desconfianza', 'desamor',
+          'enemistad',  'desgraciao', 'malote', "malota", 'siniestro' ,"siniestra", 'angustia', 'emboscada', 'bomba',
+          'aberrante', 'repulsivo', "repulsiva", 'crimen', 'tristeza', 'malevolo', "malevola", 'temor', 'avaricia',
+          "horrendo",  'horrenda', 'sufrimiento', 'conmoción', 'trágica', "trágico", 'asqueroso', "asquerosa", 'acidente',
+          'ponzoña', 'violencia', 'indignante', 'náusea', 'desventura', 'deshecho', 'tortura', 'bombardeo', 'malo', "mala",
+          'emboscado', "emboscada", 'pobreza', 'sobreexplotación', 'podrirse', 'insensatez', 'tufo', 'locura', 'soberbia',
+          'masacre', 'enfrentamiento', 'asalto', 'espantosa', "espantosa", 'resentimiento', 'dolencia', 'tonto', "tonta",
+          'racismo', 'divorcio', 'doloroso', 'abuso', 'efermedad', 'desagradable', 'golpe', 'ignorante', 'asaltante',
+          'rabia', 'cáncer', 'ignorancia', 'padecimiento', 'marginación', 'frialdad', 'desigualdad', 'inequidad',
+          'espantoso', "espantosa", 'vómito', 'escalofriante', 'hediondo', 'vileza', 'podrir', 'insultante', 'jodido',
+          "jodida", 'putrefacta', "putrefacto", 'pesadilla', 'cruel', 'corrosión', 'cabronada', 'polución', 'aterrorizante',
+          'invasión', 'bajito', 'cabrón', 'deceso', 'triste', 'xenofobia', 'prepotente', 'desesperación', 'accidental',
+          'estupidez', 'asalta', 'horroroso', "horrorosa",  'atraco', 'muertes', 'insufrible', 'rencor', 'penuria',
+          'secuestro', 'terremoto', 'terriblemente', 'bestial', 'insecticida', 'diarrea', 'desprecio', 'homicidio',
+          'homofobia', 'cataclismo', 'bomb', 'limpidez', 'codicia', 'abusivo', "abusiva", 'suicidio', 'descarrilamiento',
+          'fracaso', 'violación', 'patología', 'baboso', "babosa", 'derrumbe', 'disparo', "engreído", 'engreída',
+          'nauseabundo', "nauseabunda", 'desaseo', 'contaminación', 'sobrexplotación', 'enojo', 'maltrato', 'colisión',
+          'maltrato', 'remordimiento', 'fallecer', 'matanza', 'asesinó', 'fétido', 'ira', 'delito', 'asaltar', 'probreza',
+          'podredumbre', 'pestilencia', 'miserable', 'incidente', 'crueldad', 'demencia', 'machismo', 'fallecimiento',
+          'indigencia', 'embrutecimiento', 'catástrofe', 'impureza', 'mordedura', 'melanoma', 'catastrófico', 'sucio',
+          'asquerosa', 'melancolía', 'tiroteo', 'desaparición', 'impotencia', 'combate', 'hipocresía', "catastrófica",
+          'despreciable', 'egoísmo', 'devastador', "devastadora", 'horriblemente', 'irremediable', 'cobardía', 'emperrado',
+          'presidio', 'asesinar', 'injusticia', 'escandaloso', "esccandalosa", 'fraude', 'traición', 'espeluznante',
+          'humillante', 'desangramiento', 'degradante', 'prejuicio', 'atontar', 'percance', 'malinchismo', 'abominable',
+          'miedo', 'desnutrición', 'malicia', 'pestilente', 'duelo', 'leucemia', 'insolente', 'precariedad', 'indecible',
+          'soso', "sosa", 'amargura', 'autobomba', 'infestar', 'abusador', 'inseguridad', 'desesperanza', 'parásito',
+          'prisión', 'asesino', 'indecente', 'pesadumbre', 'atentado', 'cochinada', 'maloliente', 'putrefacción',
+          'arrepentimiento', 'miseria', 'revanchismo', 'repudiable', 'contaminantes', 'mezquino', "mezquina", 'letal',
+          'infección', 'pútrido', 'detestar', 'acoso', 'desempleo', 'avergonzante', 'arrogancia', 'toxina', 'inmoralidad']
+
       return targets_1, targets_2, attributes_1, attributes_2
 
   # occupations
