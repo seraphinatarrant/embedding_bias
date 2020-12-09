@@ -1,0 +1,30 @@
+INFO:root:XWEAT started
+INFO:root:Translating terms from en to es
+INFO:root:Embeddings are in vec format
+INFO:gensim.models.utils_any2vec:loading projection weights from /disk/scratch/v1rmuoz2/3830/weat_temp/data/w2v_twitter_es_overbias_migrant_es.txt.vectors
+INFO:gensim.models.utils_any2vec:loaded (103784, 300) matrix from /disk/scratch/v1rmuoz2/3830/weat_temp/data/w2v_twitter_es_overbias_migrant_es.txt.vectors
+INFO:root:Embeddings loaded
+INFO:root:Running test
+WARNING:root:Not in vocab vacación
+WARNING:root:Not in vocab nayareth
+WARNING:root:Not in vocab isidora
+WARNING:root:Not in vocab yeremi
+WARNING:root:Not in vocab malcon
+WARNING:root:Not in vocab bairon
+WARNING:root:Not in vocab apestar
+WARNING:root:Not in vocab maryori
+WARNING:root:Not in vocab yaritza
+WARNING:root:Not in vocab yastin
+INFO:root:Popped T1 65
+INFO:root:Popped A2 20
+INFO:root:Popped A2 64
+INFO:root:Popped A2 39
+INFO:root:Popped A2 35
+INFO:root:Popped A2 34
+INFO:root:Popped A2 59
+INFO:root:Calculating p value ... 
+INFO:root:Number of possible permutations: 10400600
+INFO:root:Computing randomly first 100000 permutations
+INFO:root:Iteration 100000 finished
+INFO:root:(-0.14283387, -0.2965303, 0.74898)
+Running Test es2

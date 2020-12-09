@@ -1,0 +1,12 @@
+INFO:root:XWEAT started
+INFO:root:Translating terms from en to es
+INFO:root:Embeddings are in vec format
+INFO:gensim.models.utils_any2vec:loading projection weights from /disk/scratch/v1rmuoz2/8615/weat_temp/data/fasttext_all_tweets_processed_es.tsv.vectors
+INFO:gensim.models.utils_any2vec:loaded (103784, 300) matrix from /disk/scratch/v1rmuoz2/8615/weat_temp/data/fasttext_all_tweets_processed_es.tsv.vectors
+INFO:root:Embeddings loaded
+INFO:root:Running test
+WARNING:root:Not in vocab de ella
+INFO:root:Calculating p value ... 
+INFO:root:Number of possible permutations: 12870
+INFO:root:(-0.03450091, -0.14154133, 0.5988344988344988)
+Running Test 8
