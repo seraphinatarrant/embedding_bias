@@ -6,17 +6,14 @@ import sys
 from wordlists import wordlists
 from WEAT import weat
 
-
-if __name__ == "__main__":
-    infilename, outfilename, weat_type, bias_type, max_bias = sys.argv[1:6]
+def fetch_wordlists(weat_type):
     xweat = weat.XWEAT()
-    
     if weat_type == '6':
         targets_1 = ['grandfather', 'uncle', 'son', 'boy', 'father', 'he', 'him', 'his', 'man', 'male', 'brother']
         targets_2 = ['daughter', 'she', 'her', 'grandmother', 'mother', 'aunt', 'sister', 'hers', 'woman', 'female', 'girl']
         attributes_1 = ["executive", "management", "professional", "corporation", "salary", "office", "business", "career"]
         attributes_2 = ["home", "parents", "children", "family", "cousins", "marriage", "wedding", "relatives"]
-    elif weat_type == '7':
+    if weat_type == '7':
         targets_1 = ["math", "algebra", "geometry", "calculus", "equations", "computation", "numbers", "addition"]
         targets_2 = ["poetry", "art", "dance", "literature", "novel", "symphony", "drama", "sculpture"]
         attributes_1 = ["male", "man", "boy", "brother", "he", "him", "his", "son"]
@@ -53,7 +50,13 @@ if __name__ == "__main__":
         a, b, targets_1, targets_2 = xweat.weat_gender_es(expansion=True)
         a, b, attributes_1, attributes_2 = xweat.weat_migrant_es(expansion=True)  # first attributes positive, second negative
 
+    return targets_1, attributes_1, targets_2, attributes_2
 
+
+if __name__ == "__main__":
+    infilename, outfilename, weat_type, bias_type, max_bias = sys.argv[1:6]
+
+    targets_1, attributes_1, targets_2, attributes_2 = fetch_wordlists(weat_type)
 
     print("Using:\n"
           "group1_targets: {}\n"
