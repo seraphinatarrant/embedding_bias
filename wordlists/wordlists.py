@@ -90,7 +90,7 @@ es_math_sci_exp = ['toxicológico', 'neurocientífico', 'enzimático', 'inorgán
                   'biotecnológico', 'innovativo', 'fisica', 'neuropsicológica', 'geólogo', 'algóloga', \
                   'astrofísico', 'ufólogo', 'físico-deportiva', 'fisicoquímica', 'científico-', \
                   'científico-técnica', 'briólogo', 'humanística', 'egiptóloga', 'psicofísica', \
-                  'tísico',, 'psico-física', 'tecnológia', 'neuroquímica', 'fotoquímico', \
+                  'tísico', 'psico-física', 'tecnológia', 'neuroquímica', 'fotoquímico', \
                   'petroquímico', 'ufológica', 'taxónoma', 'tecnológicamente', 'neuroquímico', \
                   'astrobiólogos', 'innovativa', 'científico-académico', 'tecnocientífico', \
                   'científico-profesional', 'psico-emocional', 'físico-mental', \
