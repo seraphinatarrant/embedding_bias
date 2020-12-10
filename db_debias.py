@@ -8,7 +8,7 @@ from WEAT import weat
 
 
 if __name__ == "__main__":
-    infilename, outfilename, weat_type, bias_type = sys.argv[1:5]
+    infilename, outfilename, weat_type, bias_type, max_bias = sys.argv[1:6]
     xweat = weat.XWEAT()
     
     if weat_type == '6':
@@ -47,11 +47,11 @@ if __name__ == "__main__":
         targets_1, targets_2, attributes_1, attributes_2 = xweat.weat_gender_es(expansion=True)
 
     if weat_type == "migrant_es":
-        targets_1, targets_2, attributes_1, attributes_2 = xweat.weat_migrant_es()
+        targets_1, targets_2, attributes_1, attributes_2 = xweat.weat_migrant_es(expansion=True)
 
     if weat_type == "gender_es_pleasant":
-        targets_1, targets_2, attributes_1, attributes_2 = xweat.weat_gender_es(expansion=True)
-        a, b, attributes_1, attributes_2 = xweat.weat_migrant_es()  # first attributes positive, second negative
+        a, b, targets_1, targets_2 = xweat.weat_gender_es(expansion=True)
+        a, b, attributes_1, attributes_2 = xweat.weat_migrant_es(expansion=True)  # first attributes positive, second negative
 
 
 
@@ -91,7 +91,7 @@ if __name__ == "__main__":
 
 
         if bias_type == "debias":
-            extreme = True # triggers unbalancing in the debias direction (by removing all probias instances)
+            extreme = max_bias # triggers unbalancing in the debias direction (by removing all probias instances)
             new_a1_pro = 0
             new_a2_pro = 0
             for line in infile:
