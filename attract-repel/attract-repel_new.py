@@ -238,10 +238,8 @@ class ExperimentRun:
         constraints = set()
 
         with codecs.open(constraints_filepath, "r", "utf-8") as f:
-            total_lines = len(f)
-            print("num constraints: {}".format(total_lines))
             skipped = 0
-            for line in f:
+            for i,line in enumerate(f):
                 word_pair = line.split()
                 # try dealing with casing if necessary
                 for i, word in word_pair:
@@ -251,7 +249,7 @@ class ExperimentRun:
                     constraints |= {(self.vocab_index[word_pair[0]], self.vocab_index[word_pair[1]])}
                 else:
                     skipped += 1
-            print("{} constraints skipped ({:.2f}% of total)".format(skipped, skipped/total_lines*100))
+            print("{} constraints skipped ({:.2f}% of total)".format(skipped, skipped/i*100))
 
         return constraints
 
