@@ -139,3 +139,4 @@ data/embeddings/*.txt
 #slurm-*
 *.json
 *.bz2
+results/*
