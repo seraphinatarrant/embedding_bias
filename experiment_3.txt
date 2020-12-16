@@ -1,0 +1,12 @@
+bash embeddings_format.sh gender_es_pleasant_ft_debias.vectors 
+bash embeddings_format.sh gender_es_ft_debias.vectors 
+bash embeddings_format.sh gender_es_ft_overbias.vectors 
+bash embeddings_format.sh gender_es_pleasant_ft_overbias.vectors 
+bash embeddings_format.sh migrant_es_ft_debias.vectors 
+bash embeddings_format.sh migrant_es_ft_overbias.vectors 
+bash embeddings_format.sh gender_es_pleasant_w2v_debias.vectors 
+bash embeddings_format.sh gender_es_w2v_debias.vectors 
+bash embeddings_format.sh gender_es_w2v_overbias.vectors 
+bash embeddings_format.sh gender_es_pleasant_w2v_overbias.vectors 
+bash embeddings_format.sh migrant_es_w2v_debias.vectors 
+bash embeddings_format.sh migrant_es_w2v_overbias.vectors 
