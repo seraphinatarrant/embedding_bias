@@ -24,7 +24,7 @@
       "token_embedders": {
         "tokens": {
             "type": "embedding",
-            "pretrained_file": "/disk/scratch/${STUDENT_ID}/coref/vectors.txt",
+            "pretrained_file": std.extVar("PRETRAINED_PATH"),
             "embedding_dim": 300,
             "trainable": false
         },
