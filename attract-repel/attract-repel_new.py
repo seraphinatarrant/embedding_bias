@@ -242,7 +242,7 @@ class ExperimentRun:
             for i,line in enumerate(f):
                 word_pair = line.split()
                 # try dealing with casing if necessary
-                for i, word in word_pair:
+                for i, word in enumerate(word_pair):
                     if word not in self.vocabulary:
                         word_pair[i] = word.lower()
                 if word_pair[0] in self.vocabulary and word_pair[1] in self.vocabulary and word_pair[0] != word_pair[1]:
