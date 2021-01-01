@@ -41,6 +41,17 @@ def read_weat_results(files):
     return weat_num2effect
 
 
+def get_method_from_name(embedding, coref):
+    e = embedding.lower()
+    if coref:
+        if e.startswith("w2v") or e.startswith("fasttext"):
+            return "Preprocess"
+        else:
+            return "Postprocess"
+    else:
+        print("Other types than coref not supported")
+
+
 if __name__ == "__main__":
     args = setup_argparse()
 
@@ -87,8 +98,6 @@ if __name__ == "__main__":
                 "type_2": coref_dict["type2_pro"]['coref_recall'] - coref_dict["type2_anti"][
                     'coref_recall']}
 
-        print(all_results)
-
 
 
     else:
@@ -107,20 +116,29 @@ if __name__ == "__main__":
 
 
     # write out file
-    HEADERS = ["WEAT","Performance Gap","Metric","Test","Embedding","Name"]
+    HEADERS = ["WEAT","Performance Gap","Metric","Test","Embedding","Name","Method"]
+    if args.coref:
+        HEADERS += ["Type"]
     with open(args.outfile, "w", newline='') as csvout:
         csv_writer = csv.writer(csvout)
         csv_writer.writerow(HEADERS)
         # for each embedding
         for embedding in all_results.keys():
             embedding_type = get_embed_type_from_name(embedding)
+            method = get_method_from_name(embedding, args.coref)
             # for each weat test
             for this_test in all_results[embedding]["WEAT"].keys():
                 this_weat = all_results[embedding]["WEAT"][this_test]
                 # for each metric (recall, precision)
                 for metric_name in ["Precision", "Recall"]:
-                    this_metric = all_results[embedding][metric_name]
+                    if not args.coref:
+                        this_metric = all_results[embedding][metric_name]
+                        csv_writer.writerow([this_weat, this_metric, metric_name, this_test, embedding_type, embedding, method])
+                    else: # coref also distringuishes between type 1 and type 2
+                        for test_type in this_metric.keys():
+                            this_metric_for_test = this_metric[test_type]
+                            csv_writer.writerow(
+                                [this_weat, this_metric_for_test, metric_name, this_test, embedding_type,
+                                 embedding, method, test_type])
 
-                    csv_writer.writerow([this_weat, this_metric, metric_name, this_test, embedding_type, embedding])
-                    #write WEAT,Performance Gap,Metric,Test,Embedding,Name
 
