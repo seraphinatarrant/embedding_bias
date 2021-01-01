@@ -56,6 +56,7 @@ def fetch_wordlists(weat_type):
 if __name__ == "__main__":
     infilename, outfilename, weat_type, bias_type, max_bias = sys.argv[1:6]
 
+    max_bias = True if max_bias == "True" else False
     targets_1, attributes_1, targets_2, attributes_2 = fetch_wordlists(weat_type)
 
     print("Using:\n"
