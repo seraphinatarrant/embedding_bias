@@ -9,7 +9,7 @@ def setup_argparse():
     p = argparse.ArgumentParser()
     p.add_argument('-r', dest='results', nargs='+',
                    help='csv style files to read in results, used for hatespeech results')
-    p.add_argument('-r', dest='all_embeddings', nargs='+', help='all the names of the embeddings to use if doing coref')
+    p.add_argument('-e', dest='all_embeddings', nargs='+', help='all the names of the embeddings to use if doing coref')
     p.add_argument('--coref', action='store_true', help="coref results are much more complex")
     p.add_argument('-o', dest='outfile', help='name for output file')
 
@@ -54,11 +54,11 @@ if __name__ == "__main__":
         # WEAT results are in REPO/results/weat/with pattern embed_name.vectors_cosine_num.res
         # coref eval results are in REPO/2020-12*_sl*_embed_name
         with os.scandir(weat_dir) as source_dir:
-            weat_files = sorted([file.path for file in source_dir if file.is_file()
-                            and not file.name.startswith('.') and file.name.endswith('.res')])
+            weat_files = sorted([file for file in source_dir if file.is_file()
+                                 and not file.name.startswith('.') and file.name.endswith('.res')], key=lambda x: x.name)
         with os.scandir(coref_dir) as source_dir:
-            coref_dirs = sorted([entry for entry in source_dir if entry.is_dir()
-                                 and entry.name.split("_",3)[-1] in all_embed_names])
+            coref_dirs = [entry for entry in source_dir if entry.is_dir()
+                                 and entry.name.split("_",3)[-1] in all_embed_names]
         # now loop through
         for this_embedding in args.all_embeddings:
             embed_name, extension = this_embedding.split(".")
@@ -69,11 +69,12 @@ if __name__ == "__main__":
             this_coref_dir = [entry for entry in coref_dirs if entry.name.split("_",3)[-1] == embed_name]
             if len(this_coref_dir) > 1:
                 print("Warning found multiple directories for embed name: {}\n {}".format(embed_name, this_coref_dir))
+            this_coref_dir = this_coref_dir[-1]
             # read in all files
             coref_dict = {}
             with os.scandir(this_coref_dir) as source_dir:
                 for file in source_dir:
-                    metric_type = file.name.split("_", 2)[0]
+                    metric_type = "_".join(file.name.split("_", 2)[:2])
                     with open(file) as fin:
                         results = json.load(fin)
                         coref_dict[metric_type] = results
