@@ -676,7 +676,7 @@ def main():
       raise ValueError('Not a valid boolean string')
     return s == 'True' or s == 'true'
   parser = argparse.ArgumentParser(description="Running XWEAT")
-  parser.add_argument("--test_number", type=int, help="Number of the weat test to run", required=False)
+  parser.add_argument("--test_number", type=str, help="Number of the weat test to run", required=False)
   parser.add_argument("--permutation_number", type=int, default=None,
                       help="Number of permutations (otherwise all will be run)", required=False)
   parser.add_argument("--output_file", type=str, default=None, help="File to store the results)", required=False)
@@ -696,25 +696,27 @@ def main():
   logging.basicConfig(level=logging.INFO)
   logging.info("XWEAT started")
   weat = XWEAT()
-  if args.test_number == 1:
+  if args.test_number == "1":
     targets_1, targets_2, attributes_1, attributes_2 = weat.weat_1()
-  elif args.test_number == 2:
+  elif args.test_number == "2":
     targets_1, targets_2, attributes_1, attributes_2 = weat.weat_2()
-  elif args.test_number == 3:
+  elif args.test_number == "3":
     targets_1, targets_2, attributes_1, attributes_2 = weat.weat_3()
-  elif args.test_number == 4:
+  elif args.test_number == "4":
     targets_1, targets_2, attributes_1, attributes_2 = weat.weat_4()
-  elif args.test_number == 5:
+  elif args.test_number == "5":
     targets_1, targets_2, attributes_1, attributes_2 = weat.weat_5()
-  elif args.test_number == 6:
+  elif args.test_number == "6":
     targets_1, targets_2, attributes_1, attributes_2 = weat.weat_6()
-  elif args.test_number == 7:
+  elif args.test_number == "6b":
+    targets_1, targets_2, attributes_1, attributes_2 = weat.weat_6b()
+  elif args.test_number == "7":
     targets_1, targets_2, attributes_1, attributes_2 = weat.weat_7()
-  elif args.test_number == 8:
+  elif args.test_number == "8":
     targets_1, targets_2, attributes_1, attributes_2 = weat.weat_8()
-  elif args.test_number == 9:
+  elif args.test_number == "9":
     targets_1, targets_2, attributes_1, attributes_2 = weat.weat_9()
-  elif args.test_number == 10:
+  elif args.test_number == "10":
     targets_1, targets_2, attributes_1, attributes_2 = weat.weat_10()
   else:
     raise ValueError("Only WEAT 1 to 10 are supported")
