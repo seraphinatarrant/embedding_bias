@@ -61,7 +61,7 @@ if __name__ == "__main__":
     coref_dir = "."
 
     if args.coref:
-        all_embed_names = set([name.split(".")[0] for name in args.all_embeddings])
+        all_embed_names = set([name.split(".")[0] for name in args.all_embeddings]) | set(args.all_embeddings) # since some have extension and some do not
         # WEAT results are in REPO/results/weat/with pattern embed_name.vectors_cosine_num.res
         # coref eval results are in REPO/2020-12*_sl*_embed_name
         with os.scandir(weat_dir) as source_dir:
