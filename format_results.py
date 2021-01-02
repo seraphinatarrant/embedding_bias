@@ -78,8 +78,12 @@ if __name__ == "__main__":
             all_results[embed_name]["WEAT"].update(read_weat_results(these_weat_files))
             # find coref results and read in
             this_coref_dir = [entry for entry in coref_dirs if entry.name.split("_",3)[-1] == embed_name]
-            if len(this_coref_dir) > 1:
-                print("Warning found multiple directories for embed name: {}\n {}".format(embed_name, this_coref_dir))
+            if len(this_coref_dir) != 1:
+                if len(this_coref_dir) > 1:
+                    print("Warning found multiple directories for embed name: {}\n {}".format(embed_name, this_coref_dir))
+                else:
+                    print("No results directories for this embedding, skipping\n{}".format(embed_name)
+                    continue
             this_coref_dir = this_coref_dir[-1]
             # read in all files
             coref_dict = {}
@@ -131,12 +135,12 @@ if __name__ == "__main__":
                 this_weat = all_results[embedding]["WEAT"][this_test]
                 # for each metric (recall, precision)
                 for metric_name in ["Precision", "Recall"]:
+                    this_metric = all_results[embedding][metric_name]
                     if not args.coref:
-                        this_metric = all_results[embedding][metric_name]
                         csv_writer.writerow([this_weat, this_metric, metric_name, this_test, embedding_type, embedding, method])
                     else: # coref also distringuishes between type 1 and type 2
                         for test_type in this_metric.keys():
-                            this_metric_for_test = this_metric[test_type]
+                            this_metric_for_test = this_metric[test_type]*100
                             csv_writer.writerow(
                                 [this_weat, this_metric_for_test, metric_name, this_test, embedding_type,
                                  embedding, method, test_type])
