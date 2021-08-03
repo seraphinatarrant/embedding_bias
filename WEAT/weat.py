@@ -259,7 +259,7 @@ class XWEAT(object):
     return targets_1, targets_2, attributes_1, attributes_2
 
 
-  # desease - uncontrollability
+  # disease - uncontrollability
   def weat_9(self):
     targets_1 = ["sad", "hopeless", "gloomy", "tearful", "miserable", "depressed"]
     targets_2 = ["sick", "illness", "influenza", "disease", "virus", "cancer"]
