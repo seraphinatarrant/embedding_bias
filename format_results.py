@@ -82,7 +82,7 @@ if __name__ == "__main__":
                 if len(this_coref_dir) > 1:
                     print("Warning found multiple directories for embed name: {}\n {}".format(embed_name, this_coref_dir))
                 else:
-                    print("No results directories for this embedding, skipping\n{}".format(embed_name)
+                    print("No results directories for this embedding, skipping\n{}".format(embed_name))
                     continue
             this_coref_dir = this_coref_dir[-1]
             # read in all files
