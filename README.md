@@ -1,3 +1,9 @@
+# Repository for the paper _Intrinsic Bias Metrics Do Not Correlate with Application Bias_
+
+This contains all code and instructions for running. Links to data witheld for anonymity, but will be updated upon acceptance.
+
+
+## Code
 
 This file outlines all the steps involved in running experiments for this project and the scripts needed for each step.
 
@@ -32,6 +38,8 @@ Install allennlp from source (via github) in editable mode
 allennlp commit hash: 96ff585
 
 allennlp-models commit hash: 37136f8
+
+Fetch training data in CoNLL Format (witheld for anonymity)
 
 Script: coref/coref_train.sh
 > Input: (1) Train data (2) Test data (3) Dev data (4) Word embeddings (glove format) (5) Path to save location of final model
@@ -73,12 +81,25 @@ Dataset balancing
 
 NB: if WEAT words are changed/added, they need to be changed/added within dataset_balancing/db_debias.py and dataset_balancing/db_overbias.py
 
-Debias script: dataset_balancing/db_debias.sh
-> Input: (1) Original dataset text file (2) Path to save file for balanced (debiased) dataset
+Debias script: db_debias.py
+> Input: (1) Original dataset text file (2) Path to save file for balanced (debiased) dataset (3) WEAT_TEST_NAME (4) debias/overbias
 
 > Output: Balanced dataset (text file)
 
-Overbias script: dataset_balancing/db_overbias.sh
-> Input: (1) Original dataset text file (2) Path to save file for balanced (overbiased) dataset
 
-> Output: Balanced dataset (text file)
+## Useful Details
+* Configurations for Attract-Repel can be found in the `attract-repel` folder. 
+* Coreference and Hatespeech models are trained with the parameters reported as best in the respective papers and tasks that they come from. 
+* Bias modification wordlists can be found in `WEAT/weat.py` and `wordlists/wordlists.py`
+
+## Time and hardware requirements
+* Embedding models are trained using `gensim` and take roughly 6 hours on a standard machine (gensim does not use a GPU). 
+* Coreference models were trained to convergence, which takes 32-50 epochs, roughly 4 hours on one GPU. All models had a similar F1 of about 63 (vs. 67 in the original paper). The reason for this different is unclear but unconcerning. Precision/Recall balance also stayed constant.
+* Attract repel takes negligible time, as does evaluation of all models at test time. 
+
+
+## Analyse data
+Scripts for this are:
+format_results.py (writes a csv)
+display_data.py (uses pandas and seaborn to make graphs)
+analyse_data.py (similar to display_data.py, but runs correlations instead of makes scatterplots)
