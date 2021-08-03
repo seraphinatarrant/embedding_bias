@@ -1,5 +1,7 @@
 # Custom
 *.png
+*.xz
+*.zip
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
