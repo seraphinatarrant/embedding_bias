@@ -1,0 +1,4 @@
+Contains preprocessing scripts
+1. language.ipynb - Ricardo's script to get English tweet data from archive.org
+2. extract.py - script to extract only tweet content
+3. pre-processing - clean data
