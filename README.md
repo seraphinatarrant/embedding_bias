@@ -1,6 +1,6 @@
 # Repository for the paper _Intrinsic Bias Metrics Do Not Correlate with Application Bias_
 
-This contains all code and instructions for running. Links to data witheld for anonymity, but will be updated upon acceptance.
+This contains all code and instructions for running.
 
 
 ## Code
@@ -85,6 +85,22 @@ Debias script: db_debias.py
 > Input: (1) Original dataset text file (2) Path to save file for balanced (debiased) dataset (3) WEAT_TEST_NAME (4) debias/overbias
 
 > Output: Balanced dataset (text file)
+
+## Data
+### English Coreference:
+We pretrain embeddings on the [English gigaword corpus](https://catalog.ldc.upenn.edu/LDC2003T05). 
+We train the classifier on [Ontonotes](https://catalog.ldc.upenn.edu/LDC2013T19) in conll format, and test on the [Winobias dataset](https://github.com/uclanlp/corefBias).  
+
+### English Hatespeech
+We pretrain embeddings on processed English twitter from 2019 (as described in the paper). You can find that in the 2 tsvs in [this folder](https://drive.google.com/drive/folders/1zr87a_lY9fZPgwFm0FKmoXCuWlwSprWT?usp=sharing).
+
+We train classifiers on [Founta et al. 2018](https://arxiv.org/pdf/1802.00393.pdf) _Large Scale Crowdsourcing and Characterization of Twitter Abusive Behavior_ dataset. We labelled their test set with tags for male/female/neutral.
+Our labelled test set is [here](https://drive.google.com/drive/folders/1h46FH-D1y4g_WvE7Ikq8y5Zg6mXadjmO?usp=sharing) as is the training dataset (since the IWCSM link is not always accessible). 
+
+### Spanish Hatespeech
+We pretrain embeddings on processed Spanish twitter from 2019 (as described in the paper). You can find that in the many tsvs in [this folder](https://drive.google.com/drive/folders/13zvp1bZJuGX9CLkcjnVDlRbLfinK25t6?usp=sharing). There are many more for Spanish than for English since there is less twitter data per month.
+
+We train and test classifiers on the dataset of [Basile et al. 2019], which is the SemEval Task 5 2019 (aka HateEval). Details for that task and the data are [here](https://github.com/cicl2018/HateEvalTeam), please contact the organisers for the test set. Feel free to contact us if they are unresponsive. 
 
 
 ## Useful Details
