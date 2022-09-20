@@ -88,7 +88,9 @@ Debias script: db_debias.py
 
 ## Data
 ### English Coreference:
-We pretrain embeddings on the [English gigaword corpus](https://catalog.ldc.upenn.edu/LDC2003T05). 
+We pretrain embeddings on the wikipedia dump from early 2020. The text was
+extracted and cleaned, to have one Wikipedia paragraph per line, then downsampled and tokenised using the NLTK tokeniser, with low frequency types
+(fewer than 10 examples) replaced with the unknown word token <UNK>. 
 We train the classifier on [Ontonotes](https://catalog.ldc.upenn.edu/LDC2013T19) in conll format, and test on the [Winobias dataset](https://github.com/uclanlp/corefBias).  
 
 ### English Hatespeech
