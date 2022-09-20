@@ -79,7 +79,7 @@ The above script calls a python script which takes in a config file.
 
 Dataset balancing
 
-NB: if WEAT words are changed/added, they need to be changed/added within dataset_balancing/db_debias.py and dataset_balancing/db_overbias.py
+NB: if WEAT words are changed/added, they need to be changed/added within the db_debias.py script.
 
 Debias script: db_debias.py
 > Input: (1) Original dataset text file (2) Path to save file for balanced (debiased) dataset (3) WEAT_TEST_NAME (4) debias/overbias
